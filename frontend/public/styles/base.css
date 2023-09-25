@@ -1,0 +1,23 @@
+:root {
+	--bg-color: rgba(249, 249, 249, 255);
+	--text-color-dark: rgba(100, 100, 101, 255);
+	--text-color-dark-light: rgba(103, 103, 103, 255);
+	--text-color-light: rgba(174, 175, 174, 255);
+	--color-orange: rgba(255, 136, 54, 255);
+}
+
+* {
+	margin: 0 0;
+	padding: 0 0;
+	box-sizing: border-box;
+}
+
+main {
+	display: flex;
+	position: relative;
+	width: 100vw;
+	height: 100vh;
+	justify-content: center;
+	align-items: center;
+	background-color: var(--bg-color);
+}
