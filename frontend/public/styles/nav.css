@@ -27,13 +27,7 @@
 
 #nav-bar > div > a {
 	text-decoration: none;
-	font-weight: bold;
-	font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-	color: var(--text-color-dark-light);
-}
-
-#nav-bar .text-selected {
-	color: var(--color-orange);
+	color: var(--text-color-light-black);
 }
 
 #nav-bar #nav-bar-pan-left {
@@ -52,8 +46,8 @@
 	margin-left: 2rem;
 	width: 2rem;
 	height: 2rem;
-	border-top: 2px solid var(--text-color-dark-light);
-	border-left: 2px solid var(--text-color-dark-light);
+	border-top: 2px solid var(--text-color-light-black);
+	border-left: 2px solid var(--text-color-light-black);
 	content: '';
 	rotate: -45deg;
 	transition: 250ms ease-in;
@@ -79,8 +73,8 @@
 	margin-left: 2rem;
 	width: 2rem;
 	height: 2rem;
-	border-top: 2px solid var(--text-color-dark-light);
-	border-left: 2px solid var(--text-color-dark-light);
+	border-top: 2px solid var(--text-color-light-black);
+	border-left: 2px solid var(--text-color-light-black);
 	content: '';
 	rotate: 135deg;
 	transition: 250ms ease-in;
