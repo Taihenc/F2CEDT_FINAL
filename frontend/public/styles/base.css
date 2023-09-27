@@ -1,9 +1,9 @@
 :root {
 	--bg-color: rgba(249, 249, 249, 255);
-	--text-color-dark: rgba(100, 100, 101, 255);
-	--text-color-dark-light: rgba(103, 103, 103, 255);
-	--text-color-light: rgba(174, 175, 174, 255);
-	--color-orange: rgba(255, 136, 54, 255);
+	--text-color-heavy-black: #424242;
+	--text-color-normal-black: rgba(174, 175, 174, 255);
+	--text-color-light-black: rgba(103, 103, 103, 255);
+	--text-color-orange: #ff8836;
 }
 
 * {
@@ -20,4 +20,26 @@ main {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bg-color);
+	overflow: hidden;
+}
+
+.content-on-show {
+	position: absolute;
+	top: 50vh;
+	left: 50vw;
+	transform: translate(-50%, -50%);
+}
+
+.content-on-left {
+	position: absolute;
+	top: 50% !important;
+	left: -100% !important;
+	transform: translate(-50%, -50%);
+}
+
+.content-on-right {
+	position: absolute;
+	top: 50% !important;
+	left: 150% !important;
+	transform: translate(-50%, -50%);
 }

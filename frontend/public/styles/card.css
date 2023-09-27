@@ -7,7 +7,7 @@
 
 .card-left > .card-header {
 	font-size: 2rem;
-	color: var(--text-color-dark);
+	color: var(--text-color-heavy-black);
 }
 
 .card-left > .card-header::after {
@@ -16,7 +16,7 @@
 	font-size: 1rem;
 	font-weight: lighter;
 	color: white;
-	background-color: var(--color-orange);
+	background-color: var(--text-color-orange);
 	transform: translate(-5rem, -2rem);
 	padding: 2px 5px;
 	border-radius: 3px;
@@ -24,10 +24,10 @@
 
 .card-left > .card-para-text {
 	margin: 10px 0;
-	font-size: 1rem;
-	width: 40%;
+	width: 60%;
 	text-align: right;
-	color: var(--text-color-light);
+	font-size: 1rem;
+	color: var(--text-color-normal-black);
 }
 
 .card-left > .card-ul {
@@ -39,7 +39,7 @@
 
 .card-left > .card-ul > .card-para-dot {
 	font-size: 1rem;
-	color: var(--text-color-dark-light);
+	color: var(--text-color-light-black);
 }
 
 .card-left > .card-ul > .card-para-dot::after {
@@ -53,13 +53,13 @@
 	aspect-ratio: 1/1;
 	content: '';
 	border-radius: 50%;
-	border: 0.1px solid var(--text-color-dark-light);
+	border: 0.1px solid var(--text-color-light-black);
 }
 
 .card-left > .card-button {
 	font-size: 1.25rem;
-	color: var(--text-color-dark-light);
-	border: 1px solid var(--text-color-dark-light);
+	color: var(--text-color-light-black);
+	border: 1px solid var(--text-color-light-black);
 	padding: 0.25rem 0.75rem;
 }
 
@@ -76,7 +76,7 @@
 }
 
 .card-right > .card-header {
-	color: var(--color-orange);
+	color: var(--text-color-orange);
 	font-weight: 1000;
 	font-size: 1.25rem;
 	margin-bottom: 0.5rem;
@@ -85,24 +85,19 @@
 
 .card-right > .card-sub-header {
 	font-size: 1rem;
-	color: var(--text-color-dark-light);
+	color: var(--text-color-light-black);
 }
 
 .card-right > .card-cow-img {
-	width: 10rem;
-	height: 9rem;
-	transform: scaleX(-1);
-	background-size: cover;
-	content: '';
-	mask-image: url('../img/Cowicon.png');
-	mask-size: contain;
-	-webkit-mask-image: url('../img/Cowicon.png');
-	-webkit-mask-size: contain;
-	background-image: url('../img/meat.png');
+	margin: 1rem 1rem;
+}
+
+.card-right > .card-cow-img > img {
+	width: 9rem;
 }
 
 .card-right > .card-para-text {
 	max-width: 60ch;
 	font-size: 1rem;
-	color: var(--text-color-light);
+	color: var(--text-color-normal-black);
 }
