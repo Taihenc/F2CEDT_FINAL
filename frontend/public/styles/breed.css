@@ -150,7 +150,7 @@
 .card-breed-img::after {
 	position: absolute;
 	top: 0;
-	left: 1;
+	left: 1px;
 	content: '';
 	width: 20rem;
 	height: 100%;

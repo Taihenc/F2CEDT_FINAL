@@ -1,5 +1,6 @@
 import express from 'express';
 import home from './public/scripts/home.js';
+import breed from './public/scripts/breed.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -23,8 +24,8 @@ app.get('/', (req, res) => {
 			}
 			let html = data;
 			let append = '';
-			// append += home(0, true);
-			append += home(1, false);
+			append += home(0, true);
+			append += breed(1, false);
 			append += home(2, false);
 			append += home(3, false);
 			return res.send(html.replace('<!-- replace me! -->', append));
