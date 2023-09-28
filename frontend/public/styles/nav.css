@@ -3,14 +3,15 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 9rem;
-	padding-left: 20%;
+	height: var(--nav-bar-height);
+	padding-left: 7rem;
 	padding-right: 10%;
 	padding-top: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
+	/* background-color: white; */
+	z-index: 1;
 }
 
 #nav-bar-link {

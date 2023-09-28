@@ -26,7 +26,7 @@ app.get('/', (req, res) => {
 			const html = dom.window.document.createElement('html');
 			html.innerHTML = data;
 
-			html.getElementsByTagName('main')[0].innerHTML += home(0, true);
+			// html.getElementsByTagName('main')[0].innerHTML += home(0, true);
 			html.getElementsByTagName('main')[0].innerHTML += home(1, false);
 			html.getElementsByTagName('main')[0].innerHTML += home(2, false);
 			html.getElementsByTagName('main')[0].innerHTML += home(3, false);

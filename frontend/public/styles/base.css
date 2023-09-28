@@ -1,9 +1,12 @@
 :root {
 	--bg-color: rgba(249, 249, 249, 255);
-	--text-color-heavy-black: #424242;
+	/* --text-color-heavy-black: #424242; */
+	--text-color-heavy-black: black;
 	--text-color-normal-black: rgba(174, 175, 174, 255);
 	--text-color-light-black: rgba(103, 103, 103, 255);
 	--text-color-orange: #ff8836;
+	--conten-transition: all 1s ease-in-out;
+	--nav-bar-height: 9rem;
 }
 
 * {
@@ -28,6 +31,7 @@ main {
 	top: 50vh;
 	left: 50vw;
 	transform: translate(-50%, -50%);
+	transition: var(--conten-transition);
 }
 
 .content-on-left {
@@ -35,6 +39,7 @@ main {
 	top: 50% !important;
 	left: -100% !important;
 	transform: translate(-50%, -50%);
+	transition: var(--conten-transition);
 }
 
 .content-on-right {
@@ -42,4 +47,5 @@ main {
 	top: 50% !important;
 	left: 150% !important;
 	transform: translate(-50%, -50%);
+	transition: var(--conten-transition);
 }
