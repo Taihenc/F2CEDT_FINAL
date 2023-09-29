@@ -17,7 +17,7 @@
 #nav-bar-link {
 	margin-left: auto;
 	display: flex;
-	gap: 4rem;
+	gap: 2rem;
 }
 
 #nav-bar > img {
@@ -26,9 +26,14 @@
 	height: 100%;
 }
 
-#nav-bar > div > a {
+#nav-bar-link > button {
+	font-size: var(--nave-font-size);
 	text-decoration: none;
-	color: var(--text-color-light-black);
+	padding: 1rem 1rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-color-heavy-black);
 }
 
 #nav-bar #nav-bar-pan-left {

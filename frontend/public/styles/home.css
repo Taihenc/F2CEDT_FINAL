@@ -1,5 +1,8 @@
 .content-home {
-	width: 80%;
+	width: 100%;
+	height: var(--content-height);
+	margin-top: var(--nav-bar-height);
+	padding-bottom: var(--nav-bar-height);
 	align-items: center;
 	display: grid;
 	grid-template-columns: 1fr 1fr 1fr;
