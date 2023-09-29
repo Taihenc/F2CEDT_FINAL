@@ -1,6 +1,7 @@
 import express from 'express';
 import home from './public/scripts/home.js';
 import breed from './public/scripts/breed.js';
+import cut from './public/scripts/cut.js';
 import fs from 'fs';
 import path from 'path';
 
@@ -26,7 +27,7 @@ app.get('/', (req, res) => {
 			let append = '';
 			append += home(0, true);
 			append += breed(1, false);
-			append += home(2, false);
+			append += cut(2, false);
 			append += home(3, false);
 			return res.send(html.replace('<!-- replace me! -->', append));
 		}
