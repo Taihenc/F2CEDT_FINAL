@@ -121,18 +121,15 @@ function updatenavbar(current_page_id) {
 
 	isNavigate = true;
 	clearTimeout(timeoutID);
-	console.log('clear timeout');
 
 	timeoutID = setTimeout(() => {
 		isNavigate = false;
 		displayNone(current_page_id);
-		console.log('set timeout');
 	}, 1000);
 }
 
 function displayNone(page_id) {
 	if (!isNavigate) {
-		console.log('display none');
 		for (let i = 0; i < page_length; i++) {
 			if (i == page_id) {
 				document.getElementById(`page-id-${i}`).style.display = null;
