@@ -7,14 +7,14 @@
 	flex-wrap: wrap;
 	justify-content: center;
 	gap: 2rem;
-	width: 100%;
+	width: 81%;
 	height: fit-content;
-	padding: 2rem 0;
+	padding: 2rem 10px;
 	overflow: auto;
 }
 
 .card-breed {
-	width: 80%;
+	width: 100%;
 	height: fit-content;
 	display: flex;
 	flex-direction: column;
