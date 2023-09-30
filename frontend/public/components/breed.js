@@ -30,7 +30,7 @@ export default function breed(page_id, is_show) {
 <div class="card-breed">
     <div class="card-breed-top">
         <div class="card-breed-img">
-            <img src="./img/cow.png" alt="Angus">
+            <img src="../img/02_breed/angus_img.png" alt="Angus">
         </div>
         <div class="card-breed-info">
             <div class="card-breed-def">

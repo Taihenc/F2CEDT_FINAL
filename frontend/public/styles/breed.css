@@ -46,8 +46,8 @@
 	content: '';
 	height: 65%;
 	aspect-ratio: 1/1;
-	background: url('../img/filter_icon.png') no-repeat center center/contain;
-	/* background-image: url('../img/filter_icon.png'); */
+	background: url('../img/02_breed/filter_icon.png') no-repeat center
+		center/contain;
 }
 
 #breed-filter-text {
@@ -68,7 +68,7 @@
 	height: 60%;
 	aspect-ratio: 1/1;
 	content: '';
-	background-image: url('../img/search_icon.png');
+	background-image: url('../img/02_breed/search_icon.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: 1;
@@ -106,7 +106,8 @@
 	content: '';
 	height: 65%;
 	aspect-ratio: 1/1;
-	background: url('../img/filter_icon.png') no-repeat center center/contain;
+	background: url('../img/02_breed/sort_icon.png') no-repeat center
+		center/contain;
 }
 
 #breed-sort-text {

@@ -18,13 +18,13 @@ export default function home(page_id, is_show) {
                 <div class='card-button text-para-light'>START NOW</div>
             </div>
             <div id='svg-grill'>
-                <img src="svg/mainprop_Mesa de trabajo 1.svg" alt="" />
+                <img src="../img/01_home/pan.png" alt="" />
             </div>
             <div class='card-right'>
                 <div class='card-header text-header'>WHY BEEF?</div>
                 <div class='card-sub-header text-sub-header'>THE KING OF ALL MEAT.</div>
                 <div class='card-cow-img'>
-                    <img src="/img/home/cowicon_@2x.png" alt="">
+                    <img src="../img/01_home/cowicon.png" alt="">
                 </div>
                 <div class='card-para-text text-para-light'>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nam
                     libero
