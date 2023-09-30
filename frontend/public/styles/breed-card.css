@@ -1,5 +1,8 @@
 :root {
-	--breed-card-img-width: 20rem;
+	--breed-card-img-width: 25%;
+	--breed-card-img-max-width: 20rem;
+	--stat-bar-width: 13rem;
+	--stat-bar-height: 2rem;
 }
 
 .breed-cards {
@@ -40,8 +43,10 @@
 }
 
 .card-breed-img {
+	position: relative;
 	flex-grow: 0;
 	width: var(--breed-card-img-width);
+	max-width: var(--breed-card-img-max-width);
 	height: 100%;
 	overflow: hidden;
 }
@@ -51,9 +56,8 @@
 	top: 0;
 	left: 1px;
 	content: '';
-	width: var(--breed-card-img-width);
+	width: 100%;
 	height: 100%;
-	overflow: hidden;
 	background: linear-gradient(
 		90deg,
 		rgba(211, 211, 211, 0) 0%,
@@ -86,8 +90,7 @@
 }
 
 .card-breed-land img {
-	height: 1rem;
-	object-fit: contain0;
+	height: 1em;
 }
 
 .card-breed-name {
@@ -95,9 +98,9 @@
 	color: var(--text-color-heavy-black);
 }
 
-.card-breed-stat {
+.card-breed-stats {
 	display: flex;
-	margin-right: 0.5rem;
+	margin-right: 3rem;
 	margin-left: auto;
 	align-items: center;
 	justify-content: flex-start;
@@ -106,17 +109,12 @@
 
 .card-breed-stat-price {
 	position: relative;
-	width: 15rem;
-	display: flex;
-	flex-direction: column;
-	justify-content: center;
-	gap: 1rem;
 }
 
 .stat-and-value {
 	display: flex;
 	position: absolute;
-	top: -2rem;
+	top: -2em;
 	width: max-content;
 	justify-content: flex-end;
 	align-items: flex-end;
@@ -126,8 +124,8 @@
 .stat-bar {
 	position: relative;
 	content: '';
-	width: 80%;
-	height: 2rem;
+	width: var(--stat-bar-width);
+	height: var(--stat-bar-height);
 	border-radius: 1rem;
 	background: var(--breed-card-bar-bg);
 }
@@ -137,9 +135,8 @@
 	top: 0;
 	left: 0;
 	content: '';
-	width: 100%;
-	height: 2rem;
-	border-radius: 1rem;
+	height: 100%;
+	border-radius: inherit;
 	background: linear-gradient(
 		90deg,
 		rgba(255, 183, 128, 1) 0%,

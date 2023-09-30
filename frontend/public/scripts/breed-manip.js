@@ -1,7 +1,7 @@
 let buttons = document.getElementsByClassName('card-breed-expand-button');
 // add click event to each button
 for (let i = 0; i < buttons.length; i++) {
-	buttons[i].addEventListener('click', function () {
+	buttons[i].parentElement.addEventListener('click', function () {
 		let info = buttons[i];
 		info = info.parentElement.parentElement.getElementsByClassName(
 			'card-breed-more-info'
