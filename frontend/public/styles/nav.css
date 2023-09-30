@@ -3,20 +3,21 @@
 	top: 0;
 	left: 0;
 	width: 100vw;
-	height: 9rem;
-	padding-left: 20%;
+	height: var(--nav-bar-height);
+	padding-left: 7rem;
 	padding-right: 10%;
 	padding-top: 10px;
 	display: flex;
 	justify-content: center;
 	align-items: center;
-	background-color: white;
+	/* background-color: white; */
+	z-index: 1;
 }
 
 #nav-bar-link {
 	margin-left: auto;
 	display: flex;
-	gap: 4rem;
+	gap: 2rem;
 }
 
 #nav-bar > img {
@@ -25,9 +26,14 @@
 	height: 100%;
 }
 
-#nav-bar > div > a {
+#nav-bar-link > button {
+	font-size: var(--nave-font-size);
 	text-decoration: none;
-	color: var(--text-color-light-black);
+	padding: 1rem 1rem;
+	background: none;
+	border: none;
+	cursor: pointer;
+	color: var(--text-color-heavy-black);
 }
 
 #nav-bar #nav-bar-pan-left {
@@ -35,7 +41,7 @@
 	position: fixed;
 	left: 0rem;
 	top: 25vh;
-	width: 25rem;
+	width: 10rem;
 	height: 50vh;
 }
 
@@ -62,7 +68,7 @@
 	position: fixed;
 	right: 0rem;
 	top: 25vh;
-	width: 25rem;
+	width: 10rem;
 	height: 50vh;
 }
 

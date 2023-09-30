@@ -1,9 +1,14 @@
 :root {
 	--bg-color: rgba(249, 249, 249, 255);
-	--text-color-heavy-black: #424242;
+	--nav-font-size: 1.5rem;
+	--nav-bar-height: 9rem;
+	--content-height: calc(100vh - var(--nav-bar-height));
+	/* --text-color-heavy-black: #424242; */
+	--text-color-heavy-black: black;
 	--text-color-normal-black: rgba(174, 175, 174, 255);
 	--text-color-light-black: rgba(103, 103, 103, 255);
 	--text-color-orange: #ff8836;
+	--conten-transition: all 1s ease-in-out;
 }
 
 * {
@@ -20,26 +25,30 @@ main {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bg-color);
+	z-index: 0;
 	overflow: hidden;
 }
 
 .content-on-show {
 	position: absolute;
-	top: 50vh;
-	left: 50vw;
-	transform: translate(-50%, -50%);
+	top: 0;
+	left: 0;
+	/* transform: translate(-50%, -50%); */
+	transition: var(--conten-transition);
 }
 
 .content-on-left {
 	position: absolute;
-	top: 50% !important;
+	top: 0% !important;
 	left: -100% !important;
-	transform: translate(-50%, -50%);
+	/* transform: translate(-50%, -50%); */
+	transition: var(--conten-transition);
 }
 
 .content-on-right {
 	position: absolute;
-	top: 50% !important;
+	top: 0% !important;
 	left: 150% !important;
-	transform: translate(-50%, -50%);
+	/* transform: translate(-50%, -50%); */
+	transition: var(--conten-transition);
 }

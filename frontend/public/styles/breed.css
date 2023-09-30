@@ -1,0 +1,116 @@
+:root {
+	--breed-card-border-radius: 1rem;
+	--breed-card-bar-bg: rgba(204, 205, 205, 255);
+	--breed-card-top-bg: rgba(231, 230, 231, 255);
+	--breed-card-more-info-bg: rgba(239, 239, 238, 255);
+	--breed-tools-radius: 1.25rem;
+	--breed-tools-bg: #d9d9d9;
+	--breed-tools-height: 1.75rem;
+}
+
+.content-breed {
+	margin-top: var(--nav-bar-height);
+	padding-top: 2px;
+	position: absolute;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1.5rem;
+	overflow: hidden;
+	height: var(--content-height);
+	width: 100vw;
+}
+
+.breed-tools {
+	display: flex;
+	gap: 2rem;
+}
+
+#breed-filter {
+	position: relative;
+	width: 7.0625rem;
+	height: var(--breed-tools-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--breed-tools-radius);
+	background: var(--breed-tools-bg);
+}
+
+#breed-filter-icon {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	margin-left: 1rem;
+	content: '';
+	height: 65%;
+	aspect-ratio: 1/1;
+	background: url('../img/02_breed/filter_icon.png') no-repeat center
+		center/contain;
+}
+
+#breed-filter-text {
+	font-size: 1rem;
+	color: var(--text-color-light-black);
+}
+
+#breed-search {
+	position: relative;
+	display: flex;
+	justify-content: flex-end;
+	width: 26.5625rem;
+	height: var(--breed-tools-height);
+}
+
+#breed-search-icon {
+	margin: auto 1rem;
+	height: 60%;
+	aspect-ratio: 1/1;
+	content: '';
+	background-image: url('../img/02_breed/search_icon.png');
+	background-size: contain;
+	background-repeat: no-repeat;
+	z-index: 1;
+}
+
+#breed-input {
+	padding: 0rem 1.5rem;
+	padding-right: 2.5rem;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	flex-shrink: 0;
+	border-radius: var(--breed-tools-radius);
+	background: var(--breed-tools-bg);
+	border: none;
+}
+
+#breed-sort {
+	position: relative;
+	width: 7.0625rem;
+	height: var(--breed-tools-height);
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	border-radius: var(--breed-tools-radius);
+	background: var(--breed-tools-bg);
+}
+
+#breed-sort-icon {
+	position: absolute;
+	top: 50%;
+	left: 0;
+	transform: translateY(-50%);
+	margin-left: 1rem;
+	content: '';
+	height: 65%;
+	aspect-ratio: 1/1;
+	background: url('../img/02_breed/sort_icon.png') no-repeat center
+		center/contain;
+}
+
+#breed-sort-text {
+	font-size: 1rem;
+	color: var(--text-color-light-black);
+}
