@@ -35,6 +35,8 @@
 	align-items: center;
 	border-radius: var(--breed-tools-radius);
 	background: var(--breed-tools-bg);
+	cursor: pointer;
+	border: none;
 }
 
 #breed-filter-icon {
@@ -68,10 +70,13 @@
 	height: 60%;
 	aspect-ratio: 1/1;
 	content: '';
-	background-image: url('../img/02_breed/search_icon.png');
+	background-image: url('../img/02_breed/search_icon@2x.png');
 	background-size: contain;
 	background-repeat: no-repeat;
 	z-index: 1;
+	cursor: pointer;
+	border: none;
+	background-color: transparent;
 }
 
 #breed-input {
@@ -95,6 +100,8 @@
 	align-items: center;
 	border-radius: var(--breed-tools-radius);
 	background: var(--breed-tools-bg);
+	cursor: pointer;
+	border: none;
 }
 
 #breed-sort-icon {
