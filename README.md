@@ -9,6 +9,15 @@ This is a final project of F2CEDT
 ### To start front-end server (ตอนนี้มีแค่frontend)
 
 ```shell
+cd .\frontend\
 npm install
 npm start
+```
+
+หรือถ้าอยาก dev (อันนี้จะมี nodemon คอย restart server)
+
+```shell
+cd .\frontend\
+npm install
+npm run dev
 ```

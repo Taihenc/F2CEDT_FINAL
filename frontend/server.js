@@ -1,7 +1,7 @@
 import express from 'express';
-import home from './public/scripts/home.js';
-import breed from './public/scripts/breed.js';
-import cut from './public/scripts/cut.js';
+import home from './public/components/home.js';
+import breed from './public/components/breed.js';
+import cut from './public/components/cut.js';
 import fs from 'fs';
 import path from 'path';
 
