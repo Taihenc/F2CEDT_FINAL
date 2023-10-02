@@ -7,4 +7,12 @@
         "breed_marbling_level": "Moderate",
         "breed_info": "breed-info"
     }
+    ,{
+        "breed_path_img": "./cow_breeds/angus.png",
+        "breed_name": "Angus",
+        "breed_country": "United Kingdom",
+        "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate",
+        "breed_info": "breed-info"
+    }
 ]
