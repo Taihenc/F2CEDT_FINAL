@@ -8,7 +8,7 @@ export default function home(page_id, is_show) {
 		class_list = 'content-on-right';
 	}
 	const home = `
-	<div id='page-id-${page_id}' class='content-home ${class_list} ${style}'>
+	<div id='page-id-${page_id}' class='content-home ${class_list}' ${style}>
             <div class='card-left'>
                 <div class='card-header text-header'>The Artisty of Beef</div>
                 <div class='card-para-text text-para-light'>we believe that beef is more than just meal</div>

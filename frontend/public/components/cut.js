@@ -4,10 +4,10 @@ export default function cut(page_id, is_show) {
 	if (is_show) {
 		class_list = 'content-on-show';
 	} else {
-		style = 'style=display: none;';
+		style = 'style="display: none;"';
 		class_list = 'content-on-right';
 	}
-	const cut = `<div id="page-id-${page_id}" class="content-cut ${class_list}" style"${style}">
+	const cut = `<div id="page-id-${page_id}" class="content-cut ${class_list}" ${style}>
     <div class="cut-selection">
         <svg id="Layer_1" data-name="Layer 1" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 267.72 160.95">
             <defs>

@@ -8,7 +8,7 @@ export default function breed(page_id, is_show) {
 		class_list = 'content-on-right';
 	}
 	let breed = `
-<div id="page-id-${page_id}" class="content-breed ${class_list} ${style}">
+<div id="page-id-${page_id}" class="content-breed ${class_list}" ${style}>
     <div class="breed-tools">
         <div id="breed-filter">
             <div id='breed-filter-icon'></div>
