@@ -1,0 +1,13 @@
+{
+    "json.schemas": [
+        {
+            "fileMatch": [
+                "**/cow_breeds/*.json",
+        ],
+            "url": ".vscode/cow_breed_schema.json"
+        }
+    ],
+    "json.format.enable": true,
+    "json.schemaDownload.enable": true,
+    "json.validate.enable": true,
+}
