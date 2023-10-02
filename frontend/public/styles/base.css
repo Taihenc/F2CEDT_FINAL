@@ -8,7 +8,7 @@
 	--text-color-normal-black: rgba(174, 175, 174, 255);
 	--text-color-light-black: rgba(103, 103, 103, 255);
 	--text-color-orange: #ff8836;
-	--conten-transition: all 1s ease-in-out;
+	--conten-transition: all 0.75s ease-in-out;
 }
 
 * {

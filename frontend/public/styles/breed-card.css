@@ -3,6 +3,7 @@
 	--breed-card-img-max-width: 20rem;
 	--stat-bar-width: 13rem;
 	--stat-bar-height: 2rem;
+	--breed-card-transition: all 0.5s ease-in-out;
 }
 
 .breed-cards {
@@ -168,7 +169,7 @@
 	border-left: 2px solid var(--text-color-heavy-black);
 	rotate: -135deg;
 	transform-origin: 0.4rem 0.4rem;
-	transition: all 1s ease-in-out;
+	transition: var(--breed-card-transition);
 }
 
 .card-breed-expand-button-active::after {
@@ -184,7 +185,7 @@
 	align-items: center;
 	background-color: var(--breed-card-more-info-bg);
 	overflow: hidden;
-	transition: all 1s ease-in-out;
+	transition: var(--breed-card-transition);
 }
 
 .card-breed-more-info div {
