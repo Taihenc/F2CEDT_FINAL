@@ -3,16 +3,48 @@
         "breed_path_img": "./cow_breeds/angus.png",
         "breed_name": "Angus",
         "breed_country": "United Kingdom",
-        "breed_price_level": "Moderate",
-        "breed_marbling_level": "Moderate",
-        "breed_info": "breed-info"
-    }
-    ,{
-        "breed_path_img": "./cow_breeds/angus.png",
-        "breed_name": "Angus",
+        "breed_price_level": "Moderate to high",
+        "breed_marbling_level": "High",
+        "breed_info": "The Angus cow, with its sleek black coat and excellent marbling, is a symbol of excellence in the world of cattle farming. Known for their gentle temperament and adaptability, Angus cows are a top choice for ranchers seeking premium beef and a reliable partner in their agricultural journey."
+    },
+    {
+        "breed_path_img": "./cow_breeds/hereford.png",
+        "breed_name": "Hereford",
         "breed_country": "United Kingdom",
         "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate to high",
+        "breed_info": "The Hereford cow, known for its rust-colored body and striking white face, is a symbol of tradition and quality in cattle farming. With a gentle nature and excellent marbling, Hereford cows are a top choice for ranchers seeking premium beef and reliable partners in their agricultural journey."
+    },
+    {
+        "breed_path_img": "./cow_breeds/charolais.png",
+        "breed_name": "Charolais",
+        "breed_country": "France",
+        "breed_price_level": "Moderate to high",
         "breed_marbling_level": "Moderate",
-        "breed_info": "breed-info"
+        "breed_info": "The Charolais cow, originating from France, is well-muscled with good meat quality. They offer a balance of moderate marbling and are known for their versatility in various farming conditions."
+    },
+    {
+        "breed_path_img": "./cow_breeds/simmental.png",
+        "breed_name": "Simmental",
+        "breed_country": "Switzerland",
+        "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate",
+        "breed_info": "The Simmental cow, hailing from Switzerland, has a high growth rate and offers good meat quality. They are known for their adaptability to different environments and provide a moderate marbling in their beef."
+    },
+    {
+        "breed_path_img": "./cow_breeds/limousin.png",
+        "breed_name": "Limousin",
+        "breed_country": "France",
+        "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate",
+        "breed_info": "The Limousin cow, originating from France, is lean and tender with good meat quality. They provide lean beef with moderate marbling and are a suitable choice for those looking for quality and tenderness in their meat."
+    },
+    {
+        "breed_path_img": "./cow_breeds/black_baldy.png",
+        "breed_name": "Hereford-Angus Cross (Black Baldy)",
+        "breed_country": "United States",
+        "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate to high",
+        "breed_info": "The Black Baldy is a crossbreed that combines the meat quality of Angus with the hardiness of Hereford. They offer a balance of moderate marbling and are known for their adaptability and versatility in cattle farming."
     }
 ]
