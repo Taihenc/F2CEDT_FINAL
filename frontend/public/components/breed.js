@@ -1,12 +1,14 @@
 export default function breed(page_id, is_show) {
 	let class_list = '';
+	let style = '';
 	if (is_show) {
 		class_list = 'content-on-show';
 	} else {
+		style = 'style="display: none;"';
 		class_list = 'content-on-right';
 	}
 	let breed = `
-<div id="page-id-${page_id}" class="content-breed ${class_list}">
+<div id="page-id-${page_id}" class="content-breed ${class_list} ${style}">
     <div class="breed-tools">
         <div id="breed-filter">
             <div id='breed-filter-icon'></div>
