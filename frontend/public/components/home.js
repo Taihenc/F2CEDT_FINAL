@@ -1,12 +1,14 @@
 export default function home(page_id, is_show) {
 	let class_list = '';
+	let style = '';
 	if (is_show) {
 		class_list = 'content-on-show';
 	} else {
+		style = 'style="display: none;"';
 		class_list = 'content-on-right';
 	}
 	const home = `
-	<div id='page-id-${page_id}' class='content-home ${class_list}'>
+	<div id='page-id-${page_id}' class='content-home ${class_list} ${style}'>
             <div class='card-left'>
                 <div class='card-header text-header'>The Artisty of Beef</div>
                 <div class='card-para-text text-para-light'>we believe that beef is more than just meal</div>

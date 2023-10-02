@@ -34,12 +34,24 @@
             "breed_price_level": {
                 "type": "string",
                 "title": "The breed_price_level Schema",
-                "enum": ["Low", "Moderate", "Moderate to high", "High"]
+                "enum": [
+                    "Low",
+                    "Low to moderate",
+                    "Moderate",
+                    "Moderate to high",
+                    "High"
+                ]
             },
             "breed_marbling_level": {
                 "type": "string",
                 "title": "The breed_marbling_level Schema",
-                "enum": ["Low", "Moderate", "Moderate to high", "High"]
+                "enum": [
+                    "Low",
+                    "Low to moderate",
+                    "Moderate",
+                    "Moderate to high",
+                    "High"
+                ]
             },
             "breed_info": {
                 "type": "string",

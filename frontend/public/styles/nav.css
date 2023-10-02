@@ -4,9 +4,9 @@
 	left: 0;
 	width: 100vw;
 	height: var(--nav-bar-height);
-	padding-left: 7rem;
+	padding-left: 7%;
 	padding-right: 10%;
-	padding-top: 10px;
+	padding-top: 0.5%;
 	display: flex;
 	justify-content: center;
 	align-items: center;
@@ -17,19 +17,20 @@
 #nav-bar-link {
 	margin-left: auto;
 	display: flex;
-	gap: 2rem;
+	gap: 2%;
 }
 
 #nav-bar > img {
-	padding-top: 3rem;
-	padding-bottom: 2rem;
-	height: 100%;
+	margin-top: 1%;
+	margin-left: 4%;
+	height: 50%;
+	object-fit: contain;
 }
 
 #nav-bar-link > button {
-	font-size: var(--nave-font-size);
+	font-size: var(--nav-font-size);
 	text-decoration: none;
-	padding: 1rem 1rem;
+	padding: 1em 1em;
 	background: none;
 	border: none;
 	cursor: pointer;
@@ -49,7 +50,6 @@
 	position: fixed;
 	left: -5rem;
 	top: 50vh;
-	margin-left: 2rem;
 	width: 2rem;
 	height: 2rem;
 	border-top: 2px solid var(--text-color-light-black);
@@ -76,7 +76,6 @@
 	position: fixed;
 	right: -5rem;
 	top: 50vh;
-	margin-left: 2rem;
 	width: 2rem;
 	height: 2rem;
 	border-top: 2px solid var(--text-color-light-black);
@@ -86,6 +85,6 @@
 	transition: 250ms ease-in;
 }
 
-#nav-bar #nav-bar-pan-right:hover:after {
+#nav-bar #nav-bar-pan-right:hover::after {
 	right: 5rem;
 }
