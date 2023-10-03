@@ -25,7 +25,7 @@ app.get('/', (req, res) => {
 			}
 			let html = data;
 			let append = '';
-			// append += home(0, true);
+			append += home(0, true);
 			append += breed(1, false);
 			append += cut(2, false);
 			append += home(3, false);

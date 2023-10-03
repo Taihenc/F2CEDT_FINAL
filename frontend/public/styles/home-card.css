@@ -1,16 +1,17 @@
 :root {
-	--card-left-header-size: 2vw;
-	--card-left-normal-size: 1.15vw;
-	--card-left-button-size: 1.5vw;
-	--card-right-header-size: 1.35vw;
-	--card-right-subheader-size: 1vw;
-	--card-right-normal-size: 1.15vw;
+	--card-left-header-size: 2em;
+	--card-left-normal-size: 1.15em;
+	--card-left-button-size: 1.5em;
+	--card-right-header-size: 1.35em;
+	--card-right-subheader-size: 1em;
+	--card-right-normal-size: 1.15em;
 }
 
 .card-left {
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
+	font-size: 1vw;
 }
 
 .card-left > .card-header {
@@ -23,18 +24,17 @@
 .card-left > .card-header::after {
 	position: absolute;
 	content: 'UNLOCK';
-	font-size: var(--card-left-normal-size);
-	font-weight: lighter;
+	font-size: 0.5em;
 	color: white;
 	background-color: var(--text-color-orange);
-	top: calc(-1 * var(--card-left-header-size));
+	top: -1.35em;
 	right: 0;
-	padding: 2px 1em;
+	padding: 0.1em 1em;
 	border-radius: 5rem;
 }
 
 .card-left > .card-para-text {
-	margin: 10px 0;
+	margin: 0.5em 0;
 	width: 70%;
 	text-align: right;
 	font-size: var(--card-left-normal-size);
@@ -45,7 +45,7 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	margin-bottom: 1rem;
+	margin-bottom: 1em;
 }
 
 .card-left > .card-ul > .card-para-dot {
@@ -65,11 +65,17 @@
 	border: 0.1px solid var(--text-color-light-black);
 }
 
-.card-left > .card-button {
+.card-left > .card-button,
+.card-button {
 	font-size: var(--card-left-button-size);
 	color: var(--text-color-light-black);
-	border: 1px solid var(--text-color-light-black);
+	border: 1px solid var(--text-color-normal-black);
 	padding: 0.1em 0.5em;
+	text-align: center;
+}
+
+.card-button-mobile {
+	display: none;
 }
 
 #svg-grill > img {
@@ -79,6 +85,7 @@
 .card-right {
 	display: flex;
 	flex-direction: column;
+	font-size: 1vw;
 }
 
 .card-right > .card-header {
@@ -92,6 +99,7 @@
 .card-right > .card-sub-header {
 	font-size: var(--card-right-subheader-size);
 	color: var(--text-color-normal-black);
+	letter-spacing: 0.2em;
 }
 
 .card-right > .card-cow-img {
@@ -105,11 +113,85 @@
 .card-right > .card-para-text {
 	max-width: 30ch;
 	font-size: var(--card-right-normal-size);
-	color: var(--text-color-normal-black);
+	color: var(--text-color-light-black);
 }
 
-/* @media (max-width: 1345px) {
-	.card-left > .card-header {
-		font-size: 1rem;
+@media (max-width: 600px) {
+	.card-left {
+		width: 100%;
+		align-items: center;
+		font-size: 3.5vw;
 	}
-} */
+
+	.card-left > .card-header {
+		text-align: center;
+	}
+
+	.card-left > .card-header::after {
+		font-size: 0.35em;
+		top: -2em;
+		right: 50%;
+		transform: translateX(50%);
+	}
+
+	.card-left > .card-ul {
+		flex-direction: row;
+		gap: 0.5em;
+	}
+
+	.card-left > .card-ul > .card-para-dot {
+		font-size: 0.65em;
+		text-align: center;
+		color: var(--text-color-light-black);
+	}
+
+	.card-left > .card-ul > .card-para-dot::after {
+		display: none;
+	}
+
+	.card-left > .card-para-text {
+		text-align: center;
+		width: 100%;
+	}
+
+	.card-left > .card-button {
+		display: none;
+	}
+
+	#svg-grill > img {
+		padding: 10% 8%;
+	}
+
+	.card-button-mobile {
+		display: block;
+		padding: 0.5em 3em;
+		margin-top: 0.7em;
+		font-size: 3vw;
+	}
+
+	.card-right {
+		align-items: center;
+		font-size: 3.5vw;
+	}
+
+	.card-right > .card-header {
+		margin-top: 2em;
+	}
+
+	.card-right > .card-cow-img {
+		display: flex;
+		justify-content: center;
+		align-items: center;
+		margin: 10% 0;
+	}
+
+	.card-right > .card-cow-img > img {
+		height: 80%;
+		width: auto;
+	}
+	.card-right > .card-para-text {
+		text-align: center;
+		text-justify: auto;
+		max-width: 33ch;
+	}
+}
