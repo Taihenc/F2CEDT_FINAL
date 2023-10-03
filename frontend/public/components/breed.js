@@ -43,7 +43,7 @@ export default function breed(page_id, is_show) {
                 <div class="card-breed-name text-header">Angus</div>
             </div>
             <div class="card-breed-stats">
-                <div class="card-breed-stat-price">
+                <div class="card-breed-stat">
                     <div class="stat-and-value text-sub-header">
                         <span class='stat-name text-header'>Price Rating</span>
                         Moderate to high
@@ -52,7 +52,7 @@ export default function breed(page_id, is_show) {
                         <div class="stat-bar-percent" style='width: 80%;'></div>
                     </div>
                 </div>
-                <div class="card-breed-stat-price">
+                <div class="card-breed-stat">
                     <div class="stat-and-value text-sub-header">
                         <span class='stat-name text-header'>Marbling</span>
                         Moderate to high

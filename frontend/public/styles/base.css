@@ -1,6 +1,6 @@
 :root {
 	--bg-color: rgba(249, 249, 249, 255);
-	--nav-font-size: 100%;
+	--nav-font-size: 1em;
 	--nav-bar-height: 7rem;
 	--content-height: calc(100vh - var(--nav-bar-height));
 	--text-color-heavy-black: black;

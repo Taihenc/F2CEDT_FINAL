@@ -1,21 +1,21 @@
 :root {
-	--breed-card-border-radius: 1rem;
+	--breed-card-border-radius: 1em;
 	--breed-card-bar-bg: rgba(204, 205, 205, 255);
 	--breed-card-top-bg: rgba(231, 230, 231, 255);
 	--breed-card-more-info-bg: rgba(239, 239, 238, 255);
-	--breed-tools-radius: 1.25rem;
+	--breed-tools-radius: 1.25em;
 	--breed-tools-bg: #d9d9d9;
-	--breed-tools-height: 1.75rem;
+	--breed-tools-height: 1.75em;
 }
 
 .content-breed {
 	margin-top: var(--nav-bar-height);
-	padding-top: 2px;
 	position: absolute;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
-	gap: 1.5rem;
+	font-size: 1vw;
+	gap: 1.5em;
 	overflow: hidden;
 	height: var(--content-height);
 	width: 100vw;
@@ -23,12 +23,13 @@
 
 .breed-tools {
 	display: flex;
-	gap: 2rem;
+	font-size: 1vw;
+	gap: 2em;
 }
 
 #breed-filter {
 	position: relative;
-	width: 7.0625rem;
+	width: 7em;
 	height: var(--breed-tools-height);
 	display: flex;
 	justify-content: center;
@@ -44,7 +45,7 @@
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
-	margin-left: 1rem;
+	margin-left: 1em;
 	content: '';
 	height: 65%;
 	aspect-ratio: 1/1;
@@ -53,7 +54,7 @@
 }
 
 #breed-filter-text {
-	font-size: 1rem;
+	font-size: 1em;
 	color: var(--text-color-light-black);
 }
 
@@ -61,12 +62,12 @@
 	position: relative;
 	display: flex;
 	justify-content: flex-end;
-	width: 26.5625rem;
+	width: 26em;
 	height: var(--breed-tools-height);
 }
 
 #breed-search-icon {
-	margin: auto 1rem;
+	margin: auto 1em;
 	height: 60%;
 	aspect-ratio: 1/1;
 	content: '';
@@ -80,11 +81,12 @@
 }
 
 #breed-input {
-	padding: 0rem 1.5rem;
-	padding-right: 2.5rem;
+	padding: 0em 1.5em;
+	padding-right: 2.5em;
 	position: absolute;
 	width: 100%;
 	height: 100%;
+	font-size: 1em;
 	flex-shrink: 0;
 	border-radius: var(--breed-tools-radius);
 	background: var(--breed-tools-bg);
@@ -93,7 +95,7 @@
 
 #breed-sort {
 	position: relative;
-	width: 7.0625rem;
+	width: 7em;
 	height: var(--breed-tools-height);
 	display: flex;
 	justify-content: center;
@@ -109,7 +111,7 @@
 	top: 50%;
 	left: 0;
 	transform: translateY(-50%);
-	margin-left: 1rem;
+	margin-left: 1em;
 	content: '';
 	height: 65%;
 	aspect-ratio: 1/1;
@@ -118,6 +120,12 @@
 }
 
 #breed-sort-text {
-	font-size: 1rem;
+	font-size: 1em;
 	color: var(--text-color-light-black);
+}
+
+@media (max-width: 600px) {
+	.content-breed {
+		margin-top: calc(var(--nav-bar-height) + 5em);
+	}
 }
