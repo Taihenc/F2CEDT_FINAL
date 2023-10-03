@@ -46,5 +46,38 @@
         "breed_price_level": "Moderate",
         "breed_marbling_level": "Moderate to high",
         "breed_info": "The Black Baldy is a crossbreed that combines the meat quality of Angus with the hardiness of Hereford. They offer a balance of moderate marbling and are known for their adaptability and versatility in cattle farming."
+    } ,
+    {
+        "breed_path_img": "./cow_breeds/wagyu.png",
+        "breed_name": "Wagyu",
+        "breed_country": "Japan",
+        "breed_price_level": "High",
+        "breed_marbling_level": "High",
+        "breed_info": "The Wagyu cow, originating from Japan, is renowned for its exceptional marbling and flavor. Wagyu beef is highly sought after for its melt-in-the-mouth texture and rich taste. They are considered a premium breed in the world of beef production."
+    },
+    {
+        "breed_path_img": "./cow_breeds/shorthorn.png",
+        "breed_name": "Shorthorn",
+        "breed_country": "United Kingdom",
+        "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate",
+        "breed_info": "The Shorthorn cow, known for its red, white, or roan coat, offers good meat quality with moderate marbling. They are a versatile breed suitable for various farming conditions."
+    },
+    {
+        "breed_path_img": "./cow_breeds/brahman.png",
+        "breed_name": "Brahman",
+        "breed_country": "India",
+        "breed_price_level": "Low to moderate",
+        "breed_marbling_level": "Low",
+        "breed_info": "The Brahman cow, originating from India, provides leaner meat with lower marbling. They are known for their adaptability to hot and humid climates and are a cost-effective choice for beef production."
+    },
+    {
+        "breed_path_img": "./cow_breeds/highland.png",
+        "breed_name": "Scottish Highland",
+        "breed_country": "Scotland",
+        "breed_price_level": "Moderate",
+        "breed_marbling_level": "Moderate",
+        "breed_info": "The Scottish Highland cow, recognized for its shaggy, long hair and majestic appearance, is well-muscled with moderate marbling. They are hardy and can thrive in challenging environments while providing quality beef."
     }
+
 ]
