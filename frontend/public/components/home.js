@@ -24,12 +24,12 @@ export default function home(page_id, is_show) {
                     <div class='card-para-dot text-sub-header'>Discover Unique</div>
                     <div class='card-para-dot text-sub-header'>Cooking Techiques</div>
                 </div>
-                <div class='card-button text-para-light'>START NOW</div>
+                <button id='start-now-button' class='card-button text-para-light'>START NOW</button>
             </div>
             <div id='svg-grill'>
                 <img src="../img/01_home/pan.png" alt="" />
             </div>
-            <div class='card-button card-button-mobile text-para-light'>START NOW</div>
+            <button id='start-now-button' class='card-button card-button-mobile text-para-light'>START NOW</button>
             <div class='card-right'>
                 <div class='card-header text-header'>WHY BEEF?</div>
                 <div class='card-sub-header text-sub-header'>THE KING OF ALL MEAT.</div>

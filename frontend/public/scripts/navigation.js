@@ -1,5 +1,6 @@
 const pan_left_button = document.getElementById('nav-bar-pan-left');
 const pan_right_button = document.getElementById('nav-bar-pan-right');
+const buttons = document.querySelectorAll('#start-now-button');
 const page_length = 4;
 let isNavigate = false;
 let timeoutID;
@@ -19,6 +20,12 @@ const nav_bar_buttons = document
 for (let i = 0; i < nav_bar_buttons.length; i++) {
 	nav_bar_buttons[i].addEventListener('click', (event) => {
 		pan_to_page(i);
+	});
+}
+
+for (let i = 0; i < buttons.length; i++) {
+	buttons[i].addEventListener('click', function () {
+		pan_to_page(1);
 	});
 }
 
@@ -70,7 +77,7 @@ function pan_right(event) {
 	updatenavbar(next_page_id);
 }
 
-function pan_to_page(nextpage_id) {
+export function pan_to_page(nextpage_id) {
 	const current_page = document.getElementsByClassName('content-on-show')[0];
 	const page_id = parseInt(current_page.id.match`[a-z]*([0-9]+)`[0]);
 	let next_page_id = parseInt(nextpage_id);

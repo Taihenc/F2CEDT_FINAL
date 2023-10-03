@@ -1,7 +1,7 @@
 :root {
 	--card-left-header-size: 2em;
 	--card-left-normal-size: 1.15em;
-	--card-left-button-size: 1.5em;
+	--card-left-button-size: 1em;
 	--card-right-header-size: 1.35em;
 	--card-right-subheader-size: 1em;
 	--card-right-normal-size: 1.15em;
@@ -57,12 +57,13 @@
 .card-left > .card-ul > .card-para-dot::after {
 	display: inline-block;
 	margin: 0 0.15em;
-	height: 0.75em;
+	margin-left: 0.3em;
+	height: 0.65em;
 
 	aspect-ratio: 1/1;
 	content: '';
 	border-radius: 50%;
-	border: 0.1px solid var(--text-color-light-black);
+	border: 0.1em solid var(--text-color-light-black);
 }
 
 .card-left > .card-button,
@@ -70,8 +71,15 @@
 	font-size: var(--card-left-button-size);
 	color: var(--text-color-light-black);
 	border: 1px solid var(--text-color-normal-black);
-	padding: 0.1em 0.5em;
+	background-color: transparent;
+	/* box-shadow: 4px 4px 10px 2px rgba(0, 0, 0, 0.25); */
+	padding: 0.2em 1em;
 	text-align: center;
+}
+
+.card-button:hover {
+	background-color: var(--text-color-orange);
+	color: white;
 }
 
 .card-button-mobile {
