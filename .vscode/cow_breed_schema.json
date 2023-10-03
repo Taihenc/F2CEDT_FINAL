@@ -1,0 +1,85 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "array",
+    "default": [],
+    "title": "JSON schema for cow_breeds",
+    "items": {
+        "type": "object",
+        "title": "breed",
+        "required": [
+            "breed_path_img",
+            "breed_name",
+            "breed_country",
+            "breed_price_level",
+            "breed_marbling_level",
+            "breed_info"
+        ],
+        "properties": {
+            "breed_path_img": {
+                "type": "string",
+                "title": "The breed_path_img Schema",
+                "format": "url",
+                "examples": ["./cow_breeds/angus.png"]
+            },
+            "breed_name": {
+                "type": "string",
+                "title": "The breed_name Schema",
+                "examples": ["Angus"]
+            },
+            "breed_country": {
+                "type": "string",
+                "title": "The breed_country Schema",
+                "examples": ["United Kingdom"]
+            },
+            "breed_price_level": {
+                "type": "string",
+                "title": "The breed_price_level Schema",
+                "enum": [
+                    "Low",
+                    "Low to moderate",
+                    "Moderate",
+                    "Moderate to high",
+                    "High"
+                ]
+            },
+            "breed_marbling_level": {
+                "type": "string",
+                "title": "The breed_marbling_level Schema",
+                "enum": [
+                    "Low",
+                    "Low to moderate",
+                    "Moderate",
+                    "Moderate to high",
+                    "High"
+                ]
+            },
+            "breed_info": {
+                "type": "string",
+                "title": "The breed_info Schema",
+                "examples": ["breed-info"]
+            }
+        },
+        "examples": [
+            {
+                "breed_path_img": "./cow_breeds/angus.png",
+                "breed_name": "Angus",
+                "breed_country": "United Kingdom",
+                "breed_price_level": "Moderate",
+                "breed_marbling_level": "Moderate",
+                "breed_info": "breed-info"
+            }
+        ]
+    },
+    "examples": [
+        [
+            {
+                "breed_path_img": "./cow_breeds/angus.png",
+                "breed_name": "Angus",
+                "breed_country": "United Kingdom",
+                "breed_price_level": "Moderate",
+                "breed_marbling_level": "Moderate",
+                "breed_info": "breed-info"
+            }
+        ]
+    ]
+}

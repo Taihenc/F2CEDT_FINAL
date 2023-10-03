@@ -1,12 +1,14 @@
 export default function breed(page_id, is_show) {
 	let class_list = '';
+	let style = '';
 	if (is_show) {
 		class_list = 'content-on-show';
 	} else {
+		style = 'style="display: none;"';
 		class_list = 'content-on-right';
 	}
 	let breed = `
-<div id="page-id-${page_id}" class="content-breed ${class_list}">
+<div id="page-id-${page_id}" class="content-breed ${class_list}" ${style}>
     <div class="breed-tools">
         <div id="breed-filter">
             <div id='breed-filter-icon'></div>
@@ -35,14 +37,12 @@ export default function breed(page_id, is_show) {
         <div class="card-breed-info">
             <div class="card-breed-def">
                 <div class="card-breed-land text-sub-header">
-                    <span>
-                        <img src="./img/country/scotland.png" alt="">
-                    </span>
+                    <img src="./img/country/scotland.png" alt="">
                     Scotland
                 </div>
                 <div class="card-breed-name text-header">Angus</div>
             </div>
-            <div class="card-breed-stat">
+            <div class="card-breed-stats">
                 <div class="card-breed-stat-price">
                     <div class="stat-and-value text-sub-header">
                         <span class='stat-name text-header'>Price Rating</span>
