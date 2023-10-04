@@ -1,0 +1,9 @@
+[
+    {
+        "cut_path_img": "./cow_cuts/angus.png",
+        "cut_name": "Angus",
+        "cut_price_level": "Moderate to high",
+        "cut_marbling_level": "High",
+        "breed_info": "this meat is good."
+    }
+]

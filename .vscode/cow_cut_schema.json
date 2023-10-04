@@ -1,0 +1,76 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema",
+    "type": "array",
+    "default": [],
+    "title": "Root Schema",
+    "items": {
+        "type": "object",
+        "title": "A Schema",
+        "required": [
+            "cut_path_img",
+            "cut_name",
+            "cut_price_level",
+            "cut_marbling_level",
+            "breed_info"
+        ],
+        "properties": {
+            "cut_path_img": {
+                "type": "string",
+                "title": "The cut_path_img Schema",
+                "examples": ["./cow_cuts/angus.png"]
+            },
+            "cut_name": {
+                "type": "string",
+                "title": "The cut_name Schema",
+                "examples": ["Angus"]
+            },
+            "cut_price_level": {
+                "type": "string",
+                "title": "The cut_price_level Schema",
+                "enum": [
+                    "Low",
+                    "Low to moderate",
+                    "Moderate",
+                    "Moderate to high",
+                    "High"
+                ]
+            },
+            "cut_marbling_level": {
+                "type": "string",
+                "title": "The cut_marbling_level Schema",
+                "enum": [
+                    "Low",
+                    "Low to moderate",
+                    "Moderate",
+                    "Moderate to high",
+                    "High"
+                ]
+            },
+            "breed_info": {
+                "type": "string",
+                "title": "The breed_info Schema",
+                "examples": ["this meat is good."]
+            }
+        },
+        "examples": [
+            {
+                "cut_path_img": "./cow_cuts/angus.png",
+                "cut_name": "Angus",
+                "cut_price_level": "Moderate to high",
+                "cut_marbling_level": "High",
+                "breed_info": "this meat is good."
+            }
+        ]
+    },
+    "examples": [
+        [
+            {
+                "cut_path_img": "./cow_cuts/angus.png",
+                "cut_name": "Angus",
+                "cut_price_level": "Moderate to high",
+                "cut_marbling_level": "High",
+                "breed_info": "this meat is good."
+            }
+        ]
+    ]
+}
