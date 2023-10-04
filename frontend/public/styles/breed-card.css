@@ -81,7 +81,6 @@
 	display: flex;
 	flex-direction: column;
 	justify-content: center;
-	/* gap: 1rem; */
 }
 
 .card-breed-land {
@@ -128,7 +127,7 @@
 	content: '';
 	width: var(--stat-bar-width);
 	height: var(--stat-bar-height);
-	border-radius: 1rem;
+	border-radius: 1em;
 	background: var(--breed-card-bar-bg);
 }
 
@@ -152,7 +151,6 @@
 	margin-right: 2em;
 	width: 1em;
 	height: 100%;
-	/* margin-left: -rem; */
 	content: '';
 }
 
@@ -169,6 +167,7 @@
 	rotate: -135deg;
 	transform-origin: 0.4em 0.4em;
 	transition: var(--breed-card-transition);
+	transition-property: rotate;
 }
 
 .card-breed-expand-button-active::after {

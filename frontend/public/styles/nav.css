@@ -86,13 +86,13 @@
 	position: fixed;
 	left: -10%;
 	top: 50vh;
-	width: 2rem;
-	height: 2rem;
-	border-top: 2px solid var(--text-color-light-black);
-	border-left: 2px solid var(--text-color-light-black);
+	width: 2em;
+	height: 2em;
+	border-top: 0.2em solid var(--text-color-light-black);
+	border-left: 0.2em solid var(--text-color-light-black);
 	content: '';
 	rotate: -45deg;
-	transition: 250ms ease-in;
+	transition: left 250ms ease-in;
 }
 
 #nav-bar #nav-bar-pan-left:hover::after {
@@ -115,13 +115,13 @@
 	position: fixed;
 	right: -10%;
 	top: 50vh;
-	width: 2rem;
-	height: 2rem;
-	border-top: 2px solid var(--text-color-light-black);
-	border-left: 2px solid var(--text-color-light-black);
+	width: 2em;
+	height: 2em;
+	border-top: 0.2em solid var(--text-color-light-black);
+	border-left: 0.2em solid var(--text-color-light-black);
 	content: '';
 	rotate: 135deg;
-	transition: 250ms ease-in;
+	transition: right 250ms ease-in;
 }
 
 #nav-bar #nav-bar-pan-right:hover::after {
