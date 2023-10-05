@@ -37,7 +37,6 @@ export default async function breed(page_id, is_show) {
 	try {
 		const breeds = await get_breeds();
 		append = breeds.map((breed) => generateBreedCard(breed)).join('');
-		console.log('Updated append:', append); // Debugging to verify the update
 	} catch (error) {
 		console.error('Error fetching breeds:', error);
 	}

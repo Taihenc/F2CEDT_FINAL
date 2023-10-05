@@ -14,8 +14,6 @@ for (let i = 0; i < buttons.length; i++) {
 			info.childNodes.forEach((node) => {
 				if (node.tagName == 'DIV') {
 					info.style.height = node.offsetHeight + 'px';
-
-					console.log(node.height + 'px');
 				}
 			});
 		}
