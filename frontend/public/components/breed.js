@@ -1,4 +1,9 @@
-export default function breed(page_id, is_show) {
+import { get_breeds } from '../scripts/api.js';
+import { toPercentage, backend_url } from '../scripts/config.js';
+
+/**@typedef {import('../scripts/config.js').Breed_card} Breed_card */
+
+export default async function breed(page_id, is_show) {
 	let class_list = '';
 	let style = '';
 	if (is_show) {
@@ -28,37 +33,59 @@ export default function breed(page_id, is_show) {
     </div>
 </div>
     `;
-	const breed_cards = `
+	let append = '';
+	try {
+		const breeds = await get_breeds();
+		append = breeds.map((breed) => generateBreedCard(breed)).join('');
+		console.log('Updated append:', append); // Debugging to verify the update
+	} catch (error) {
+		console.error('Error fetching breeds:', error);
+	}
+
+	return breed.replace('<!-- replace me! -->', append);
+}
+
+/**@param {Breed_card} breed */
+function generateBreedCard(breed) {
+	const breed_card_template = `
 <div class="card-breed">
     <div class="card-breed-top">
         <div class="card-breed-img">
-            <img src="../img/02_breed/angus_img.png" alt="Angus">
+            <img src="${backend_url}${breed.breed_path_img}" alt="${
+		breed.breed_name
+	}">
         </div>
         <div class="card-breed-info">
             <div class="card-breed-def">
                 <div class="card-breed-land text-sub-header">
-                    <img src="./img/country/scotland.png" alt="">
+                    <img src="${backend_url}${breed.breed_country_img}" alt="">
                     Scotland
                 </div>
-                <div class="card-breed-name text-header">Angus</div>
+                <div class="card-breed-name text-header">${
+					breed.breed_name
+				}</div>
             </div>
             <div class="card-breed-stats">
                 <div class="card-breed-stat">
                     <div class="stat-and-value text-sub-header">
                         <span class='stat-name text-header'>Price Rating</span>
-                        Moderate to high
+                        ${breed.breed_price_level}
                     </div>
                     <div class="stat-bar">
-                        <div class="stat-bar-percent" style='width: 80%;'></div>
+                        <div class="stat-bar-percent" style='width: ${
+							toPercentage[breed.breed_price_level]
+						}%;'></div>
                     </div>
                 </div>
                 <div class="card-breed-stat">
                     <div class="stat-and-value text-sub-header">
                         <span class='stat-name text-header'>Marbling</span>
-                        Moderate to high
+                        ${breed.breed_marbling_level}
                     </div>
                     <div class="stat-bar">
-                        <div class="stat-bar-percent" style='width: 80%;'></div>
+                        <div class="stat-bar-percent" style='width: ${
+							toPercentage[breed.breed_marbling_level]
+						}%;'></div>
                     </div>
                 </div>
             </div>
@@ -67,20 +94,12 @@ export default function breed(page_id, is_show) {
     </div>
     <div class="card-breed-more-info" style='height: 0px;'>
         <div class='text-para-light'>
-            The Angus breed of cattle is known for its exceptional meat quality and marbling. These cattle
-            are
-            black in color and have a distinct appearance with a smooth and muscular body. They are docile
-            in
-            nature and adapt well to various climates. Angus beef is highly regarded for its tenderness,
-            juiciness, and rich flavor.
+            <div class='card-breed-fullname text-header'>${
+				breed.breed_name
+			}</div>
+            ${breed.breed_info}
         </div>
     </div>
 </div>`;
-
-	let append = '';
-	for (let i = 0; i < 10; i++) {
-		append += breed_cards;
-	}
-
-	return breed.replace('<!-- replace me! -->', append);
+	return breed_card_template;
 }

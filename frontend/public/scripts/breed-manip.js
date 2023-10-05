@@ -11,7 +11,13 @@ for (let i = 0; i < buttons.length; i++) {
 			buttons[i].classList.remove('card-breed-expand-button-active');
 		} else {
 			buttons[i].classList.add('card-breed-expand-button-active');
-			info.style = null;
+			info.childNodes.forEach((node) => {
+				if (node.tagName == 'DIV') {
+					info.style.height = node.offsetHeight + 'px';
+
+					console.log(node.height + 'px');
+				}
+			});
 		}
 	});
 }

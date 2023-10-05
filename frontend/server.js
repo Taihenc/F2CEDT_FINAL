@@ -7,7 +7,6 @@ import path from 'path';
 
 const app = express();
 const PORT = 80;
-const backend_PORT = 81;
 
 app.use(express.static('public'));
 
@@ -32,11 +31,13 @@ app.get('/', (req, res) => {
 			}
 			let html = data;
 			let append = '';
-			append += home(0, true);
-			append += breed(1, false);
-			append += cut(2, false);
-			append += home(3, false);
-			return res.send(html.replace('<!-- replace me! -->', append));
+			(async () => {
+				append += home(0, true);
+				append += await breed(1, false);
+				append += cut(2, false);
+				append += home(3, false);
+				return res.send(html.replace('<!-- replace me! -->', append));
+			})();
 		}
 	);
 });
