@@ -54,11 +54,12 @@ function generateBreedCard(breed) {
 		breed.breed_name
 	}">
         </div>
+        <div class="card-breed-img-filter"></div>
         <div class="card-breed-info">
             <div class="card-breed-def">
                 <div class="card-breed-land text-sub-header">
                     <img src="${backend_url}${breed.breed_country_img}" alt="">
-                    Scotland
+                    ${breed.breed_country}
                 </div>
                 <div class="card-breed-name text-header">${
 					breed.breed_name

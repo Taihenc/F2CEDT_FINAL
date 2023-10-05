@@ -15,7 +15,6 @@
 	flex-direction: column;
 	align-items: center;
 	gap: 1.5em;
-	overflow: hidden;
 	height: var(--content-height);
 	width: 100vw;
 }

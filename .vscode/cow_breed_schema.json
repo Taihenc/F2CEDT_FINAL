@@ -36,7 +36,7 @@
 				"type": "string",
 				"title": "The breed_country_img Schema",
 				"format": "url",
-				"examples": ["./country_flags/uk.png"]
+				"examples": ["../country/uk.png"]
 			},
 			"breed_price_level": {
 				"type": "string",

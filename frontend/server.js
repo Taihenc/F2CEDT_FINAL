@@ -4,9 +4,11 @@ import breed from './public/components/breed.js';
 import cut from './public/components/cut.js';
 import fs from 'fs';
 import path from 'path';
+import { Set_backend_url } from './public/scripts/config.js';
 
 const app = express();
 const PORT = 80;
+const backend_PORT = 81;
 
 app.use(express.static('public'));
 
@@ -21,6 +23,7 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 app.get('/', (req, res) => {
+	Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
 	fs.readFile(
 		path.resolve('./public/template.html'),
 		'utf-8',

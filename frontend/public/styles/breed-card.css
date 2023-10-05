@@ -53,12 +53,13 @@
 	overflow: hidden;
 }
 
-.card-breed-img::after {
+.card-breed-img-filter {
 	position: absolute;
 	top: 0;
-	left: 0;
+	left: 2px;
 	content: '';
-	width: 100%;
+	width: var(--breed-card-img-width);
+	max-width: var(--breed-card-img-max-width);
 	height: 100%;
 	background: linear-gradient(
 		90deg,
@@ -66,8 +67,6 @@
 		var(--breed-card-top-bg) 90%,
 		var(--breed-card-top-bg) 100%
 	);
-	background-size: cover;
-	background-repeat: no-repeat;
 }
 
 .card-breed-img > img {

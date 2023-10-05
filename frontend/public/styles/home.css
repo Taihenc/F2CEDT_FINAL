@@ -10,8 +10,7 @@
 	height: calc(var(--content-height) - 2em);
 	min-height: var(--content-home-min-width);
 	display: flex;
-	/* overflow: auto; */
-	/* overflow-x: hidden; */
+	overflow-x: hidden;
 	align-items: center;
 	justify-content: center;
 }

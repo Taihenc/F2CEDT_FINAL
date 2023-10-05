@@ -15,7 +15,6 @@
 	display: flex;
 	width: 50%;
 	align-items: center;
-	overflow: hidden;
 }
 
 .cut-selection > svg {
@@ -85,7 +84,6 @@
 	max-height: 100%;
 	flex-grow: 1;
 	flex-direction: column;
-	overflow: hidden;
 	gap: 1em;
 }
 
