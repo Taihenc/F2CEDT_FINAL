@@ -1,0 +1,18 @@
+[
+	{
+		"cut_id": "cut_tenderloin",
+		"cut_path_img": "./img/tenderloin.png",
+		"cut_name": "Tenderlion",
+		"cut_price_level": "Moderate to high",
+		"cut_marbling_level": "High",
+		"cut_info": "this meat is good."
+	},
+	{
+		"cut_id": "cut_rib",
+		"cut_path_img": "./img/rib.png",
+		"cut_name": "Ribeye",
+		"cut_price_level": "Moderate to high",
+		"cut_marbling_level": "High",
+		"cut_info": "this meat is also good."
+	}
+]

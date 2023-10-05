@@ -21,4 +21,5 @@
         "*.css": "css",
         "cachesim.h": "c"
     },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

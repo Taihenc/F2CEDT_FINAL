@@ -7,8 +7,15 @@ import path from 'path';
 
 const app = express();
 const PORT = 80;
+const backend_PORT = 81;
 
 app.use(express.static('public'));
+
+// works but 2x slower
+// app.use('/resource', (req, res) => {
+// 	const serverURL = `${req.protocol}://${req.get('host')}`;
+// 	res.redirect(`${serverURL}:${backend_PORT}/resource${req.path}`);
+// });
 
 app.listen(PORT, '0.0.0.0', () => {
 	console.log(`Frontend Server ready at http://localhost:${PORT}`);
