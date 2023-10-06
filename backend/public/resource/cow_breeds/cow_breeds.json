@@ -133,5 +133,77 @@
 		"breed_price_level": "Low to moderate",
 		"breed_marbling_level": "Low",
 		"breed_info": "Texas Longhorn cattle, known for their distinctive long, curved horns, offer leaner meat with low marbling. They are a historic breed with a unique appearance and are well-suited to certain regional environments."
+	},
+	{
+		"breed_path_img": "./img/red_angus.png",
+		"breed_name": "Red Angus",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Red Angus cattle, known for their red coat color, offer moderate marbling and are prized for their beef quality and gentle disposition. They are a popular choice for ranchers seeking quality beef production."
+	},
+	{
+		"breed_path_img": "./img/gelbvieh.png",
+		"breed_name": "Gelbvieh",
+		"breed_country": "Germany",
+		"breed_country_img": "../country/germany.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Gelbvieh cattle, originating from Germany, are well-muscled with good meat quality and moderate marbling. They are known for their adaptability and are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/santa_gertrudis.png",
+		"breed_name": "Santa Gertrudis",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Santa Gertrudis cattle, developed in the United States, offer moderate marbling and are known for their heat tolerance and adaptability to various climates. They are prized for their beef quality and versatility."
+	},
+	{
+		"breed_path_img": "./img/ß",
+		"breed_name": "Brangus",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "High",
+		"breed_info": "The Brangus cow is a crossbreed that combines the meat quality of Angus with the adaptability of Brahman. They offer high marbling and are prized for their premium beef quality."
+	},
+	{
+		"breed_path_img": "./img/murray_grey.png",
+		"breed_name": "Murray Grey",
+		"breed_country": "Australia",
+		"breed_country_img": "../country/australia.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Murray Grey cattle, originating from Australia, offer moderate marbling and are known for their docile nature and adaptability to various climates. They are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/pinzgauer.png",
+		"breed_name": "Pinzgauer",
+		"breed_country": "Austria",
+		"breed_country_img": "../country/austria.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Pinzgauer cattle, hailing from Austria, are well-muscled with good meat quality and moderate marbling. They are known for their attractive appearance and versatility in beef production."
+	},
+	{
+		"breed_path_img": "./img/ankole_watusi.png",
+		"breed_name": "Ankole-Watusi",
+		"breed_country": "Africa",
+		"breed_country_img": "../country/africa.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "Ankole-Watusi cattle, native to Africa, provide leaner meat with low marbling. They are recognized for their impressive long horns and are well-suited to certain regional environments."
+	},
+	{
+		"breed_path_img": "./img/ankole.png",
+		"breed_name": "Ankole",
+		"breed_country": "Africa",
+		"breed_country_img": "../country/africa.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "Ankole cattle, native to Africa, provide leaner meat with low marbling. They are known for their distinctive long, upward-curving horns and are well-adapted to the African climate."
 	}
 ]
