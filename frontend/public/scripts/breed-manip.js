@@ -15,9 +15,9 @@ for (let i = 0; i < buttons.length; i++) {
 				if (node.tagName == 'DIV') {
 					const height_in_em =
 						node.offsetHeight /
-						parseInt(
+						parseFloat(
 							window
-								.getComputedStyle(node)
+								.getComputedStyle(info)
 								.getPropertyValue('font-size')
 						);
 					info.style.height = height_in_em + 'em';

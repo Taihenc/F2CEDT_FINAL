@@ -190,6 +190,7 @@
 	background-color: var(--breed-card-more-info-bg);
 	overflow: hidden;
 	transition: var(--breed-card-transition);
+	transition-property: height;
 }
 
 .card-breed-more-info > .text-para-light {
@@ -198,11 +199,126 @@
 	padding-bottom: 2em;
 	font-size: 1.25em;
 	line-height: 2.5em;
-	transition: var(--breed-card-transition);
 }
 
 .card-breed-fullname {
 	position: absolute;
 	top: 1.5em;
 	left: 3em;
+}
+
+@media (max-width: 600px) {
+	:root {
+		--stat-bar-width: 6em;
+		--stat-bar-height: 1em;
+	}
+
+	.breed-tools {
+		display: grid;
+		font-size: 3vw;
+		gap: 0.5em;
+		grid-template-rows: 1fr 1fr;
+		grid-template-columns: 1fr 1fr;
+		justify-content: center;
+		align-content: center;
+	}
+
+	#breed-search {
+		grid-column: 1 / span 2;
+	}
+
+	#breed-filter {
+		order: 2;
+		margin: auto;
+	}
+
+	#breed-sort {
+		order: 3;
+		margin: auto;
+	}
+
+	.card-breed-top {
+		font-size: 2vw;
+		flex-direction: column;
+		height: 33vw;
+	}
+
+	.card-breed-img-filter {
+		display: none;
+	}
+
+	.card-breed-img {
+		margin: 0 0;
+		width: 100%;
+		min-width: 100%;
+		height: 65%;
+	}
+
+	.card-breed-img img {
+		width: 100%;
+		height: auto;
+		object-fit: cover;
+		margin-top: -2em;
+	}
+
+	.card-breed-info {
+		padding: 0 2.75em;
+		padding-top: 1em;
+	}
+
+	.card-breed-def {
+		margin-right: 1em;
+		width: 12em;
+		max-width: 12em;
+		min-width: 12em;
+	}
+
+	.card-breed-land {
+		margin-bottom: -0.75em;
+	}
+
+	.card-breed-stats {
+		margin: 0 0;
+		flex-direction: column;
+		align-items: flex-start;
+		justify-content: center;
+		gap: 0.2em;
+		flex-grow: 1;
+	}
+
+	.card-breed-stat {
+		display: flex;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+	}
+
+	.stat-and-value {
+		position: static;
+		top: 0;
+		left: 0;
+	}
+
+	.stat-name {
+		transform: translateY(0.1em);
+	}
+
+	.stat-bar {
+		margin-left: auto;
+	}
+
+	.card-breed-expand-button {
+		display: none;
+	}
+
+	.card-breed-more-info > .text-para-light {
+		padding: 1em 2em;
+		padding-top: 2em;
+		font-size: 2em;
+	}
+
+	.card-breed-fullname {
+		top: 0.5em;
+		left: 1em;
+	}
 }
