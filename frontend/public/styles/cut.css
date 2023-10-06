@@ -1,3 +1,7 @@
+:root {
+	--cut-card-transition: all 0.5s ease-in-out;
+}
+
 .content-cut {
 	display: flex;
 	width: 100%;
@@ -18,11 +22,16 @@
 }
 
 .cut-selection > svg {
+	z-index: 2;
 	object-fit: contain;
 	width: 100%;
 }
 
 .cut-selection > svg > path:hover {
+	fill: var(--text-color-orange);
+}
+
+.cut-selection > svg > path.selected-cut {
 	fill: var(--text-color-orange);
 }
 
@@ -40,12 +49,30 @@
 	box-shadow: 4px 4px 30px 2px rgba(0, 0, 0, 0.25);
 }
 
+.cut-card {
+	opacity: 0%;
+	top: 5em;
+	left: 5em;
+	background-color: inherit;
+}
+
+.cut-card.selected-cut {
+	top: 0;
+	left: 0;
+	opacity: 100%;
+	position: absolute;
+	height: 100%;
+	transition: var(--cut-card-transition);
+	transition-property: opacity, top, left;
+}
+
 .cut-selected-card-backdrop {
 	display: block;
 	position: absolute;
 	width: 100%;
 	height: 100%;
 	z-index: -1;
+	user-select: none;
 }
 
 .cut-selected-card-backdrop > img:nth-child(1) {

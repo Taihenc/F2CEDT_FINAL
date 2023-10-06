@@ -16,7 +16,7 @@
 	height: fit-content;
 	overflow: auto;
 	transition: var(--breed-card-transition);
-	transition-property: opacity margin-top;
+	transition-property: opacity, margin-top;
 }
 
 .card-breed {
