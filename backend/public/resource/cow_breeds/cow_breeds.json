@@ -88,5 +88,50 @@
 		"breed_price_level": "Moderate",
 		"breed_marbling_level": "Moderate",
 		"breed_info": "The Scottish Highland cow, recognized for its shaggy, long hair and majestic appearance, is well-muscled with moderate marbling. They are hardy and can thrive in challenging environments while providing quality beef."
+	},
+	{
+		"breed_path_img": "./cow_breeds/limflex.png",
+		"breed_name": "Lim-Flex",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Lim-Flex is a crossbreed that combines the meat quality of Limousin with the adaptability of Angus. They offer moderate marbling and are known for their versatility in beef production."
+	},
+	{
+		"breed_path_img": "./cow_breeds/salers.png",
+		"breed_name": "Salers",
+		"breed_country": "France",
+		"breed_country_img": "../country/france.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Salers cattle, originating from France, are well-muscled with good meat quality and moderate marbling. They are known for their hardiness and are suitable for various farming conditions."
+	},
+	{
+		"breed_path_img": "./cow_breeds/angus_brangus.png",
+		"breed_name": "Angus-Brangus Cross",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "High",
+		"breed_info": "The Angus-Brangus Cross is a hybrid breed that combines the qualities of Angus and Brangus cattle. They offer high marbling and are prized for their premium beef quality."
+	},
+	{
+		"breed_path_img": "./cow_breeds/piedmontese.png",
+		"breed_name": "Piedmontese",
+		"breed_country": "Italy",
+		"breed_country_img": "../country/italy.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Low to moderate",
+		"breed_info": "Piedmontese cattle, originating from Italy, provide lean beef with low to moderate marbling. They are known for their unique double-muscle trait, making them an interesting breed for beef production."
+	},
+	{
+		"breed_path_img": "./cow_breeds/longhorn.png",
+		"breed_name": "Texas Longhorn",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Low to moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "Texas Longhorn cattle, known for their distinctive long, curved horns, offer leaner meat with low marbling. They are a historic breed with a unique appearance and are well-suited to certain regional environments."
 	}
 ]
