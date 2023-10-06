@@ -27,8 +27,9 @@
 	width: 100%;
 }
 
-.cut-selection > svg > path:hover {
+.cut-selection > svg > path:hover[id] {
 	fill: var(--text-color-orange);
+	opacity: 0.7;
 }
 
 .cut-selection > svg > path.selected-cut {
@@ -44,7 +45,7 @@
 	max-height: 75%;
 	aspect-ratio: 30/42;
 	width: max(20em, 30vw);
-	border-radius: 0.2em;
+	border-radius: 0.35em;
 	background: #fff;
 	box-shadow: 4px 4px 30px 2px rgba(0, 0, 0, 0.25);
 }
@@ -66,9 +67,11 @@
 	position: absolute;
 	height: 100%;
 	z-index: 2;
-	user-select: all;
+	user-select: unset;
 	transition: var(--cut-card-transition);
 	transition-property: opacity, top, left;
+	border-radius: 0.35em;
+	overflow: hidden;
 }
 
 .cut-selected-card-backdrop {
@@ -99,6 +102,7 @@
 .cut-selected-card-img {
 	width: 100%;
 	height: 30%;
+	user-select: none;
 }
 
 .cut-selected-card-img img {
@@ -180,11 +184,57 @@
 }
 
 @media (max-width: 600px) {
+	.content-cut {
+		padding-top: 10em;
+		padding-bottom: 10em;
+		flex-direction: column;
+		justify-content: flex-start;
+		align-items: center;
+		height: auto;
+		gap: 5em;
+	}
+
+	.cut-selection {
+		margin: 0 0;
+		width: 85%;
+	}
+
+	.cut-selected-card {
+		margin: 0 0;
+		aspect-ratio: 30/42;
+		width: 90%;
+		font-size: 3vw;
+		max-height: none;
+	}
+
+	.cut-selected-card-backdrop {
+		font-size: 2vw;
+	}
+
+	.cut-selected-card-backdrop > img:nth-child(2) {
+		top: -3em;
+		left: -4em;
+		bottom: auto;
+	}
+
+	.cut-selected-card-img {
+		height: 13em;
+	}
+
+	.cut-selected-header {
+		margin-bottom: -0.2em;
+	}
+
 	.cut-stat-and-value {
 		gap: 0.2em;
-		font-size: 0.75em;
+		font-size: 1em;
 	}
+
+	.cut-stat-and-value > .stat-name {
+		transform: none;
+	}
+
 	.cut-stat-bar {
-		width: 3em;
+		width: 5em;
 	}
 }
