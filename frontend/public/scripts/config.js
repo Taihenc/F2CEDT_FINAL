@@ -12,6 +12,17 @@ export let backend_url = 'http://localhost:81';
  * @property {string} breed_info
  */
 
+/**
+ * @typedef {Object} Cut_card
+ * @property {string} _id
+ * @property {string} cut_id
+ * @property {string} cut_path_img
+ * @property {string} cut_name
+ * @property {string} cut_price_level
+ * @property {string} cut_marbling_level
+ * @property {string} cut_info
+ */
+
 export const toPercentage = {
 	'Low': 0,
 	'Low to moderate': 25,

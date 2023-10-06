@@ -50,9 +50,12 @@
 }
 
 .cut-card {
+	position: absolute;
 	opacity: 0%;
 	top: 5em;
 	left: 5em;
+	user-select: none;
+	z-index: -1;
 	background-color: inherit;
 }
 
@@ -62,6 +65,8 @@
 	opacity: 100%;
 	position: absolute;
 	height: 100%;
+	z-index: 2;
+	user-select: all;
 	transition: var(--cut-card-transition);
 	transition-property: opacity, top, left;
 }

@@ -37,7 +37,7 @@ app.get('/', (req, res) => {
 			(async () => {
 				append += home(0, true);
 				append += await breed(1, false);
-				append += cut(2, false);
+				append += await cut(2, false);
 				append += home(3, false);
 				return res.send(html.replace('<!-- replace me! -->', append));
 			})();
