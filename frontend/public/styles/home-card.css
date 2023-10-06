@@ -1,6 +1,6 @@
 :root {
 	--card-left-header-size: 2em;
-	--card-left-normal-size: 1.15em;
+	--card-left-normal-size: 1em;
 	--card-left-button-size: 1em;
 	--card-right-header-size: 1.35em;
 	--card-right-subheader-size: 1em;
@@ -36,8 +36,9 @@
 	margin: 0.5em 0;
 	width: 70%;
 	text-align: right;
+	line-height: 1.375em;
 	font-size: var(--card-left-normal-size);
-	color: var(--text-color-light-black);
+	color: var(--text-color-heavy-black);
 }
 
 .card-left > .card-ul {

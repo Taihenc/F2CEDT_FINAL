@@ -18,7 +18,7 @@ export default function home(page_id, is_show) {
             </div>
             <div class='card-left'>
                 <div class='card-header text-header'>The Artisty of Beef</div>
-                <div class='card-para-text text-para-light'>we believe that beef is more than just meal</div>
+                <div class='card-para-text text-para-light'>we believe that beef is more than just a meal</div>
                 <div class='card-ul'>
                     <div class='card-para-dot text-sub-header'>Explore Beef Breeds</div>
                     <div class='card-para-dot text-sub-header'>Discover Unique</div>
