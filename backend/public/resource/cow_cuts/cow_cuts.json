@@ -1,0 +1,150 @@
+[
+	{
+		"cut_id": "cut_tenderloin",
+		"cut_path_img": "./img/tenderloin.png",
+		"cut_name": "Tenderlion",
+		"cut_price_level": "Moderate to high",
+		"cut_marbling_level": "High",
+		"cut_info": "The tenderloin, also known as fillet, is a prime cut of beef that showcases exceptional tenderness. It is positioned in the loin area of the animal, running parallel to the spine. The characteristic feature of tenderloin is its lean and delicate texture, which is attributed to the muscle's minimal fat content and its location in a less exercised part of the animal. As a result, tenderloin is highly regarded for its tenderness and is often considered"
+	},
+	{
+		"cut_id": "cut_neck",
+		"cut_path_img": "./img/neck.png",
+		"cut_name": "Neck",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef neck is a flavorful but relatively tough cut of meat. It contains a fair amount of connective tissue and requires slow cooking to become tender. It is often used in stews and braised dishes."
+	},
+	{
+		"cut_id": "cut_chuck",
+		"cut_path_img": "./img/chunk.png",
+		"cut_name": "Chunk",
+		"cut_price_level": "Low",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef chunk, also known as stewing beef, is a budget-friendly cut with good flavor. It has a bit of marbling but is still best suited for slow-cooking methods like stews and casseroles."
+	},
+
+	{
+		"cut_id": "cut_brisket",
+		"cut_path_img": "./img/brisket.png",
+		"cut_name": "Brisket",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef brisket is a tough and flavorful cut often used for barbecue and smoking. It benefits from long, slow cooking to become tender and is prized for its rich, smoky flavor."
+	},
+
+	{
+		"cut_id": "cut_rib",
+		"cut_path_img": "./img/rib.png",
+		"cut_name": "Rib",
+		"cut_price_level": "Moderate to high",
+		"cut_marbling_level": "High",
+		"cut_info": "Beef rib is a prime cut known for its excellent marbling and tenderness. It can be prepared as a roast or cut into ribeye steaks, both of which are highly sought after for their flavor and juiciness."
+	},
+
+	{
+		"cut_id": "cut_plate",
+		"cut_path_img": "./img/plate.png",
+		"cut_name": "Plate",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef plate is a less expensive cut with a fair amount of connective tissue. It is often used for ground beef, but some portions can be suitable for slow cooking or braising."
+	},
+
+	{
+		"cut_id": "cut_flank",
+		"cut_path_img": "./img/flank.png",
+		"cut_name": "Flank",
+		"cut_price_level": "Moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef flank steak is a lean and flavorful cut. It is best when marinated and cooked quickly at high heat. It's often used in fajitas, stir-fries, or as a London broil."
+	},
+
+	{
+		"cut_id": "cut_shortloin",
+		"cut_path_img": "./img/short_loin.png",
+		"cut_name": "Short Loin",
+		"cut_price_level": "Moderate to high",
+		"cut_marbling_level": "High",
+		"cut_info": "The beef short loin is a premium cut that includes the famous T-bone and porterhouse steaks. It offers both the tenderloin and strip loin, making it highly prized for its tenderness and flavor."
+	},
+
+	{
+		"cut_id": "cut_buttomsirloin",
+		"cut_path_img": "./img/bottom_sirloin.png",
+		"cut_name": "Bottom Sirloin",
+		"cut_price_level": "Moderate",
+		"cut_marbling_level": "Moderate",
+		"cut_info": "Beef bottom sirloin is a versatile cut often used for sirloin steaks or roasts. It's moderately priced and offers good flavor when cooked to medium-rare or medium doneness."
+	},
+
+	{
+		"cut_id": "cut_topsirloin",
+		"cut_path_img": "./img/top_sirloin.png",
+		"cut_name": "Top Sirloin",
+		"cut_price_level": "Moderate",
+		"cut_marbling_level": "Moderate",
+		"cut_info": "Beef top sirloin is another versatile cut used for sirloin steaks or roasts. It's reasonably priced and has a balanced flavor profile. Cooking it to medium-rare or medium is recommended."
+	},
+
+	{
+		"cut_id": "cut_round",
+		"cut_path_img": "./img/round.png",
+		"cut_name": "Round",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef round is a lean and economical cut. It is often used for making beef jerky, roasts, and lean ground beef. Due to its leanness, it's best cooked using slow, moist heat methods."
+	},
+
+	{
+		"cut_id": "cut_oxtail",
+		"cut_path_img": "./img/tail.png",
+		"cut_name": "Tail",
+		"cut_price_level": "Low",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef tail is a lesser-known and less expensive cut. It is used in various cuisines for its rich flavor and gelatinous texture when cooked slowly. It is often used to add depth to soups and stews."
+	},
+	{
+		"cut_id": "cut_cheek",
+		"cut_path_img": "./img/cheek.png",
+		"cut_name": "Cheek",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef cheek is a flavorful but relatively tough cut of meat. It has a rich, beefy flavor and is often used in slow-cooked dishes like stews and braises. When cooked slowly, it becomes tender and delicious."
+	},
+
+	{
+		"cut_id": "cut_head",
+		"cut_path_img": "./img/head.png",
+		"cut_name": "Head",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef head is a less common and versatile cut. Various parts of the head, such as the cheeks and tongue, are used in culinary dishes. It requires careful preparation and cooking but can yield unique and flavorful results."
+	},
+
+	{
+		"cut_id": "cut_tongue",
+		"cut_path_img": "./img/tongue.png",
+		"cut_name": "Tongue",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef tongue is a tender and flavorful cut. It is often used in various cuisines, where it is boiled or braised until tender and then sliced for sandwiches or used in other dishes. It has a unique taste and texture."
+	},
+	{
+		"cut_id": "cut_shank",
+		"cut_path_img": "./img/shank.png",
+		"cut_name": "Shank",
+		"cut_price_level": "Low to moderate",
+		"cut_marbling_level": "Low",
+		"cut_info": "Beef shank is a tough and flavorful cut often used in soups, stews, and braised dishes. It contains a fair amount of connective tissue and benefits from slow cooking to become tender. It adds depth and richness to dishes."
+	},
+
+	{
+		"cut_id": "cut_sirloin",
+		"cut_path_img": "./img/sirloin.png",
+		"cut_name": "Sirloin",
+		"cut_price_level": "Moderate",
+		"cut_marbling_level": "Moderate",
+		"cut_info": "Beef sirloin is a versatile cut that includes both top sirloin and bottom sirloin portions. It is often used for sirloin steaks or roasts. Sirloin offers a balanced flavor profile and is moderately priced. Cooking it to medium-rare or medium is recommended."
+	}
+]

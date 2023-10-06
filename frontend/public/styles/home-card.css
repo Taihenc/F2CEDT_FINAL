@@ -1,7 +1,7 @@
 :root {
 	--card-left-header-size: 2em;
-	--card-left-normal-size: 1.15em;
-	--card-left-button-size: 1.5em;
+	--card-left-normal-size: 1em;
+	--card-left-button-size: 1em;
 	--card-right-header-size: 1.35em;
 	--card-right-subheader-size: 1em;
 	--card-right-normal-size: 1.15em;
@@ -11,7 +11,6 @@
 	display: flex;
 	flex-direction: column;
 	align-items: flex-end;
-	font-size: 1vw;
 }
 
 .card-left > .card-header {
@@ -30,15 +29,16 @@
 	top: -1.35em;
 	right: 0;
 	padding: 0.1em 1em;
-	border-radius: 5rem;
+	border-radius: 5em;
 }
 
 .card-left > .card-para-text {
 	margin: 0.5em 0;
 	width: 70%;
 	text-align: right;
+	line-height: 1.375em;
 	font-size: var(--card-left-normal-size);
-	color: var(--text-color-light-black);
+	color: var(--text-color-heavy-black);
 }
 
 .card-left > .card-ul {
@@ -57,21 +57,28 @@
 .card-left > .card-ul > .card-para-dot::after {
 	display: inline-block;
 	margin: 0 0.15em;
-	height: 0.75em;
+	margin-left: 0.3em;
+	height: 0.65em;
 
 	aspect-ratio: 1/1;
 	content: '';
 	border-radius: 50%;
-	border: 0.1px solid var(--text-color-light-black);
+	border: 0.1em solid var(--text-color-light-black);
 }
 
 .card-left > .card-button,
 .card-button {
 	font-size: var(--card-left-button-size);
 	color: var(--text-color-light-black);
-	border: 1px solid var(--text-color-normal-black);
-	padding: 0.1em 0.5em;
+	border: 0.1em solid var(--text-color-normal-black);
+	background-color: transparent;
+	padding: 0.2em 1em;
 	text-align: center;
+}
+
+.card-button:hover {
+	background-color: var(--text-color-orange);
+	color: white;
 }
 
 .card-button-mobile {
@@ -85,7 +92,6 @@
 .card-right {
 	display: flex;
 	flex-direction: column;
-	font-size: 1vw;
 }
 
 .card-right > .card-header {
@@ -111,6 +117,7 @@
 }
 
 .card-right > .card-para-text {
+	padding-right: 2em;
 	max-width: 30ch;
 	font-size: var(--card-right-normal-size);
 	color: var(--text-color-light-black);
@@ -182,13 +189,10 @@
 		display: flex;
 		justify-content: center;
 		align-items: center;
+		width: 100%;
 		margin: 10% 0;
 	}
 
-	.card-right > .card-cow-img > img {
-		height: 80%;
-		width: auto;
-	}
 	.card-right > .card-para-text {
 		text-align: center;
 		text-justify: auto;

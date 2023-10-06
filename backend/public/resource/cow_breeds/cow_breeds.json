@@ -1,0 +1,209 @@
+[
+	{
+		"breed_path_img": "./img/angus.png",
+		"breed_name": "Angus",
+		"breed_country": "Scotland",
+		"breed_country_img": "../country/scotland.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "High",
+		"breed_info": "The Angus cow, with its sleek black coat and excellent marbling, is a symbol of excellence in the world of cattle farming. Known for their gentle temperament and adaptability, Angus cows are a top choice for ranchers seeking premium beef and a reliable partner in their agricultural journey."
+	},
+	{
+		"breed_path_img": "./img/hereford.png",
+		"breed_name": "Hereford",
+		"breed_country": "United Kingdom",
+		"breed_country_img": "../country/unitedkingdom.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate to high",
+		"breed_info": "The Hereford cow, known for its rust-colored body and striking white face, is a symbol of tradition and quality in cattle farming. With a gentle nature and excellent marbling, Hereford cows are a top choice for ranchers seeking premium beef and reliable partners in their agricultural journey."
+	},
+	{
+		"breed_path_img": "./img/charolais.png",
+		"breed_name": "Charolais",
+		"breed_country": "France",
+		"breed_country_img": "../country/france.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Charolais cow, originating from France, is well-muscled with good meat quality. They offer a balance of moderate marbling and are known for their versatility in various farming conditions."
+	},
+	{
+		"breed_path_img": "./img/simmental.png",
+		"breed_name": "Simmental",
+		"breed_country": "Switzerland",
+		"breed_country_img": "../country/switzerland.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Simmental cow, hailing from Switzerland, has a high growth rate and offers good meat quality. They are known for their adaptability to different environments and provide a moderate marbling in their beef."
+	},
+	{
+		"breed_path_img": "./img/limousin.png",
+		"breed_name": "Limousin",
+		"breed_country": "France",
+		"breed_country_img": "../country/france.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Limousin cow, originating from France, is lean and tender with good meat quality. They provide lean beef with moderate marbling and are a suitable choice for those looking for quality and tenderness in their meat."
+	},
+	{
+		"breed_path_img": "./img/black_baldy.png",
+		"breed_name": "Hereford-Angus Cross (Black Baldy)",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate to high",
+		"breed_info": "The Black Baldy is a crossbreed that combines the meat quality of Angus with the hardiness of Hereford. They offer a balance of moderate marbling and are known for their adaptability and versatility in cattle farming."
+	},
+	{
+		"breed_path_img": "./img/wagyu.png",
+		"breed_name": "Wagyu",
+		"breed_country": "Japan",
+		"breed_country_img": "../country/japan.png",
+		"breed_price_level": "High",
+		"breed_marbling_level": "High",
+		"breed_info": "The Wagyu cow, originating from Japan, is renowned for its exceptional marbling and flavor. Wagyu beef is highly sought after for its melt-in-the-mouth texture and rich taste. They are considered a premium breed in the world of beef production."
+	},
+	{
+		"breed_path_img": "./img/shorthorn.png",
+		"breed_name": "Shorthorn",
+		"breed_country": "United Kingdom",
+		"breed_country_img": "../country/unitedkingdom.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Shorthorn cow, known for its red, white, or roan coat, offers good meat quality with moderate marbling. They are a versatile breed suitable for various farming conditions."
+	},
+	{
+		"breed_path_img": "./img/brahman.png",
+		"breed_name": "Brahman",
+		"breed_country": "India",
+		"breed_country_img": "../country/india.png",
+		"breed_price_level": "Low to moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "The Brahman cow, originating from India, provides leaner meat with lower marbling. They are known for their adaptability to hot and humid climates and are a cost-effective choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/highland.png",
+		"breed_name": "Scottish Highland",
+		"breed_country": "Scotland",
+		"breed_country_img": "../country/scotland.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Scottish Highland cow, recognized for its shaggy, long hair and majestic appearance, is well-muscled with moderate marbling. They are hardy and can thrive in challenging environments while providing quality beef."
+	},
+	{
+		"breed_path_img": "./img/limflex.png",
+		"breed_name": "Lim-Flex",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Lim-Flex is a crossbreed that combines the meat quality of Limousin with the adaptability of Angus. They offer moderate marbling and are known for their versatility in beef production."
+	},
+	{
+		"breed_path_img": "./img/salers.png",
+		"breed_name": "Salers",
+		"breed_country": "France",
+		"breed_country_img": "../country/france.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Salers cattle, originating from France, are well-muscled with good meat quality and moderate marbling. They are known for their hardiness and are suitable for various farming conditions."
+	},
+	{
+		"breed_path_img": "./img/angus_brangus.png",
+		"breed_name": "Angus-Brangus Cross",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "High",
+		"breed_info": "The Angus-Brangus Cross is a hybrid breed that combines the qualities of Angus and Brangus cattle. They offer high marbling and are prized for their premium beef quality."
+	},
+	{
+		"breed_path_img": "./img/piedmontese.png",
+		"breed_name": "Piedmontese",
+		"breed_country": "Italy",
+		"breed_country_img": "../country/italy.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Low to moderate",
+		"breed_info": "Piedmontese cattle, originating from Italy, provide lean beef with low to moderate marbling. They are known for their unique double-muscle trait, making them an interesting breed for beef production."
+	},
+	{
+		"breed_path_img": "./img/longhorn.png",
+		"breed_name": "Texas Longhorn",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Low to moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "Texas Longhorn cattle, known for their distinctive long, curved horns, offer leaner meat with low marbling. They are a historic breed with a unique appearance and are well-suited to certain regional environments."
+	},
+	{
+		"breed_path_img": "./img/red_angus.png",
+		"breed_name": "Red Angus",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Red Angus cattle, known for their red coat color, offer moderate marbling and are prized for their beef quality and gentle disposition. They are a popular choice for ranchers seeking quality beef production."
+	},
+	{
+		"breed_path_img": "./img/gelbvieh.png",
+		"breed_name": "Gelbvieh",
+		"breed_country": "Germany",
+		"breed_country_img": "../country/germany.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Gelbvieh cattle, originating from Germany, are well-muscled with good meat quality and moderate marbling. They are known for their adaptability and are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/santa_gertrudis.png",
+		"breed_name": "Santa Gertrudis",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Santa Gertrudis cattle, developed in the United States, offer moderate marbling and are known for their heat tolerance and adaptability to various climates. They are prized for their beef quality and versatility."
+	},
+	{
+		"breed_path_img": "./img/brangus.png",
+		"breed_name": "Brangus",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "High",
+		"breed_info": "The Brangus cow is a crossbreed that combines the meat quality of Angus with the adaptability of Brahman. They offer high marbling and are prized for their premium beef quality."
+	},
+	{
+		"breed_path_img": "./img/murray_grey.png",
+		"breed_name": "Murray Grey",
+		"breed_country": "Australia",
+		"breed_country_img": "../country/australia.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Murray Grey cattle, originating from Australia, offer moderate marbling and are known for their docile nature and adaptability to various climates. They are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/pinzgauer.png",
+		"breed_name": "Pinzgauer",
+		"breed_country": "Austria",
+		"breed_country_img": "../country/austria.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Pinzgauer cattle, hailing from Austria, are well-muscled with good meat quality and moderate marbling. They are known for their attractive appearance and versatility in beef production."
+	},
+	{
+		"breed_path_img": "./img/ankole_watusi.png",
+		"breed_name": "Ankole-Watusi",
+		"breed_country": "Africa",
+		"breed_country_img": "../country/africa.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "Ankole-Watusi cattle, native to Africa, provide leaner meat with low marbling. They are recognized for their impressive long horns and are well-suited to certain regional environments."
+	},
+	{
+		"breed_path_img": "./img/ankole.png",
+		"breed_name": "Ankole",
+		"breed_country": "Africa",
+		"breed_country_img": "../country/africa.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Low",
+		"breed_info": "Ankole cattle, native to Africa, provide leaner meat with low marbling. They are known for their distinctive long, upward-curving horns and are well-adapted to the African climate."
+	}
+]

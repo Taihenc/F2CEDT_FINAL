@@ -1,13 +1,13 @@
 :root {
 	--bg-color: rgba(249, 249, 249, 255);
-	--nav-font-size: 100%;
-	--nav-bar-height: 7rem;
+	--nav-font-size: 1em;
+	--nav-bar-height: 7em;
 	--content-height: calc(100vh - var(--nav-bar-height));
 	--text-color-heavy-black: black;
 	--text-color-normal-black: rgb(52, 52, 52);
 	--text-color-light-black: rgba(103, 103, 103, 255);
 	--text-color-orange: #ff8836;
-	--conten-transition: all 0.75s ease-in-out;
+	--conten-transition: left 0.75s ease-in-out;
 }
 
 * {
@@ -24,6 +24,7 @@ main {
 	justify-content: center;
 	align-items: center;
 	background-color: var(--bg-color);
+	font-size: 1vw;
 	z-index: 0;
 	overflow: auto;
 	overflow-x: hidden;
@@ -40,7 +41,7 @@ main {
 .content-on-left {
 	position: absolute;
 	top: 0% !important;
-	left: -100% !important;
+	left: -150% !important;
 	/* transform: translate(-50%, -50%); */
 	transition: var(--conten-transition);
 }

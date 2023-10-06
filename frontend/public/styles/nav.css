@@ -28,23 +28,33 @@
 }
 
 #nav-bar > .hamburger-lines {
-	display: none;
-	height: 20px;
-	width: 20px;
+	display: block;
+	height: 4em;
+	width: 5em;
 	position: absolute;
-	top: 30px;
-	right: 20px;
+	top: cal(50% - 4em);
+	right: 7%;
 	z-index: 2;
 	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
 
+#nav-checkbox {
+	position: absolute;
+	top: 0;
+	right: 0;
+	height: 100%;
+	width: 7em;
+	opacity: 0;
+	z-index: 3;
+}
+
 #nav-bar > .hamburger-lines .line {
-	display: block;
-	height: 4px;
+	display: none;
+	height: 20%;
 	width: 100%;
-	border-radius: 10px;
+	border-radius: 5em;
 	background: #0e2431;
 }
 
@@ -60,6 +70,18 @@
 #nav-bar > .hamburger-lines .line3 {
 	transform-origin: 0% 100%;
 	transition: transform 0.4s ease-in-out;
+}
+
+#nav-checkbox:checked ~ .hamburger-lines .line1 {
+	transform: rotate(45deg);
+}
+
+#nav-checkbox:checked ~ .hamburger-lines .line2 {
+	transform: scaleY(0);
+}
+
+#nav-checkbox:checked ~ .hamburger-lines .line3 {
+	transform: rotate(-45deg);
 }
 
 #nav-bar-link > button {
@@ -86,13 +108,13 @@
 	position: fixed;
 	left: -10%;
 	top: 50vh;
-	width: 2rem;
-	height: 2rem;
-	border-top: 2px solid var(--text-color-light-black);
-	border-left: 2px solid var(--text-color-light-black);
+	width: 2em;
+	height: 2em;
+	border-top: 0.2em solid var(--text-color-light-black);
+	border-left: 0.2em solid var(--text-color-light-black);
 	content: '';
 	rotate: -45deg;
-	transition: 250ms ease-in;
+	transition: left 250ms ease-in;
 }
 
 #nav-bar #nav-bar-pan-left:hover::after {
@@ -115,13 +137,13 @@
 	position: fixed;
 	right: -10%;
 	top: 50vh;
-	width: 2rem;
-	height: 2rem;
-	border-top: 2px solid var(--text-color-light-black);
-	border-left: 2px solid var(--text-color-light-black);
+	width: 2em;
+	height: 2em;
+	border-top: 0.2em solid var(--text-color-light-black);
+	border-left: 0.2em solid var(--text-color-light-black);
 	content: '';
 	rotate: 135deg;
-	transition: 250ms ease-in;
+	transition: right 250ms ease-in;
 }
 
 #nav-bar #nav-bar-pan-right:hover::after {
@@ -133,6 +155,7 @@
 		--nav-bar-height: 5rem;
 	}
 	#nav-bar {
+		justify-content: flex-start;
 		background: linear-gradient(
 			180deg,
 			rgba(255, 255, 255, 1) 0%,
@@ -142,7 +165,34 @@
 		box-shadow: 4px 4px 30px 2px rgba(0, 0, 0, 0.25);
 	}
 
+	#nav-bar > .hamburger-lines .line {
+		display: block;
+	}
+
+	#nav-bar-link {
+		top: var(--nav-bar-height);
+		right: 0;
+		width: 0em;
+		flex-direction: column;
+		position: fixed;
+		z-index: 1;
+		overflow: hidden;
+		transition: width 0.5s ease-in-out;
+	}
+
+	#nav-checkbox:checked ~ #nav-bar-link {
+		width: 30em;
+	}
+
 	#nav-bar-link > button {
-		display: none;
+		display: block;
+		font-size: 3.5em;
+		color: black;
+		background: rgba(255, 255, 255, 0.9);
+	}
+
+	#nav-bar-link > button.text-selected {
+		color: white !important;
+		background: rgba(255, 110, 0, 0.6);
 	}
 }

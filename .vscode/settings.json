@@ -5,9 +5,21 @@
                 "**/cow_breeds/*.json",
         ],
             "url": ".vscode/cow_breed_schema.json"
+        },
+        {
+            "fileMatch": [
+                "**/cow_cuts/*.json",
+            ],
+            "url": ".vscode/cow_cut_schema.json"
         }
     ],
     "json.format.enable": true,
     "json.schemaDownload.enable": true,
     "json.validate.enable": true,
+    "files.associations": {
+        "*.txt": "plaintext",
+        "*.css": "css",
+        "cachesim.h": "c"
+    },
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
 }

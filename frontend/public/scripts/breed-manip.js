@@ -1,4 +1,4 @@
-let buttons = document.getElementsByClassName('card-breed-expand-button');
+const buttons = document.getElementsByClassName('card-breed-expand-button');
 // add click event to each button
 for (let i = 0; i < buttons.length; i++) {
 	buttons[i].parentElement.addEventListener('click', function () {
@@ -11,7 +11,18 @@ for (let i = 0; i < buttons.length; i++) {
 			buttons[i].classList.remove('card-breed-expand-button-active');
 		} else {
 			buttons[i].classList.add('card-breed-expand-button-active');
-			info.style = null;
+			info.childNodes.forEach((node) => {
+				if (node.tagName == 'DIV') {
+					const height_in_em =
+						node.offsetHeight /
+						parseFloat(
+							window
+								.getComputedStyle(info)
+								.getPropertyValue('font-size')
+						);
+					info.style.height = height_in_em + 'em';
+				}
+			});
 		}
 	});
 }

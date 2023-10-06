@@ -1,0 +1,102 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "array",
+	"default": [],
+	"title": "JSON schema for cow_cuts",
+	"items": {
+		"type": "object",
+		"title": "cut",
+		"required": [
+			"cut_id",
+			"cut_path_img",
+			"cut_name",
+			"cut_price_level",
+			"cut_marbling_level",
+			"cut_info"
+		],
+		"properties": {
+			"cut_id": {
+				"type": "string",
+				"title": "The cut_id Schema",
+				"enum": [
+					"cut_head",
+					"cut_neck",
+					"cut_tongue",
+					"cut_cheek",
+					"cut_chuck",
+					"cut_brisket",
+					"cut_shank",
+					"cut_rib",
+					"cut_plate",
+					"cut_shortloin",
+					"cut_flank",
+					"cut_tenderloin",
+					"cut_topsirloin",
+					"cut_sirloin",
+					"cut_buttomsirloin",
+					"cut_round",
+					"cut_oxtail"
+				]
+			},
+			"cut_path_img": {
+				"type": "string",
+				"title": "The cut_path_img Schema",
+				"examples": ["./cow_cuts/tenderlion.png"]
+			},
+			"cut_name": {
+				"type": "string",
+				"title": "The cut_name Schema",
+				"examples": ["Tenderlion"]
+			},
+			"cut_price_level": {
+				"type": "string",
+				"title": "The cut_price_level Schema",
+				"enum": [
+					"Low",
+					"Low to moderate",
+					"Moderate",
+					"Moderate to high",
+					"High"
+				]
+			},
+			"cut_marbling_level": {
+				"type": "string",
+				"title": "The cut_marbling_level Schema",
+				"enum": [
+					"Low",
+					"Low to moderate",
+					"Moderate",
+					"Moderate to high",
+					"High"
+				]
+			},
+			"cut_info": {
+				"type": "string",
+				"title": "The cut_info Schema",
+				"examples": ["this meat is good."]
+			}
+		},
+		"examples": [
+			{
+				"cut_id": "cut_tenderlion",
+				"cut_path_img": "./cow_cuts/tenderlion.png",
+				"cut_name": "Tenderlion",
+				"cut_price_level": "Moderate to high",
+				"cut_marbling_level": "High",
+				"cut_info": "this meat is good."
+			}
+		]
+	},
+	"examples": [
+		[
+			{
+				"cut_id": "cut_tenderlion",
+				"cut_path_img": "./cow_cuts/tenderlion.png",
+				"cut_name": "Tenderlion",
+				"cut_price_level": "Moderate to high",
+				"cut_marbling_level": "High",
+				"cut_info": "this meat is good."
+			}
+		]
+	]
+}
