@@ -162,7 +162,7 @@
 		"breed_info": "Santa Gertrudis cattle, developed in the United States, offer moderate marbling and are known for their heat tolerance and adaptability to various climates. They are prized for their beef quality and versatility."
 	},
 	{
-		"breed_path_img": "./img/brangus",
+		"breed_path_img": "./img/brangus.png",
 		"breed_name": "Brangus",
 		"breed_country": "United States",
 		"breed_country_img": "../country/unitedstates.png",
