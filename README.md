@@ -2,22 +2,22 @@
 
 This is a final project of F2CEDT
 ![lading](landing.png)
-*this is our landing page*
+_this is our landing page_
 
 ## GUIDE
 
-### To start front-end server (ตอนนี้มีแค่frontend)
+### To start front-end server
 
 ```shell
 cd .\frontend\
 npm install
-npm start
+npm start #or npm run dev
 ```
 
-หรือถ้าอยาก dev (อันนี้จะมี nodemon คอย restart server)
+### To start back-end server
 
 ```shell
-cd .\frontend\
+cd .\backend\
 npm install
-npm run dev
+npm start #or npm run dev
 ```
