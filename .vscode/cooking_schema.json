@@ -12,6 +12,7 @@
 			"cooking_id",
 			"cooking_path_img",
 			"cooking_name",
+			"cooking_size_text",
 			"cooking_temperature_text",
 			"cooking_time_text",
 			"cooking_perfect_min_value",
@@ -59,6 +60,12 @@
 				"default": "",
 				"title": "The cooking_name Schema",
 				"examples": ["Tenderlion"]
+			},
+			"cooking_size_text": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_size_text Schema",
+				"examples": ["1 1/2 to 2 inches thick"]
 			},
 			"cooking_temperature_text": {
 				"type": "string",

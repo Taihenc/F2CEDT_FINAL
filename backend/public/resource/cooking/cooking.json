@@ -1,9 +1,10 @@
 [
 	{
-		"cut_id": "ใช้อันเดียวกับ cut_id",
+		"cut_id": "cut_tenderloin",
 		"cooking_id": "cooking_tenderloin",
 		"cooking_path_img": "./img/cooking_tenderloin.png",
 		"cooking_name": "Tenderlion",
+		"cooking_size_text": "1 1/2 to 2 inches thick",
 		"cooking_temperature_text": "Medium-high to high heat",
 		"cooking_time_text": "1 to 2 minutes per side<br>for medium-rare to medium doneness",
 		"cooking_perfect_min_value": 123,
