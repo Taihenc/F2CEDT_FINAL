@@ -22,7 +22,25 @@
 				"type": "string",
 				"default": "",
 				"title": "The cut_id Schema",
-				"examples": ["ใช้อันเดียวกับ cut_id"]
+				"enum": [
+					"cut_head",
+					"cut_neck",
+					"cut_tongue",
+					"cut_cheek",
+					"cut_chuck",
+					"cut_brisket",
+					"cut_shank",
+					"cut_rib",
+					"cut_plate",
+					"cut_shortloin",
+					"cut_flank",
+					"cut_tenderloin",
+					"cut_topsirloin",
+					"cut_sirloin",
+					"cut_buttomsirloin",
+					"cut_round",
+					"cut_oxtail"
+				]
 			},
 			"cooking_id": {
 				"type": "string",
