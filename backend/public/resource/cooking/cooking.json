@@ -1,0 +1,12 @@
+[
+	{
+		"cut_id": "ใช้อันเดียวกับ cut_id",
+		"cooking_id": "cooking_tenderloin",
+		"cooking_path_img": "./img/cooking_tenderloin.png",
+		"cooking_name": "Tenderlion",
+		"cooking_temperature_text": "Medium-high to high heat",
+		"cooking_time_text": "1 to 2 minutes per side<br>for medium-rare to medium doneness",
+		"cooking_perfect_min_value": 123,
+		"cooking_perfect_max_value": 231
+	}
+]

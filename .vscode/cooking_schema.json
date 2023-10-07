@@ -1,0 +1,99 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "array",
+	"default": [],
+	"title": "Root Schema",
+	"items": {
+		"type": "object",
+		"default": {},
+		"title": "A Schema",
+		"required": [
+			"cut_id",
+			"cooking_id",
+			"cooking_path_img",
+			"cooking_name",
+			"cooking_temperature_text",
+			"cooking_time_text",
+			"cooking_perfect_min_value",
+			"cooking_perfect_max_value"
+		],
+		"properties": {
+			"cut_id": {
+				"type": "string",
+				"default": "",
+				"title": "The cut_id Schema",
+				"examples": ["ใช้อันเดียวกับ cut_id"]
+			},
+			"cooking_id": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_id Schema",
+				"examples": ["cooking_tenderloin"]
+			},
+			"cooking_path_img": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_path_img Schema",
+				"examples": ["./img/cooking_tenderloin.png"]
+			},
+			"cooking_name": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_name Schema",
+				"examples": ["Tenderlion"]
+			},
+			"cooking_temperature_text": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_temperature_text Schema",
+				"examples": ["Medium-high to high heat"]
+			},
+			"cooking_time_text": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_time_text Schema",
+				"examples": [
+					"1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness"
+				]
+			},
+			"cooking_perfect_min_value": {
+				"type": "integer",
+				"default": 0,
+				"title": "The cooking_perfect_min_value Schema",
+				"examples": [123]
+			},
+			"cooking_perfect_max_value": {
+				"type": "integer",
+				"default": 0,
+				"title": "The cooking_perfect_max_value Schema",
+				"examples": [231]
+			}
+		},
+		"examples": [
+			{
+				"cut_id": "ใช้อันเดียวกับ cut_id",
+				"cooking_id": "cooking_tenderloin",
+				"cooking_path_img": "./img/cooking_tenderloin.png",
+				"cooking_name": "Tenderlion",
+				"cooking_temperature_text": "Medium-high to high heat",
+				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
+				"cooking_perfect_min_value": 123,
+				"cooking_perfect_max_value": 231
+			}
+		]
+	},
+	"examples": [
+		[
+			{
+				"cut_id": "ใช้อันเดียวกับ cut_id",
+				"cooking_id": "cooking_tenderloin",
+				"cooking_path_img": "./img/cooking_tenderloin.png",
+				"cooking_name": "Tenderlion",
+				"cooking_temperature_text": "Medium-high to high heat",
+				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
+				"cooking_perfect_min_value": 123,
+				"cooking_perfect_max_value": 231
+			}
+		]
+	]
+}
