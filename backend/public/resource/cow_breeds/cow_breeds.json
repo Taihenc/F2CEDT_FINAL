@@ -261,6 +261,24 @@
 		"breed_info": "Blaarkop cattle, with their striking black and white heads, offer good meat quality with moderate marbling. They are a traditional Dutch breed known for their milk and beef production."
 	},
 	{
+		"breed_path_img": "./img/belmont_red.png",
+		"breed_name": "Belmont Red",
+		"breed_country": "Australia",
+		"breed_country_img": "../country/australia.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Belmont Red cattle, originating from Australia, offer moderate marbling and are known for their adaptability to various climates. They are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/canadian_angus.png",
+		"breed_name": "Canadian Angus",
+		"breed_country": "Canada",
+		"breed_country_img": "../country/canada.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate to high",
+		"breed_info": "Canadian Angus cattle, a breed of Angus originating in Canada, provide moderate to high marbling and are prized for their premium beef quality. They are well-suited for cold Canadian climates."
+	},
+	{
 		"breed_path_img": "./img/polish.png",
 		"breed_name": "Polish Cow",
 		"breed_country": "Poland",
