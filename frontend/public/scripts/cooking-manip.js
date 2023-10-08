@@ -2,6 +2,7 @@ import getMousePosition from './mouse-handle.js';
 import getTouchPosition from './touch-handle.js';
 import { updateMousePosition } from './mouse-handle.js';
 import { updateTouchPosition } from './touch-handle.js';
+import Timer from './timer.js';
 
 const cut_on_plate = document.getElementsByClassName('cut-on-plate')[0];
 
@@ -18,6 +19,9 @@ const cut_pannel_button = document.getElementById('cut-pannel-button');
 const close_pannel_button = document.getElementById('close-pannel-button');
 const cut_pannel_wrap = document.getElementsByClassName('cut-pannel-wrap')[0];
 const cut_paths = document.querySelectorAll('.cut-pannel-wrap svg path');
+
+const cooking_time = document.getElementById('cooking-time');
+const timer = new Timer(cooking_time);
 
 cookingPanelInit();
 
@@ -41,26 +45,7 @@ document.getElementsByClassName('content-cooking')[0].addEventListener(
 
 MovableObject(cut_on_plate, pan, pan_hitbox, (obj, dest, hit) => {
 	dest.appendChild(obj);
-	MovableObject(
-		obj,
-		wood_plate,
-		wood_plate_hitbox,
-		(obj, dest, hit) => {
-			dest.appendChild(obj);
-			dest.style = null;
-		},
-		(obj, dest, hit) => {
-			if (
-				detectDragOverElement(getMousePosition(), hit) |
-				detectDragOverElement(getTouchPosition(), hit)
-			) {
-				dest.style.top = '-10em';
-			} else {
-				dest.style = null;
-			}
-		}
-	);
-	// StartCooking(obj);
+	StartCooking(obj);
 });
 
 /**
@@ -190,9 +175,43 @@ function AnimateObjToStickWithMouse(obj, client) {
  * @param {Element} obj
  */
 function StartCooking(obj) {
-	obj.addEventListener('click', () => {
-		console.log('clicked');
-	});
+	let front = true;
+	timer.start();
+	cooking_time.parentNode.style.opacity = 1;
+	const target = document.getElementById('cut-flip');
+	const clickEvent = () => {
+		console.log(obj.style);
+		if (obj.style.position == 'fixed') return;
+		if (front) {
+			target.style.animation = 'rotate-first' + ' 0.5s'; // Adjust the duration as needed
+			front = false;
+		} else {
+			front = true;
+			target.style.animation = 'rotate-second' + ' 0.5s'; // Adjust the duration as needed
+		}
+		target.style.animationFillMode = 'forwards';
+	};
+	MovableObject(
+		obj,
+		wood_plate,
+		wood_plate_hitbox,
+		(obj, dest, hit) => {
+			target.removeEventListener('click', clickEvent);
+			dest.appendChild(obj);
+			dest.style = null;
+		},
+		(obj, dest, hit) => {
+			if (
+				detectDragOverElement(getMousePosition(), hit) |
+				detectDragOverElement(getTouchPosition(), hit)
+			) {
+				dest.style.top = '-10em';
+			} else {
+				dest.style = null;
+			}
+		}
+	);
+	target.addEventListener('click', clickEvent);
 }
 
 const slider_input = document.getElementById('slider_input'),

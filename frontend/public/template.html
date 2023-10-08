@@ -14,6 +14,7 @@
     <link rel="stylesheet" href="./styles/home-card.css">
     <link rel="stylesheet" href="./styles/cut.css">
     <link rel="stylesheet" href="./styles/cooking.css">
+    <link rel="stylesheet" href="./styles/cooking-cut.css">
     <link rel="stylesheet" href="./styles/typeface.css">
     <link rel="stylesheet" href="./styles/temp.css">
 </head>
@@ -153,14 +154,13 @@
                             <button id='close-pannel-button'>❌</button>
                         </div>
                     </div>
-                    <div class="card js-card">
-                        <div class="card__wrapper">
+                    <div class="card cut-on-plate cut js-card">
+                        <div id='cut-flip' class="card__wrapper">
                             <div class="card__side is-active">
-                                <img class="cut-on-plate cut" src="./img/04_cooking/meat_01_raw.png" alt="">
+                                <img src="./img/04_cooking/meat_01_raw.png" alt="">
                             </div>
                             <div class="card__side card__side--back">
-                                <img style='display: none;' class="asdfcut-on-plate cut"
-                                    src="./img/04_cooking/meat_01_raw.png" alt="">
+                                <img class="asdfcut-on-plate" src="./img/04_cooking/meat_01_raw.png" alt="">
                             </div>
                         </div>
                     </div>
@@ -181,6 +181,12 @@
                     <div class="pan">
                         <div class="pan-hitbox hitbox"></div>
                         <img class="pan-img" src="./img/04_cooking/pan.png" alt="">
+                        <div class="cooking-timer" style='opacity: 0;'>
+                            <span>
+                                <img src="./img/04_cooking/clock.svg" alt="">
+                            </span>
+                            <span id='cooking-time' class='text-header'>60:60 s</span>
+                        </div>
                     </div>
                 </div>
                 <div class="cut-info">

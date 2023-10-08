@@ -28,7 +28,7 @@
 	width: 15em;
 	height: 15em;
 	display: flex;
-	justify-self: center;
+	justify-content: center;
 	align-items: center;
 	z-index: 1;
 	background-color: red;
@@ -43,7 +43,8 @@
 	width: 4em;
 	height: 4em;
 	top: -5em;
-	left: cal(50% - 2em);
+	left: 50%;
+	transform: translateX(-50%);
 }
 
 .cut-pannel-button button {
@@ -95,12 +96,8 @@
 	opacity: 0.7;
 }
 
-.cut {
-	user-select: none;
-}
-
 .cut-plate .cut {
-	width: 100%;
+	width: 80%;
 	user-select: none;
 }
 
@@ -110,7 +107,7 @@
 	display: flex;
 }
 
-.heat-slider {
+/* .heat-slider {
 	margin-top: auto;
 	margin-bottom: auto;
 	margin-right: 1em;
@@ -140,7 +137,7 @@
 		rgba(255, 183, 128, 1) 0%,
 		rgba(255, 85, 85, 1) 100%
 	);
-}
+} */
 
 .pan {
 	width: 40em;
@@ -171,6 +168,27 @@
 
 .pan .cut {
 	width: 50%;
+}
+
+.cooking-timer {
+	margin-left: auto;
+	top: 0;
+	justify-content: center;
+	align-items: center;
+	gap: 0.5em;
+	font-size: 1.5em;
+	display: flex;
+	position: absolute;
+	transition: opacity 0.5s ease-in-out;
+}
+
+.cooking-timer span {
+	font-size: 1em;
+}
+
+.cookinng-timer .text-header {
+	line-height: 1em;
+	font-size: 1em;
 }
 
 .cut-info {
