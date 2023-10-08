@@ -213,6 +213,10 @@
 		--stat-bar-height: 1em;
 	}
 
+	.breed-cards {
+		padding-bottom: 20em;
+	}
+
 	.breed-tools {
 		display: grid;
 		font-size: 3vw;
