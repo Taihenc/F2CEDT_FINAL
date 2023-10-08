@@ -176,11 +176,13 @@ function AnimateObjToStickWithMouse(obj, client) {
  */
 function StartCooking(obj) {
 	let front = true;
+	let mouseDownTime;
+
 	timer.start();
 	cooking_time.parentNode.style.opacity = 1;
 	const target = document.getElementById('cut-flip');
+
 	const clickEvent = () => {
-		console.log(obj.style);
 		if (obj.style.position == 'fixed') return;
 		if (front) {
 			target.style.animation = 'rotate-first' + ' 0.5s'; // Adjust the duration as needed
@@ -191,12 +193,29 @@ function StartCooking(obj) {
 		}
 		target.style.animationFillMode = 'forwards';
 	};
+
+	const handleMouseDown = () => {
+		mouseDownTime = new Date().getTime();
+	};
+
+	const handleMouseUp = () => {
+		const mouseUpTime = new Date().getTime();
+		const timeDifference = mouseUpTime - mouseDownTime;
+
+		if (timeDifference < 100) {
+			clickEvent();
+		}
+	};
+
 	MovableObject(
 		obj,
 		wood_plate,
 		wood_plate_hitbox,
 		(obj, dest, hit) => {
-			target.removeEventListener('click', clickEvent);
+			target.removeEventListener('mousedown', handleMouseDown);
+			target.removeEventListener('touchstart', handleMouseDown);
+			target.removeEventListener('mouseup', handleMouseUp);
+			target.removeEventListener('touchend', handleMouseUp);
 			dest.appendChild(obj);
 			dest.style = null;
 		},
@@ -211,7 +230,10 @@ function StartCooking(obj) {
 			}
 		}
 	);
-	target.addEventListener('click', clickEvent);
+	target.addEventListener('mousedown', handleMouseDown);
+	target.addEventListener('touchstart', handleMouseDown);
+	target.addEventListener('mouseup', handleMouseUp);
+	target.addEventListener('touchend', handleMouseUp);
 }
 
 const slider_input = document.getElementById('slider_input'),
