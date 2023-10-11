@@ -10,8 +10,8 @@
 		"cooking_name": "Chuck",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium-high to high heat",
-		"cooking_time_text": "1 to 2 minutes per side<br>for medium-rare to medium doneness",
-		"cooking_perfect_score": 20
+		"cooking_time_text": "1 to 2 minutes <br>for medium-rare to medium doneness",
+		"cooking_perfect_score": 60
 	},
 	{
 		"cut_id": "cut_brisket",
@@ -24,9 +24,8 @@
 		"cooking_name": "Brisket",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Low to medium",
-		"cooking_time_text": "20-30 seconds per side (thin slices cook quickly)",
-		"cooking_perfect_min_value": 20,
-		"cooking_perfect_max_value": 30
+		"cooking_time_text": "20-30 seconds  (thin slices cook quickly)",
+		"cooking_perfect_score": 10
 	},
 	{
 		"cut_id": "cut_plate",
@@ -39,9 +38,8 @@
 		"cooking_name": "Plate",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Low to medium",
-		"cooking_time_text": "20-30 seconds per side (thin slices cook quickly)",
-		"cooking_perfect_min_value": 20,
-		"cooking_perfect_max_value": 30
+		"cooking_time_text": "20-30 seconds  (thin slices cook quickly)",
+		"cooking_perfect_score": 10
 	},
 	{
 		"cut_id": "cut_rib",
@@ -54,9 +52,8 @@
 		"cooking_name": "Rib",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_flank",
@@ -69,9 +66,8 @@
 		"cooking_name": "Flank",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_shortloin",
@@ -84,9 +80,8 @@
 		"cooking_name": "Short Loin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_topsirloin",
@@ -99,9 +94,8 @@
 		"cooking_name": "Top Sirloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_buttomsirloin",
@@ -114,9 +108,8 @@
 		"cooking_name": "Bottom Sirloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_tenderloin",
@@ -129,9 +122,8 @@
 		"cooking_name": "Tenderloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_sirloin",
@@ -144,24 +136,22 @@
 		"cooking_name": "Sirloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_round",
 		"cooking_id": "cooking_round",
 		"cooking_path_img": [
-			"./img/cooking_round        .png",
+			"./img/cooking_round_raw.png",
 			"./img/cooking_round_cooked.png",
 			"./img/cooking_round_burned.png"
 		],
 		"cooking_name": "Round",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_tongue",
@@ -174,8 +164,7 @@
 		"cooking_name": "Tongue",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
-		"cooking_time_text": "20-30 seconds per side (thin slices cook quickly)",
-		"cooking_perfect_min_value": 20,
-		"cooking_perfect_max_value": 30
+		"cooking_time_text": "20-30 seconds (thin slices cook quickly)",
+		"cooking_perfect_score": 30
 	}
 ]
