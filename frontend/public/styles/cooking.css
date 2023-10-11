@@ -208,6 +208,10 @@
 	font-size: 1em;
 }
 
+.cooking-timer span img {
+	max-height: 1.5em;
+}
+
 .cookinng-timer .text-header {
 	line-height: 1em;
 	font-size: 1em;
@@ -389,11 +393,7 @@
 	height: 100%;
 	border-radius: inherit;
 	width: 0;
-	background: linear-gradient(
-		90deg,
-		rgba(255, 183, 128, 1) 0%,
-		rgba(255, 85, 85, 1) 100%
-	);
+	background: linear-gradient(90deg, rgba(255, 183, 128, 1) 0%, rgba(255, 85, 85, 1) 100%);
 }
 
 #slider_thumb {
