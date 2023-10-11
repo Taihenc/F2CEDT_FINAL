@@ -89,9 +89,7 @@ export function pan_to_page(next_page_id, dir = null) {
 
 	if (next_page_id == 1) {
 		setTimeout(() => {
-			breed_cards = document.getElementsByClassName(
-				'breed-cards'
-			)[0].style = null;
+			document.getElementsByClassName('breed-cards')[0].style = null;
 		}, 850);
 	}
 

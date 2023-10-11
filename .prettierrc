@@ -8,5 +8,5 @@
 	"arrowParens": "always",
 	"quoteProps": "consistent",
 	"proseWrap": "never",
-	"printWidth": 100
+	"printWidth": 80
 }
