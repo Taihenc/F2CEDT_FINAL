@@ -3,12 +3,14 @@ import cors from 'cors';
 import router from './src/router/router.js';
 import InitCowBreeds from './src/db/init/cow_breeds_init.js';
 import InitCowCuts from './src/db/init/cow_cut_init.js';
+import InitCowCooking from './src/db/init/cow_cooking_cut.js';
 
 const app = express();
 const PORT = 81;
 
 await InitCowBreeds();
 await InitCowCuts();
+await InitCowCooking();
 
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));

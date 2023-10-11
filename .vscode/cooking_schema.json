@@ -47,19 +47,30 @@
 				"type": "string",
 				"default": "",
 				"title": "The cooking_id Schema",
-				"examples": ["cooking_tenderloin"]
+				"examples": ["cooking_chuck"]
 			},
 			"cooking_path_img": {
-				"type": "string",
-				"default": "",
+				"type": "array",
+				"default": [],
 				"title": "The cooking_path_img Schema",
-				"examples": ["./img/cooking_tenderloin.png"]
+				"items": {
+					"type": "string",
+					"title": "cut img",
+					"examples": ["./img/cooking_chunk_raw.png"]
+				},
+				"examples": [
+					[
+						"./img/cooking_chunk_raw.png",
+						"./img/cooking_chunk_cooked.png",
+						"./img/cooking_chunk_burned.png"
+					]
+				]
 			},
 			"cooking_name": {
 				"type": "string",
 				"default": "",
 				"title": "The cooking_name Schema",
-				"examples": ["Tenderlion"]
+				"examples": ["Chuck"]
 			},
 			"cooking_size_text": {
 				"type": "string",
@@ -97,9 +108,14 @@
 		"examples": [
 			{
 				"cut_id": "ใช้อันเดียวกับ cut_id",
-				"cooking_id": "cooking_tenderloin",
-				"cooking_path_img": "./img/cooking_tenderloin.png",
-				"cooking_name": "Tenderlion",
+				"cooking_id": "cooking_chuck",
+				"cooking_path_img": [
+					"./img/cooking_chunk_raw.png",
+					"./img/cooking_chunk_cooked.png",
+					"./img/cooking_chunk_burned.png"
+				],
+				"cooking_name": "Chuck",
+				"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 				"cooking_temperature_text": "Medium-high to high heat",
 				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
 				"cooking_perfect_min_value": 123,
@@ -111,9 +127,14 @@
 		[
 			{
 				"cut_id": "ใช้อันเดียวกับ cut_id",
-				"cooking_id": "cooking_tenderloin",
-				"cooking_path_img": "./img/cooking_tenderloin.png",
-				"cooking_name": "Tenderlion",
+				"cooking_id": "cooking_chuck",
+				"cooking_path_img": [
+					"./img/cooking_chunk_raw.png",
+					"./img/cooking_chunk_cooked.png",
+					"./img/cooking_chunk_burned.png"
+				],
+				"cooking_name": "Chuck",
+				"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 				"cooking_temperature_text": "Medium-high to high heat",
 				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
 				"cooking_perfect_min_value": 123,

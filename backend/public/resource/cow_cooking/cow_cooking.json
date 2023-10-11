@@ -1,19 +1,23 @@
 [
 	{
 		"cut_id": "cut_chuck",
-		"cooking_id": "cooking_chunk",
-		"cooking_path_img": "./img/cooking_chunk.png",
-		"cooking_name": "Chunk",
-		"cooking_size_text": "1/4 to 1/2-inch thick slices",
-		"cooking_temperature_text": "Low to medium-high",
-		"cooking_time_text": "30-45 seconds per side",
-		"cooking_perfect_min_value": 30,
-		"cooking_perfect_max_value": 45
+		"cooking_id": "cooking_chuck",
+		"cooking_path_img": [
+			"./img/cooking_chunk_raw.png",
+			"./img/cooking_chunk_cooked.png",
+			"./img/cooking_chunk_burned.png"
+		],
+		"cooking_name": "Chuck",
+		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+		"cooking_temperature_text": "Medium-high to high heat",
+		"cooking_time_text": "1 to 2 minutes per side<br>for medium-rare to medium doneness",
+		"cooking_perfect_min_value": 123,
+		"cooking_perfect_max_value": 231
 	},
 	{
 		"cut_id": "cut_brisket",
 		"cooking_id": "cooking_brisket",
-		"cooking_path_img": "./img/cooking_brisket.png",
+		"cooking_path_img": ["./img/cooking_brisket.png"],
 		"cooking_name": "Brisket",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Low to medium",
@@ -24,7 +28,7 @@
 	{
 		"cut_id": "cut_plate",
 		"cooking_id": "cooking_plate",
-		"cooking_path_img": "./img/cooking_plate.png",
+		"cooking_path_img": ["./img/cooking_plate.png"],
 		"cooking_name": "Plate",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Low to medium",
@@ -35,7 +39,7 @@
 	{
 		"cut_id": "cut_rib",
 		"cooking_id": "cooking_rib",
-		"cooking_path_img": "./img/cooking_rib.png",
+		"cooking_path_img": ["./img/cooking_rib.png"],
 		"cooking_name": "Rib",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -46,7 +50,7 @@
 	{
 		"cut_id": "cut_flank",
 		"cooking_id": "cooking_flank",
-		"cooking_path_img": "./img/cooking_flank.png",
+		"cooking_path_img": ["./img/cooking_flank.png"],
 		"cooking_name": "Flank",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -57,7 +61,7 @@
 	{
 		"cut_id": "cut_shortloin",
 		"cooking_id": "cooking_short_loin",
-		"cooking_path_img": "./img/cooking_short_loin.png",
+		"cooking_path_img": ["./img/cooking_short_loin.png"],
 		"cooking_name": "Short Loin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -68,7 +72,7 @@
 	{
 		"cut_id": "cut_topsirloin",
 		"cooking_id": "cooking_top_sirloin",
-		"cooking_path_img": "./img/cooking_top_sirloin.png",
+		"cooking_path_img": ["./img/cooking_top_sirloin.png"],
 		"cooking_name": "Top Sirloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -79,7 +83,7 @@
 	{
 		"cut_id": "cut_buttomsirloin",
 		"cooking_id": "cooking_bottom_sirloin",
-		"cooking_path_img": "./img/cooking_bottom_sirloin.png",
+		"cooking_path_img": ["./img/cooking_bottom_sirloin.png"],
 		"cooking_name": "Bottom Sirloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -90,7 +94,7 @@
 	{
 		"cut_id": "cut_tenderloin",
 		"cooking_id": "cooking_tenderloin",
-		"cooking_path_img": "./img/cooking_tenderloin.png",
+		"cooking_path_img": ["./img/cooking_tenderloin.png"],
 		"cooking_name": "Tenderloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -101,7 +105,7 @@
 	{
 		"cut_id": "cut_sirloin",
 		"cooking_id": "cooking_sirloin",
-		"cooking_path_img": "./img/cooking_sirloin.png",
+		"cooking_path_img": ["./img/cooking_sirloin.png"],
 		"cooking_name": "Sirloin",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -112,7 +116,7 @@
 	{
 		"cut_id": "cut_round",
 		"cooking_id": "cooking_round",
-		"cooking_path_img": "./img/cooking_round.png",
+		"cooking_path_img": ["./img/cooking_round.png"],
 		"cooking_name": "Round",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
@@ -123,7 +127,7 @@
 	{
 		"cut_id": "cut_oxtail",
 		"cooking_id": "cooking_oxtail",
-		"cooking_path_img": "./img/cooking_oxtail.png",
+		"cooking_path_img": ["./img/cooking_oxtail.png"],
 		"cooking_name": "Oxtail",
 		"cooking_size_text": "Not used for yakiniku",
 		"cooking_temperature_text": "Not used for yakiniku",
@@ -134,7 +138,7 @@
 	{
 		"cut_id": "cut_shank",
 		"cooking_id": "cooking_shank",
-		"cooking_path_img": "./img/cooking_shank.png",
+		"cooking_path_img": ["./img/cooking_shank.png"],
 		"cooking_name": "Shank",
 		"cooking_size_text": "Not used for yakiniku",
 		"cooking_temperature_text": "Not used for yakiniku",
@@ -145,7 +149,7 @@
 	{
 		"cut_id": "cut_neck",
 		"cooking_id": "cooking_neck",
-		"cooking_path_img": "./img/cooking_neck.png",
+		"cooking_path_img": ["./img/cooking_neck.png"],
 		"cooking_name": "Neck",
 		"cooking_size_text": "Not used for yakiniku",
 		"cooking_temperature_text": "Not used for yakiniku",
@@ -156,7 +160,7 @@
 	{
 		"cut_id": "cut_cheek",
 		"cooking_id": "cooking_cheek",
-		"cooking_path_img": "./img/cooking_cheek.png",
+		"cooking_path_img": ["./img/cooking_cheek.png"],
 		"cooking_name": "Cheek",
 		"cooking_size_text": "Not used for yakiniku",
 		"cooking_temperature_text": "Not used for yakiniku",
@@ -167,7 +171,7 @@
 	{
 		"cut_id": "cut_tongue",
 		"cooking_id": "cooking_tongue",
-		"cooking_path_img": "./img/cooking_tongue.png",
+		"cooking_path_img": ["./img/cooking_tongue.png"],
 		"cooking_name": "Tongue",
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
