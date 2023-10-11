@@ -21,8 +21,57 @@
 
 .breed-tools {
 	margin-top: 0.5em;
+	position: relative;
 	display: flex;
 	gap: 2em;
+}
+
+.breed-tools-pannel {
+	top: 120%;
+	width: 100%;
+	/* height: 10em; */
+	position: absolute;
+	padding: 1em;
+	/* gap: 1em; */
+	justify-content: flex-start;
+	flex-direction: column;
+	display: flex;
+	z-index: 3;
+	background-color: var(--breed-tools-bg);
+	border-radius: var(--breed-card-border-radius);
+}
+
+.filter-selected {
+	margin-bottom: 0.4em;
+	display: flex;
+	max-width: 100%;
+	flex-wrap: wrap;
+	gap: 0.4em;
+	height: max-content;
+}
+
+.breed-tools-pannel .text-sub-header {
+	padding: 0.2em;
+	font-size: 1em;
+	background-color: rgb(240, 240, 240);
+	border-radius: 0.5em;
+	cursor: pointer;
+}
+
+.filter-selected .text-sub-header {
+	background-color: rgb(172, 233, 190);
+}
+
+.filter-options {
+	display: flex;
+	max-width: 100%;
+	flex-wrap: wrap;
+	gap: 0.4em;
+	height: max-content;
+}
+
+.breed-tools-pannel img {
+	width: 1em;
 }
 
 #breed-filter {

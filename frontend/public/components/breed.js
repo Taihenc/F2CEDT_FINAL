@@ -28,6 +28,12 @@ export default async function breed(page_id, is_show) {
             <div id='breed-sort-icon'></div>
             <div id='breed-sort-text' class='text-para-light'>Sort</div>
         </div>
+        <div class="breed-tools-pannel" style='display: none; opacity: 0'>
+            <div class='filter-selected'>
+            </div>
+            <div class='filter-options'>
+            </div>
+        </div>
     </div>
     <div class="breed-cards" style='opacity: 0; margin-top: 4em'>
         <!-- replace me! -->
