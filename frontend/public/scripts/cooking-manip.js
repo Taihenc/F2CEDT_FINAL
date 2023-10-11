@@ -249,7 +249,10 @@ function StartCooking(obj) {
 			}, 1000);
 		},
 		(obj, dest, hit) => {
-			if (detectDragOverElement(getMousePosition(), hit) | detectDragOverElement(getTouchPosition(), hit)) {
+			if (
+				detectDragOverElement(getMousePosition(), hit) |
+				detectDragOverElement(getTouchPosition(), hit)
+			) {
 				dest.style.top = '-10em';
 			} else {
 				dest.style = null;
@@ -262,7 +265,57 @@ function StartCooking(obj) {
 	cut_flip.addEventListener('touchend', handleMouseUp);
 }
 
-function CookingScoreEval(cooking_cut) {}
+function CookingScoreEval(cooking_cut) {
+	const range = {
+		perfect: [0.9, 1.1],
+		good: [0.75],
+		ok: [0.5],
+	};
+	const perfect_score = cookings.find((cooking) => {
+		return cooking.cooking_id == cooking_cut.cut.id;
+	}).cooking_perfect_score;
+	let front_score = (cooking_cut.heat_level * cooking_cut.front_time) / 10;
+	let back_score = (cooking_cut.heat_level * cooking_cut.back_time) / 10;
+	let front_score_percent = front_score / perfect_score;
+	let back_score_percent = back_score / perfect_score;
+	if (front_score_percent <= 1.1 && front_score_percent >= 0.9) {
+		// perfect
+		front_score_percent = 1;
+	} else if (front_score_percent <= 0.9) {
+		front_score_percent =
+			1 - Math.abs(front_score_percent - range.perfect[0]) / range.perfect[0];
+	} else if (front_score_percent >= 1.1) {
+		front_score_percent =
+			1 - Math.abs(front_score_percent - range.perfect[1]) / range.perfect[1] < 0
+				? 0
+				: 1 - Math.abs(front_score_percent - range.perfect[1]) / range.perfect[1];
+	}
+
+	if (back_score_percent <= 1.1 && back_score_percent >= 0.9) {
+		// perfect
+		back_score_percent = 1;
+	} else if (back_score_percent <= 0.9) {
+		back_score_percent = 1 - Math.abs(back_score_percent - range.perfect[0]) / range.perfect[0];
+	} else if (back_score_percent >= 1.1) {
+		back_score_percent =
+			1 - Math.abs(back_score_percent - range.perfect[1]) / range.perfect[1] < 0
+				? 0
+				: 1 - Math.abs(back_score_percent - range.perfect[1]) / range.perfect[1];
+	}
+	let score_percent = Math.min(front_score_percent, back_score_percent);
+	let score_text = '';
+	if (score_percent >= range.perfect[0]) {
+		score_text = 'Perfect';
+	} else if (score_percent >= range.good[0]) {
+		score_text = 'Good';
+	} else if (score_percent >= range.ok[0]) {
+		score_text = 'Ok';
+	} else {
+		score_text = 'Bad';
+	}
+	console.log(score_percent);
+	console.log(score_text);
+}
 
 function InitSlider() {
 	const slider_input = document.getElementById('slider_input'),
@@ -317,14 +370,16 @@ function detectDragOverElement(client, targetElement) {
 
 function hitboxsDisplayNoneExcept(element = null) {
 	for (let i = 0; i < hitboxs.length; i++) {
-		if (element == null || (element != null && hitboxs[i] != element)) hitboxs[i].style.display = 'none';
+		if (element == null || (element != null && hitboxs[i] != element))
+			hitboxs[i].style.display = 'none';
 		else hitboxs[i].style.display = 'block';
 	}
 }
 
 function hitboxsDisplayBlockExcept(element = null) {
 	for (let i = 0; i < hitboxs.length; i++) {
-		if (element == null || (element != null && hitboxs[i] != element)) hitboxs[i].style.display = 'block';
+		if (element == null || (element != null && hitboxs[i] != element))
+			hitboxs[i].style.display = 'block';
 		else hitboxs[i].style.display = 'none';
 	}
 }

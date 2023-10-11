@@ -5,7 +5,7 @@ import { backend_url } from '../scripts/config.js';
  * @param {Cooking_cut} cooking_cut
  */
 export default function GenerateCookingCut(cooking_cut) {
-	const cooking_cut_template = `<div class="cooking-cut cut">
+	const cooking_cut_template = `<div id='${cooking_cut.cooking_id}' class="cooking-cut cut">
         <div id='cut-flip' class="cooking-cut__wrapper">
             <div class="cooking-cut__side is-active">
                 <img src="${backend_url}${cooking_cut.cooking_path_img[0]}" alt="">
