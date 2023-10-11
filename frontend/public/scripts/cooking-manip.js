@@ -28,7 +28,10 @@ const cut_pannel_wrap = document.getElementsByClassName('cut-pannel-wrap')[0];
 const cut_paths = document.querySelectorAll('.cut-pannel-wrap svg path');
 
 const cooking_time = document.getElementById('cooking-time');
-const timer = new Timer(cooking_time);
+const time_multipy_up = document.getElementById('time-multipy-up');
+const time_multipy_down = document.getElementById('time-multipy-down');
+const time_multipy_number = document.getElementById('time-multipy-number');
+const timer = new Timer(cooking_time, time_multipy_up, time_multipy_down, time_multipy_number);
 
 const cooking_info = {
 	cut_name: document.getElementById('cut-name'),
@@ -313,8 +316,6 @@ function CookingScoreEval(cooking_cut) {
 	} else {
 		score_text = 'Bad';
 	}
-	console.log(score_percent);
-	console.log(score_text);
 }
 
 function InitSlider() {
