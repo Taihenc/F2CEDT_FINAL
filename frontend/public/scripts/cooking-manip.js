@@ -189,13 +189,21 @@ function StartCooking(obj) {
 	cooking_cut.heat_level = getHeatLevel();
 
 	timer.start(cooking_cut, () => {
-		if (cooking_cut.front_time > 20) {
+		let { front_score_percent, is_front_overbound, back_score_percent, is_back_overbound } =
+			CookingScoreEval(cooking_cut);
+		if (front_score_percent >= 0.7 && !is_front_overbound) {
 			ChangeDoneness(obj, 'cooked', 'front');
 			cooking_cut.front_doneness = 'cooked';
+		} else if (front_score_percent >= 0.5 && is_front_overbound) {
+			ChangeDoneness(obj, 'burned', 'front');
+			cooking_cut.front_doneness = 'burned';
 		}
-		if (cooking_cut.back_time > 20) {
+		if (back_score_percent >= 0.7 && !is_back_overbound) {
 			ChangeDoneness(obj, 'cooked', 'back');
 			cooking_cut.back_doneness = 'cooked';
+		} else if (front_score_percent >= 0.5 && is_back_overbound) {
+			ChangeDoneness(obj, 'burned', 'back');
+			cooking_cut.back_doneness = 'burned';
 		}
 	});
 	const cut_flip = document.getElementById('cut-flip');
@@ -281,6 +289,8 @@ function CookingScoreEval(cooking_cut) {
 	let back_score = (cooking_cut.heat_level * cooking_cut.back_time) / 10;
 	let front_score_percent = front_score / perfect_score;
 	let back_score_percent = back_score / perfect_score;
+	let is_front_overbound = false;
+	let is_back_overbound = false;
 	if (front_score_percent <= 1.1 && front_score_percent >= 0.9) {
 		// perfect
 		front_score_percent = 1;
@@ -288,6 +298,7 @@ function CookingScoreEval(cooking_cut) {
 		front_score_percent =
 			1 - Math.abs(front_score_percent - range.perfect[0]) / range.perfect[0];
 	} else if (front_score_percent >= 1.1) {
+		is_front_overbound = true;
 		front_score_percent =
 			1 - Math.abs(front_score_percent - range.perfect[1]) / range.perfect[1] < 0
 				? 0
@@ -300,6 +311,7 @@ function CookingScoreEval(cooking_cut) {
 	} else if (back_score_percent <= 0.9) {
 		back_score_percent = 1 - Math.abs(back_score_percent - range.perfect[0]) / range.perfect[0];
 	} else if (back_score_percent >= 1.1) {
+		is_back_overbound = true;
 		back_score_percent =
 			1 - Math.abs(back_score_percent - range.perfect[1]) / range.perfect[1] < 0
 				? 0
@@ -316,6 +328,14 @@ function CookingScoreEval(cooking_cut) {
 	} else {
 		score_text = 'Bad';
 	}
+	return {
+		score_percent,
+		score_text,
+		front_score_percent,
+		is_front_overbound,
+		back_score_percent,
+		is_back_overbound,
+	};
 }
 
 function InitSlider() {
