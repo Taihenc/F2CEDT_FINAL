@@ -20,8 +20,7 @@ const pan = document.getElementsByClassName('pan')[0];
 const pan_hitbox = document.getElementsByClassName('pan-hitbox')[0];
 
 const wood_plate = document.getElementsByClassName('wood-plate')[0];
-const wood_plate_hitbox =
-	document.getElementsByClassName('wood-plate-hitbox')[0];
+const wood_plate_hitbox = document.getElementsByClassName('wood-plate-hitbox')[0];
 
 const cut_pannel_button = document.getElementById('cut-pannel-button');
 const close_pannel_button = document.getElementById('close-pannel-button');
@@ -30,6 +29,13 @@ const cut_paths = document.querySelectorAll('.cut-pannel-wrap svg path');
 
 const cooking_time = document.getElementById('cooking-time');
 const timer = new Timer(cooking_time);
+
+const cooking_info = {
+	cut_name: document.getElementById('cut-name'),
+	cut_size_info: document.getElementById('cut-size-info'),
+	cut_temp_info: document.getElementById('cut-temp-info'),
+	cut_time_info: document.getElementById('cut-time-info'),
+};
 
 let getHeatLevel = null;
 
@@ -55,13 +61,7 @@ document.getElementsByClassName('content-cooking')[0].addEventListener(
     
  }}
  */
-function MovableObject(
-	obj,
-	destination = null,
-	hitbox = null,
-	callback = null,
-	callback2 = null
-) {
+function MovableObject(obj, destination = null, hitbox = null, callback = null, callback2 = null) {
 	const mouseDown = { value: false };
 	const obj_mousedown = () => {
 		obj.style = `
@@ -249,10 +249,7 @@ function StartCooking(obj) {
 			}, 1000);
 		},
 		(obj, dest, hit) => {
-			if (
-				detectDragOverElement(getMousePosition(), hit) |
-				detectDragOverElement(getTouchPosition(), hit)
-			) {
+			if (detectDragOverElement(getMousePosition(), hit) | detectDragOverElement(getTouchPosition(), hit)) {
 				dest.style.top = '-10em';
 			} else {
 				dest.style = null;
@@ -320,16 +317,14 @@ function detectDragOverElement(client, targetElement) {
 
 function hitboxsDisplayNoneExcept(element = null) {
 	for (let i = 0; i < hitboxs.length; i++) {
-		if (element == null || (element != null && hitboxs[i] != element))
-			hitboxs[i].style.display = 'none';
+		if (element == null || (element != null && hitboxs[i] != element)) hitboxs[i].style.display = 'none';
 		else hitboxs[i].style.display = 'block';
 	}
 }
 
 function hitboxsDisplayBlockExcept(element = null) {
 	for (let i = 0; i < hitboxs.length; i++) {
-		if (element == null || (element != null && hitboxs[i] != element))
-			hitboxs[i].style.display = 'block';
+		if (element == null || (element != null && hitboxs[i] != element)) hitboxs[i].style.display = 'block';
 		else hitboxs[i].style.display = 'none';
 	}
 }
@@ -355,25 +350,28 @@ function cookingPanelInit() {
 			path.style.opacity = 1;
 			path.classList.add('clickable');
 			path.addEventListener('click', () => {
-				// gernate new cooking cut and append to cut-on-plate
 				/**
 				 * @type {Cooking_cut}
 				 */
 				const cooking_cut = cookings.find((cooking) => {
 					return cooking.cut_id == path.id;
 				});
+				// change cooking cut info
+				cooking_info.cut_name.textContent = cooking_cut.cooking_name;
+				cooking_info.cut_size_info.textContent = cooking_cut.cooking_size_text;
+				cooking_info.cut_temp_info.textContent = cooking_cut.cooking_temperature_text;
+				cooking_info.cut_time_info.textContent = cooking_cut.cooking_time_text;
+				// gernate new cooking cut and append to cut-on-plate
 				const cooking_cut_element = GenerateCookingCut(cooking_cut);
+				cut_plate.childNodes.forEach((element) => {
+					if (element?.classList?.contains('cooking-cut')) element.remove();
+				});
 				ChangeDoneness(cooking_cut_element, 'raw', 'both');
 				cut_plate.appendChild(cooking_cut_element);
-				MovableObject(
-					cooking_cut_element,
-					pan,
-					pan_hitbox,
-					(obj, dest, hit) => {
-						dest.appendChild(obj);
-						StartCooking(obj);
-					}
-				);
+				MovableObject(cooking_cut_element, pan, pan_hitbox, (obj, dest, hit) => {
+					dest.appendChild(obj);
+					StartCooking(obj);
+				});
 				closePanel();
 				hitboxsDisplayBlockExcept();
 			});

@@ -7,5 +7,6 @@
 	"jsxBracketSameLine": true,
 	"arrowParens": "always",
 	"quoteProps": "consistent",
-	"proseWrap": "never"
+	"proseWrap": "never",
+	"printWidth": 120
 }
