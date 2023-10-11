@@ -15,8 +15,7 @@
 			"cooking_size_text",
 			"cooking_temperature_text",
 			"cooking_time_text",
-			"cooking_perfect_min_value",
-			"cooking_perfect_max_value"
+			"cooking_perfect_sore"
 		],
 		"properties": {
 			"cut_id": {
@@ -92,17 +91,11 @@
 					"1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness"
 				]
 			},
-			"cooking_perfect_min_value": {
-				"type": "integer",
+			"cooking_perfect_score": {
+				"type": "number",
 				"default": 0,
-				"title": "The cooking_perfect_min_value Schema",
-				"examples": [123]
-			},
-			"cooking_perfect_max_value": {
-				"type": "integer",
-				"default": 0,
-				"title": "The cooking_perfect_max_value Schema",
-				"examples": [231]
+				"title": "The cooking_perfect_score Schema",
+				"examples": [69]
 			}
 		},
 		"examples": [
@@ -118,8 +111,7 @@
 				"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 				"cooking_temperature_text": "Medium-high to high heat",
 				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
-				"cooking_perfect_min_value": 123,
-				"cooking_perfect_max_value": 231
+				"cooking_perfect_score": 69
 			}
 		]
 	},
@@ -137,8 +129,7 @@
 				"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 				"cooking_temperature_text": "Medium-high to high heat",
 				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
-				"cooking_perfect_min_value": 123,
-				"cooking_perfect_max_value": 231
+				"cooking_perfect_score": 69
 			}
 		]
 	]

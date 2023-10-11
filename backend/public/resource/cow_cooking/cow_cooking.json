@@ -11,8 +11,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium-high to high heat",
 		"cooking_time_text": "1 to 2 minutes per side<br>for medium-rare to medium doneness",
-		"cooking_perfect_min_value": 123,
-		"cooking_perfect_max_value": 231
+		"cooking_perfect_score": 20
 	},
 	{
 		"cut_id": "cut_brisket",

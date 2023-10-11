@@ -33,8 +33,7 @@ export let backend_url = 'http://localhost:81';
  * @property {string} cooking_size_text
  * @property {string} cooking_temperature_text
  * @property {string} cooking_time_text
- * @property {number} cooking_perfect_min_value
- * @property {number} cooking_perfect_max_value
+ * @property {number} cooking_perfect_score
  *  */
 
 export const toPercentage = {
