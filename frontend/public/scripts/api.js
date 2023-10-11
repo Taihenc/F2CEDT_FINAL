@@ -20,6 +20,22 @@ export async function get_breeds(query) {
 	return breeds;
 }
 
+export async function get_breeds_sorted(query) {
+	const queryParams = new URLSearchParams({
+		query: query,
+	}).toString();
+	/**
+	 * @type {Breed_card[]}
+	 */
+	const breeds = await fetch(`${backend_url}/breedsSorted?${queryParams}`)
+		.then((res) => res.json())
+		.catch((err) => {
+			console.log('err', err);
+		});
+
+	return breeds;
+}
+
 export async function get_cuts() {
 	/**
 	 * @type {Cut_card[]}

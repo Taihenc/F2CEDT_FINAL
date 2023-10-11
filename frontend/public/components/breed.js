@@ -27,7 +27,23 @@ export default async function breed(page_id, is_show) {
         <div id="breed-sort">
             <div id='breed-sort-icon'></div>
             <div id='breed-sort-text' class='text-para-light'>Sort</div>
-        </div>
+            <div class='sort-pannel text-sub-header' style='display: none; opacity: 0;'>
+                <div data-field='breed_name' class='name sort-option ascending'>
+                        <span>
+                            <img src="./img/common/arrow_down.png" alt="">
+                            <img src="./img/common/arrow_up.png" alt="">
+                        </span>
+                    Name
+                    </div> 
+                    <div data-field='breed_country' class='country sort-option ascending'>
+                        <span>
+                            <img src="./img/common/arrow_down.png" alt="">
+                            <img src="./img/common/arrow_up.png" alt="">
+                        </span>
+                    Country
+                    </div> 
+                </div>
+            </div>
         <div class="breed-tools-pannel" style='display: none; opacity: 0'>
             <div class='filter-selected'>
             </div>

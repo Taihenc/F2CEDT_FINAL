@@ -1,15 +1,21 @@
 import breed, { query } from '../components/breed.js';
-import { get_breeds } from '../scripts/api.js';
+import { get_breeds, get_breeds_sorted } from '../scripts/api.js';
 import { generateBreedCard } from '../components/breed.js';
 import { backend_url } from './config.js';
 
 const breed_input = document.getElementById('breed-input');
 const breed_cards = document.getElementsByClassName('breed-cards')[0];
+
 const tools_panel = document.getElementsByClassName('breed-tools-pannel')[0];
 const filter_selected = document.getElementsByClassName('filter-selected')[0];
 const filter_options = document.getElementsByClassName('filter-options')[0];
 const filter_button = document.getElementById('breed-filter');
+
+const sort_button = document.getElementById('breed-sort');
+const sort_pannel = document.getElementsByClassName('sort-pannel')[0];
+
 let isFilterOpen = false;
+let isSortOpen = false;
 
 function addClickExpand() {
 	const buttons = document.getElementsByClassName('card-breed-expand-button');
@@ -135,4 +141,57 @@ filter_button.addEventListener('click', async () => {
 			addClickExpand();
 		}
 	}
+});
+
+sort_button.addEventListener('click', async () => {
+	if (isSortOpen == false) {
+		isSortOpen = true;
+		sort_pannel.style.display = null;
+		sort_pannel.animate([{ opacity: 0 }, { opacity: 1 }], {
+			duration: 200,
+			fill: 'forwards',
+		});
+		sort_pannel.style = null;
+	} else {
+		isSortOpen = false;
+		const animation = sort_pannel.animate(
+			[{ opacity: 1 }, { opacity: 0 }],
+			{
+				duration: 200,
+				fill: 'forwards',
+			}
+		);
+		animation.onfinish = () => {
+			sort_pannel.style.display = 'none';
+		};
+
+		const sort_option =
+			sort_pannel.getElementsByClassName('sort-option-active')[0];
+		const sort_order = sort_option.classList.contains('ascending') ? 1 : -1;
+		console.log(sort_option.dataset.field);
+		const breeds = await get_breeds_sorted(
+			`{"${sort_option.dataset.field}": "${sort_order}"}`
+		);
+		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
+		breed_cards.innerHTML = append;
+		addClickExpand();
+	}
+	sort_pannel.childNodes.forEach((option) => {
+		option.addEventListener('click', (event) => {
+			event.stopPropagation();
+			if (!option.classList.contains('sort-option')) return;
+			if (option.classList.contains('ascending')) {
+				option.classList.remove('ascending');
+				option.classList.add('descending');
+			} else {
+				option.classList.remove('descending');
+				option.classList.add('ascending');
+			}
+
+			sort_pannel.childNodes.forEach((option) => {
+				option?.classList?.remove('sort-option-active');
+			});
+			option.classList.add('sort-option-active');
+		});
+	});
 });

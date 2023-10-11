@@ -74,6 +74,49 @@
 	width: 1em;
 }
 
+.sort-pannel {
+	top: 120%;
+	right: 0;
+	width: 100%;
+	padding: 0.5em;
+	position: absolute;
+	display: flex;
+	z-index: 3;
+	gap: 0.5em;
+	flex-direction: column;
+	background-color: var(--breed-tools-bg);
+	border-radius: var(--breed-card-border-radius);
+}
+
+.sort-pannel .sort-option {
+	font-size: 1em;
+}
+
+.sort-pannel .sort-option span img {
+	padding-top: 0.3em;
+	max-width: 1em;
+}
+
+.sort-option {
+	user-select: none;
+	display: flex;
+	align-items: center;
+	background: rgb(240, 240, 240);
+	border-radius: 0.5em;
+}
+
+.sort-option.sort-option-active {
+	background-color: rgb(172, 233, 190);
+}
+
+.sort-pannel .sort-option.ascending span img:nth-child(1) {
+	display: none !important;
+}
+
+.sort-pannel .sort-option.descending span img:nth-child(2) {
+	display: none !important;
+}
+
 #breed-filter {
 	position: relative;
 	width: 7em;
@@ -85,6 +128,7 @@
 	background: var(--breed-tools-bg);
 	cursor: pointer;
 	border: none;
+	user-select: none;
 }
 
 #breed-filter-icon {
@@ -151,6 +195,7 @@
 	background: var(--breed-tools-bg);
 	cursor: pointer;
 	border: none;
+	user-select: none;
 }
 
 #breed-sort-icon {
