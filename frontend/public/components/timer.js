@@ -70,6 +70,7 @@ export default class Timer {
 		clearInterval(this.timer);
 		clearInterval(this.timer_update);
 		this.element.parentNode.style.opacity = 0;
+		this.time_multiplier = 1;
 		this.reset();
 	}
 	reset() {
@@ -84,5 +85,6 @@ export default class Timer {
 			// ${String(hours).padStart(2, '0')}:
 			`${String(minutes).padStart(2, '0')}:${String(seconds).padStart(2, '0')} s`;
 		this.element.textContent = formattedTime;
+		this.time_text.textContent = this.time_multiplier;
 	}
 }

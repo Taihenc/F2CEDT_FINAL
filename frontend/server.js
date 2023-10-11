@@ -2,6 +2,7 @@ import express from 'express';
 import home from './public/components/home.js';
 import breed from './public/components/breed.js';
 import cut from './public/components/cut.js';
+import cooking from './public/components/cooking.js';
 import fs from 'fs';
 import path from 'path';
 import { Set_backend_url } from './public/scripts/config.js';
@@ -35,10 +36,10 @@ app.get('/', (req, res) => {
 			let html = data;
 			let append = '';
 			(async () => {
-				// append += home(0, true);
+				append += home(0, true);
 				append += await breed(1, false);
 				append += await cut(2, false);
-				append += home(3, false);
+				append += await cooking(3, false);
 				return res.send(html.replace('<!-- replace me! -->', append));
 			})();
 		}

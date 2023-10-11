@@ -191,17 +191,17 @@ function StartCooking(obj) {
 	timer.start(cooking_cut, () => {
 		let { front_score_percent, is_front_overbound, back_score_percent, is_back_overbound } =
 			CookingScoreEval(cooking_cut);
-		if (front_score_percent >= 0.7 && !is_front_overbound) {
+		if (front_score_percent >= 0.65 && !is_front_overbound) {
 			ChangeDoneness(obj, 'cooked', 'front');
 			cooking_cut.front_doneness = 'cooked';
-		} else if (front_score_percent >= 0.5 && is_front_overbound) {
+		} else if (front_score_percent >= 0.4 && is_front_overbound) {
 			ChangeDoneness(obj, 'burned', 'front');
 			cooking_cut.front_doneness = 'burned';
 		}
-		if (back_score_percent >= 0.7 && !is_back_overbound) {
+		if (back_score_percent >= 0.65 && !is_back_overbound) {
 			ChangeDoneness(obj, 'cooked', 'back');
 			cooking_cut.back_doneness = 'cooked';
-		} else if (front_score_percent >= 0.5 && is_back_overbound) {
+		} else if (front_score_percent >= 0.4 && is_back_overbound) {
 			ChangeDoneness(obj, 'burned', 'back');
 			cooking_cut.back_doneness = 'burned';
 		}
