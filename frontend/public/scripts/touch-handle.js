@@ -22,8 +22,3 @@ export function updateTouchPosition(callback) {
 
 document.addEventListener('touchmove', handleTouchMove); // Start updating touch position
 document.addEventListener('touchstart', handleTouchMove); // Start updating touch position
-
-// updateTouchPosition(() => {
-// 	console.log(touchPos);
-// 	return true;
-// });

@@ -2,7 +2,7 @@ import getMousePosition from './mouse-handle.js';
 import getTouchPosition from './touch-handle.js';
 import { updateMousePosition } from './mouse-handle.js';
 import { updateTouchPosition } from './touch-handle.js';
-import Timer from './timer.js';
+import Timer from '../components/timer.js';
 import GenerateCookingCut from '../components/cooking-cut.js';
 import { get_cookings } from '../scripts/api.js';
 
@@ -30,6 +30,8 @@ const cut_paths = document.querySelectorAll('.cut-pannel-wrap svg path');
 
 const cooking_time = document.getElementById('cooking-time');
 const timer = new Timer(cooking_time);
+
+let getHeatLevel = null;
 
 cookingPanelInit();
 InitSlider();
@@ -60,7 +62,7 @@ function MovableObject(
 	callback = null,
 	callback2 = null
 ) {
-	let mouseDown = { value: false };
+	const mouseDown = { value: false };
 	const obj_mousedown = () => {
 		obj.style = `
 		    height: ${obj.offsetHeight}px;
@@ -171,34 +173,37 @@ function AnimateObjToStickWithMouse(obj, client) {
  * @param {Element} obj
  */
 function StartCooking(obj) {
-	let front = true;
+	const cooking_cut = {
+		side: 'front',
+		front_doneness: 'raw',
+		back_doneness: 'raw',
+		front_time: 0,
+		back_time: 0,
+		heat_level: 0,
+		cut: obj,
+	};
 	let mouseDownTime, mouseUpTime;
+	cooking_cut.heat_level = getHeatLevel();
 
-	timer.start((time) => {
-		if (time > 8) {
-			if (front) {
-				ChangeDoneness(obj, 'burned', 'back');
-			} else {
-				ChangeDoneness(obj, 'burned', 'front');
-			}
-		} else if (time > 5) {
-			if (front) {
-				ChangeDoneness(obj, 'cooked', 'back');
-			} else {
-				ChangeDoneness(obj, 'cooked', 'front');
-			}
+	timer.start(cooking_cut, () => {
+		if (cooking_cut.front_time > 20) {
+			ChangeDoneness(obj, 'cooked', 'front');
+			cooking_cut.front_doneness = 'cooked';
+		}
+		if (cooking_cut.back_time > 20) {
+			ChangeDoneness(obj, 'cooked', 'back');
+			cooking_cut.back_doneness = 'cooked';
 		}
 	});
-	cooking_time.parentNode.style.opacity = 1;
 	const cut_flip = document.getElementById('cut-flip');
 
 	const clickEvent = () => {
 		if (obj.style.position == 'fixed') return;
-		if (front) {
+		if (cooking_cut.side == 'front') {
 			cut_flip.style.animation = 'rotate-first' + ' 0.5s'; // Adjust the duration as needed
-			front = false;
+			cooking_cut.side = 'back';
 		} else {
-			front = true;
+			cooking_cut.side = 'front';
 			cut_flip.style.animation = 'rotate-second' + ' 0.5s'; // Adjust the duration as needed
 		}
 		cut_flip.style.animationFillMode = 'forwards';
@@ -212,8 +217,6 @@ function StartCooking(obj) {
 		mouseUpTime = new Date().getTime();
 		if (mouseUpTime - mouseDownTime < 100) {
 			clickEvent();
-		} else if (mouseUpTime - mouseDownTime < 1000) {
-			timer.stop();
 		}
 	};
 
@@ -229,6 +232,21 @@ function StartCooking(obj) {
 			cut_flip.removeEventListener('touchend', handleMouseUp);
 			dest.style = null;
 			dest.appendChild(obj);
+			timer.stop();
+			CookingScoreEval(cooking_cut);
+			setTimeout(() => {
+				requestAnimationFrame(() => {
+					const animation = obj.animate(
+						{
+							opacity: 0,
+						},
+						{ duration: 1000, fill: 'forwards' }
+					);
+					animation.onfinish = () => {
+						obj.remove();
+					};
+				});
+			}, 1000);
 		},
 		(obj, dest, hit) => {
 			if (
@@ -247,6 +265,8 @@ function StartCooking(obj) {
 	cut_flip.addEventListener('touchend', handleMouseUp);
 }
 
+function CookingScoreEval(cooking_cut) {}
+
 function InitSlider() {
 	const slider_input = document.getElementById('slider_input'),
 		slider_thumb = document.getElementById('slider_thumb'),
@@ -264,16 +284,27 @@ function InitSlider() {
 	slider_input.addEventListener('input', showSliderValue, false);
 	function mapValue(x) {
 		if (x >= 0 && x <= 35) {
-			// Map [0, 33.33] to [10, 50]
 			return 0;
 		} else if (x > 36 && x <= 66) {
-			// Map (33.33, 66.66] to [50, 100]
 			return 50;
 		} else if (x > 87 && x <= 100) {
-			// Map (66.66, 100] to [100]
 			return 100;
 		}
 	}
+
+	function mapHeat(x) {
+		if (x >= 0 && x <= 35) {
+			return 0.5;
+		} else if (x > 36 && x <= 66) {
+			return 1.0;
+		} else if (x > 87 && x <= 100) {
+			return 1.5;
+		}
+	}
+
+	getHeatLevel = () => {
+		return mapHeat(slider_input.value);
+	};
 }
 
 function detectDragOverElement(client, targetElement) {

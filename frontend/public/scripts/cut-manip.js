@@ -7,7 +7,6 @@ cut_paths.forEach((path) => {
 	path.addEventListener('click', (event) => {
 		if (path.id != '') {
 			const cut_card = document.querySelector(`#${path.id}.cut-card`);
-			console.log(path.id, cut_card);
 			cut_paths.forEach((path) => {
 				path.classList.remove('selected-cut');
 			});

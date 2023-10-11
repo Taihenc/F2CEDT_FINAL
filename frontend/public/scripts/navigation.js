@@ -55,9 +55,6 @@ export function pan_to_page(next_page_id, dir = null) {
 	const page_id = parseInt(current_page.id.match`[a-z]*([0-9]+)`[0]);
 	next_page_id = parseInt(next_page_id);
 	const next_page = document.getElementById(`page-id-${next_page_id}`);
-	console.log(dir);
-	console.log('next', next_page_id);
-	console.log('Cur', page_id);
 	if ((page_id < next_page_id && dir === null) || dir == 'right') {
 		next_page.style.transition = 'none';
 		requestAnimationFrame(() => {
