@@ -13,7 +13,6 @@ cut_paths.forEach((path) => {
 			path.classList.add('selected-cut');
 
 			clearTimeout(timeOutID);
-			console.log(cut_card);
 			cut_card.classList.add('selected-cut');
 			cut_card.style = `z-index: ${zindex++};`;
 			timeOutID = setTimeout(() => {

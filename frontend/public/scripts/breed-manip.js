@@ -168,7 +168,6 @@ sort_button.addEventListener('click', async () => {
 		const sort_option =
 			sort_pannel.getElementsByClassName('sort-option-active')[0];
 		const sort_order = sort_option.classList.contains('ascending') ? 1 : -1;
-		console.log(sort_option.dataset.field);
 		const breeds = await get_breeds_sorted(
 			`{"${sort_option.dataset.field}": "${sort_order}"}`
 		);

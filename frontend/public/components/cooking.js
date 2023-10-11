@@ -114,6 +114,12 @@ export default async function cooking(page_id, is_show) {
             <img class="wood-plate-img" src="./img/04_cooking/wood_plate.png" alt="">
         </div>
     </div>
+    <div class='cooking-score'>
+        <img class='score perfect' style='display: none' src="./img/04_cooking/score_perfect.png" alt="">
+        <img class='score good' style='display: none;' src="./img/04_cooking/score_good.png" alt="">
+        <img class='score ok' style='display: none;' src="./img/04_cooking/score_ok.png" alt="">
+        <img class='score bad' style='display: none;' src="./img/04_cooking/score_bad.png" alt="">
+    </div>
 </div>`;
 	return cooking;
 }

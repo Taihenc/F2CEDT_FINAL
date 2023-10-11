@@ -20,7 +20,8 @@ const pan = document.getElementsByClassName('pan')[0];
 const pan_hitbox = document.getElementsByClassName('pan-hitbox')[0];
 
 const wood_plate = document.getElementsByClassName('wood-plate')[0];
-const wood_plate_hitbox = document.getElementsByClassName('wood-plate-hitbox')[0];
+const wood_plate_hitbox =
+	document.getElementsByClassName('wood-plate-hitbox')[0];
 
 const cut_pannel_button = document.getElementById('cut-pannel-button');
 const close_pannel_button = document.getElementById('close-pannel-button');
@@ -31,7 +32,12 @@ const cooking_time = document.getElementById('cooking-time');
 const time_multipy_up = document.getElementById('time-multipy-up');
 const time_multipy_down = document.getElementById('time-multipy-down');
 const time_multipy_number = document.getElementById('time-multipy-number');
-const timer = new Timer(cooking_time, time_multipy_up, time_multipy_down, time_multipy_number);
+const timer = new Timer(
+	cooking_time,
+	time_multipy_up,
+	time_multipy_down,
+	time_multipy_number
+);
 
 const cooking_info = {
 	cut_name: document.getElementById('cut-name'),
@@ -39,6 +45,8 @@ const cooking_info = {
 	cut_temp_info: document.getElementById('cut-temp-info'),
 	cut_time_info: document.getElementById('cut-time-info'),
 };
+
+const cooking_score_div = document.getElementsByClassName('cooking-score')[0];
 
 let getHeatLevel = null;
 
@@ -64,7 +72,13 @@ document.getElementsByClassName('content-cooking')[0].addEventListener(
     
  }}
  */
-function MovableObject(obj, destination = null, hitbox = null, callback = null, callback2 = null) {
+function MovableObject(
+	obj,
+	destination = null,
+	hitbox = null,
+	callback = null,
+	callback2 = null
+) {
 	const mouseDown = { value: false };
 	const obj_mousedown = () => {
 		obj.style = `
@@ -96,7 +110,7 @@ function MovableObject(obj, destination = null, hitbox = null, callback = null, 
 			obj.style = null;
 			mouseDown.value = false;
 			if (destination != null && hitbox != null) {
-				if (hitbox.matches(':hover')) {
+				if (detectDragOverElement(getMousePosition(), hitbox)) {
 					if (callback != null) {
 						callback(obj, destination, hitbox);
 					}
@@ -189,8 +203,12 @@ function StartCooking(obj) {
 	cooking_cut.heat_level = getHeatLevel();
 
 	timer.start(cooking_cut, () => {
-		let { front_score_percent, is_front_overbound, back_score_percent, is_back_overbound } =
-			CookingScoreEval(cooking_cut);
+		let {
+			front_score_percent,
+			is_front_overbound,
+			back_score_percent,
+			is_back_overbound,
+		} = CookingScoreEval(cooking_cut);
 		if (front_score_percent >= 0.65 && !is_front_overbound) {
 			ChangeDoneness(obj, 'cooked', 'front');
 			cooking_cut.front_doneness = 'cooked';
@@ -244,20 +262,20 @@ function StartCooking(obj) {
 			dest.style = null;
 			dest.appendChild(obj);
 			timer.stop();
-			CookingScoreEval(cooking_cut);
 			setTimeout(() => {
 				requestAnimationFrame(() => {
 					const animation = obj.animate(
 						{
 							opacity: 0,
 						},
-						{ duration: 1000, fill: 'forwards' }
+						{ duration: 500, fill: 'forwards' }
 					);
 					animation.onfinish = () => {
 						obj.remove();
+						popUpScore(CookingScoreEval(cooking_cut));
 					};
 				});
-			}, 1000);
+			}, 500);
 		},
 		(obj, dest, hit) => {
 			if (
@@ -296,26 +314,39 @@ function CookingScoreEval(cooking_cut) {
 		front_score_percent = 1;
 	} else if (front_score_percent <= 0.9) {
 		front_score_percent =
-			1 - Math.abs(front_score_percent - range.perfect[0]) / range.perfect[0];
+			1 -
+			Math.abs(front_score_percent - range.perfect[0]) / range.perfect[0];
 	} else if (front_score_percent >= 1.1) {
 		is_front_overbound = true;
 		front_score_percent =
-			1 - Math.abs(front_score_percent - range.perfect[1]) / range.perfect[1] < 0
+			1 -
+				Math.abs(front_score_percent - range.perfect[1]) /
+					range.perfect[1] <
+			0
 				? 0
-				: 1 - Math.abs(front_score_percent - range.perfect[1]) / range.perfect[1];
+				: 1 -
+				  Math.abs(front_score_percent - range.perfect[1]) /
+						range.perfect[1];
 	}
 
 	if (back_score_percent <= 1.1 && back_score_percent >= 0.9) {
 		// perfect
 		back_score_percent = 1;
 	} else if (back_score_percent <= 0.9) {
-		back_score_percent = 1 - Math.abs(back_score_percent - range.perfect[0]) / range.perfect[0];
+		back_score_percent =
+			1 -
+			Math.abs(back_score_percent - range.perfect[0]) / range.perfect[0];
 	} else if (back_score_percent >= 1.1) {
 		is_back_overbound = true;
 		back_score_percent =
-			1 - Math.abs(back_score_percent - range.perfect[1]) / range.perfect[1] < 0
+			1 -
+				Math.abs(back_score_percent - range.perfect[1]) /
+					range.perfect[1] <
+			0
 				? 0
-				: 1 - Math.abs(back_score_percent - range.perfect[1]) / range.perfect[1];
+				: 1 -
+				  Math.abs(back_score_percent - range.perfect[1]) /
+						range.perfect[1];
 	}
 	let score_percent = Math.min(front_score_percent, back_score_percent);
 	let score_text = '';
@@ -434,20 +465,29 @@ function cookingPanelInit() {
 				});
 				// change cooking cut info
 				cooking_info.cut_name.textContent = cooking_cut.cooking_name;
-				cooking_info.cut_size_info.textContent = cooking_cut.cooking_size_text;
-				cooking_info.cut_temp_info.textContent = cooking_cut.cooking_temperature_text;
-				cooking_info.cut_time_info.textContent = cooking_cut.cooking_time_text;
+				cooking_info.cut_size_info.textContent =
+					cooking_cut.cooking_size_text;
+				cooking_info.cut_temp_info.textContent =
+					cooking_cut.cooking_temperature_text;
+				cooking_info.cut_time_info.textContent =
+					cooking_cut.cooking_time_text;
 				// gernate new cooking cut and append to cut-on-plate
 				const cooking_cut_element = GenerateCookingCut(cooking_cut);
 				cut_plate.childNodes.forEach((element) => {
-					if (element?.classList?.contains('cooking-cut')) element.remove();
+					if (element?.classList?.contains('cooking-cut'))
+						element.remove();
 				});
 				ChangeDoneness(cooking_cut_element, 'raw', 'both');
 				cut_plate.appendChild(cooking_cut_element);
-				MovableObject(cooking_cut_element, pan, pan_hitbox, (obj, dest, hit) => {
-					dest.appendChild(obj);
-					StartCooking(obj);
-				});
+				MovableObject(
+					cooking_cut_element,
+					pan,
+					pan_hitbox,
+					(obj, dest, hit) => {
+						dest.appendChild(obj);
+						StartCooking(obj);
+					}
+				);
 				closePanel();
 				hitboxsDisplayBlockExcept();
 			});
@@ -501,5 +541,48 @@ function ChangeDoneness(cooking_cut, doneness, option) {
 		for (let i = 0; i < 6; i++) {
 			cooking_img[i].style.opacity = opacityValues[doneness][i];
 		}
+	}
+}
+
+function popUpScore({ score_percent, score_text }) {
+	console.log(score_percent, score_text);
+	let text = null;
+	cooking_score_div.childNodes.forEach((element) => {
+		if (element.tagName == 'IMG') {
+			element.style.display = 'none';
+		}
+	});
+	if (score_text == 'Perfect') {
+		cooking_score_div.childNodes.forEach((element) => {
+			if (element?.classList?.contains('perfect')) {
+				element.style.display = null;
+				text = element;
+			}
+		});
+	} else if (score_text == 'Good') {
+		cooking_score_div.childNodes.forEach((element) => {
+			if (element?.classList?.contains('good')) {
+				element.style.display = null;
+				text = element;
+			}
+		});
+	} else if (score_text == 'Ok') {
+		cooking_score_div.childNodes.forEach((element) => {
+			if (element?.classList?.contains('ok')) {
+				element.style.display = null;
+				text = element;
+			}
+		});
+	} else {
+		cooking_score_div.childNodes.forEach((element) => {
+			if (element?.classList?.contains('bad')) {
+				element.style.display = null;
+				text = element;
+			}
+		});
+		text.classList.add('popup-animation');
+		text.addEventListener('animationend', () => {
+			text.classList.remove('popup-animation');
+		});
 	}
 }

@@ -28,14 +28,14 @@
 }
 
 #nav-bar > .hamburger-lines {
-	display: block;
 	height: 4em;
 	width: 5em;
 	position: absolute;
 	top: cal(50% - 4em);
 	right: 7%;
 	z-index: 2;
-	display: flex;
+	/* display: flex; */
+	display: none;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -163,6 +163,10 @@
 			rgba(255, 255, 255, 0.7) 100%
 		);
 		box-shadow: 4px 4px 30px 2px rgba(0, 0, 0, 0.25);
+	}
+
+	#nav-bar > .hamburger-lines {
+		display: flex;
 	}
 
 	#nav-bar > .hamburger-lines .line {
