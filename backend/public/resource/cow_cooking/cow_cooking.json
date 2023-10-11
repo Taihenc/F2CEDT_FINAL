@@ -25,7 +25,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Low to medium",
 		"cooking_time_text": "20-30 seconds  (thin slices cook quickly)",
-		"cooking_perfect_score": 20
+		"cooking_perfect_score": 10
 	},
 	{
 		"cut_id": "cut_plate",
@@ -39,7 +39,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Low to medium",
 		"cooking_time_text": "20-30 seconds  (thin slices cook quickly)",
-		"cooking_perfect_score": 20
+		"cooking_perfect_score": 10
 	},
 	{
 		"cut_id": "cut_rib",
@@ -53,7 +53,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_flank",
@@ -67,7 +67,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_shortloin",
@@ -81,7 +81,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_topsirloin",
@@ -95,7 +95,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_buttomsirloin",
@@ -109,7 +109,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_tenderloin",
@@ -123,7 +123,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_sirloin",
@@ -137,7 +137,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_round",
@@ -151,7 +151,7 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "30-45 seconds ",
-		"cooking_perfect_score": 30
+		"cooking_perfect_score": 45
 	},
 	{
 		"cut_id": "cut_tongue",
@@ -165,6 +165,6 @@
 		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
 		"cooking_temperature_text": "Medium to high",
 		"cooking_time_text": "20-30 seconds (thin slices cook quickly)",
-		"cooking_perfect_score": 20
+		"cooking_perfect_score": 30
 	}
 ]
