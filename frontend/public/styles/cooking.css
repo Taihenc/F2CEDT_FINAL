@@ -98,6 +98,7 @@
 
 .cut-plate .cut {
 	width: 80%;
+	height: 80%;
 	user-select: none;
 }
 
@@ -188,6 +189,7 @@
 
 .pan .cut {
 	width: 50%;
+	height: 50%;
 }
 
 .cooking-timer {
@@ -288,6 +290,7 @@
 .wood-plate .cut {
 	position: relative;
 	width: 60%;
+	height: 60%;
 }
 
 .wood-plate-hitbox {

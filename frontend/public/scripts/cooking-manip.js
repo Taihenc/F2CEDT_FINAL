@@ -3,10 +3,18 @@ import getTouchPosition from './touch-handle.js';
 import { updateMousePosition } from './mouse-handle.js';
 import { updateTouchPosition } from './touch-handle.js';
 import Timer from './timer.js';
+import GenerateCookingCut from '../components/cooking-cut.js';
+import { get_cookings } from '../scripts/api.js';
 
-const cut_on_plate = document.getElementsByClassName('cut-on-plate')[0];
+/**
+ * @typedef {import('../scripts/config.js').Cooking_cut} Cooking_cut
+ */
+
+const cookings = await get_cookings();
 
 const hitboxs = document.getElementsByClassName('hitbox');
+
+const cut_plate = document.getElementsByClassName('cut-plate')[0];
 
 const pan = document.getElementsByClassName('pan')[0];
 const pan_hitbox = document.getElementsByClassName('pan-hitbox')[0];
@@ -24,14 +32,7 @@ const cooking_time = document.getElementById('cooking-time');
 const timer = new Timer(cooking_time);
 
 cookingPanelInit();
-
-cut_on_plate.addEventListener('contextmenu', (event) => {
-	event.preventDefault();
-});
-
-cut_on_plate.addEventListener('touchstart', (event) => {
-	event.preventDefault();
-});
+InitSlider();
 
 document.getElementsByClassName('content-cooking')[0].addEventListener(
 	'touchmove',
@@ -42,11 +43,6 @@ document.getElementsByClassName('content-cooking')[0].addEventListener(
 	},
 	{ passive: false }
 );
-
-MovableObject(cut_on_plate, pan, pan_hitbox, (obj, dest, hit) => {
-	dest.appendChild(obj);
-	StartCooking(obj);
-});
 
 /**
  *
@@ -176,22 +172,22 @@ function AnimateObjToStickWithMouse(obj, client) {
  */
 function StartCooking(obj) {
 	let front = true;
-	let mouseDownTime;
+	let mouseDownTime, mouseUpTime;
 
 	timer.start();
 	cooking_time.parentNode.style.opacity = 1;
-	const target = document.getElementById('cut-flip');
+	const cut_flip = document.getElementById('cut-flip');
 
 	const clickEvent = () => {
 		if (obj.style.position == 'fixed') return;
 		if (front) {
-			target.style.animation = 'rotate-first' + ' 0.5s'; // Adjust the duration as needed
+			cut_flip.style.animation = 'rotate-first' + ' 0.5s'; // Adjust the duration as needed
 			front = false;
 		} else {
 			front = true;
-			target.style.animation = 'rotate-second' + ' 0.5s'; // Adjust the duration as needed
+			cut_flip.style.animation = 'rotate-second' + ' 0.5s'; // Adjust the duration as needed
 		}
-		target.style.animationFillMode = 'forwards';
+		cut_flip.style.animationFillMode = 'forwards';
 	};
 
 	const handleMouseDown = () => {
@@ -199,10 +195,8 @@ function StartCooking(obj) {
 	};
 
 	const handleMouseUp = () => {
-		const mouseUpTime = new Date().getTime();
-		const timeDifference = mouseUpTime - mouseDownTime;
-
-		if (timeDifference < 100) {
+		mouseUpTime = new Date().getTime();
+		if (mouseUpTime - mouseDownTime < 100) {
 			clickEvent();
 		}
 	};
@@ -212,12 +206,13 @@ function StartCooking(obj) {
 		wood_plate,
 		wood_plate_hitbox,
 		(obj, dest, hit) => {
-			target.removeEventListener('mousedown', handleMouseDown);
-			target.removeEventListener('touchstart', handleMouseDown);
-			target.removeEventListener('mouseup', handleMouseUp);
-			target.removeEventListener('touchend', handleMouseUp);
-			dest.appendChild(obj);
+			cut_flip.style = null;
+			cut_flip.removeEventListener('mousedown', handleMouseDown);
+			cut_flip.removeEventListener('touchstart', handleMouseDown);
+			cut_flip.removeEventListener('mouseup', handleMouseUp);
+			cut_flip.removeEventListener('touchend', handleMouseUp);
 			dest.style = null;
+			dest.appendChild(obj);
 		},
 		(obj, dest, hit) => {
 			if (
@@ -230,39 +225,38 @@ function StartCooking(obj) {
 			}
 		}
 	);
-	target.addEventListener('mousedown', handleMouseDown);
-	target.addEventListener('touchstart', handleMouseDown);
-	target.addEventListener('mouseup', handleMouseUp);
-	target.addEventListener('touchend', handleMouseUp);
+	cut_flip.addEventListener('mousedown', handleMouseDown);
+	cut_flip.addEventListener('touchstart', handleMouseDown);
+	cut_flip.addEventListener('mouseup', handleMouseUp);
+	cut_flip.addEventListener('touchend', handleMouseUp);
 }
 
-const slider_input = document.getElementById('slider_input'),
-	slider_thumb = document.getElementById('slider_thumb'),
-	slider_line = document.getElementById('slider_line');
+function InitSlider() {
+	const slider_input = document.getElementById('slider_input'),
+		slider_thumb = document.getElementById('slider_thumb'),
+		slider_line = document.getElementById('slider_line');
+	function showSliderValue() {
+		// slider_thumb.innerHTML = slider_input.value;
+		const bulletPosition = mapValue(slider_input.value) / slider_input.max,
+			space = slider_input.offsetWidth - slider_thumb.offsetWidth;
 
-function showSliderValue() {
-	// slider_thumb.innerHTML = slider_input.value;
-	const bulletPosition = mapValue(slider_input.value) / slider_input.max,
-		space = slider_input.offsetWidth - slider_thumb.offsetWidth;
-
-	slider_thumb.style.left = bulletPosition * space + 'px';
-	slider_line.style.width = mapValue(slider_input.value) + '%';
-}
-
-showSliderValue();
-window.addEventListener('resize', showSliderValue);
-slider_input.addEventListener('input', showSliderValue, false);
-
-function mapValue(x) {
-	if (x >= 0 && x <= 35) {
-		// Map [0, 33.33] to [10, 50]
-		return 0;
-	} else if (x > 36 && x <= 66) {
-		// Map (33.33, 66.66] to [50, 100]
-		return 50;
-	} else if (x > 87 && x <= 100) {
-		// Map (66.66, 100] to [100]
-		return 100;
+		slider_thumb.style.left = bulletPosition * space + 'px';
+		slider_line.style.width = mapValue(slider_input.value) + '%';
+	}
+	showSliderValue();
+	window.addEventListener('resize', showSliderValue);
+	slider_input.addEventListener('input', showSliderValue, false);
+	function mapValue(x) {
+		if (x >= 0 && x <= 35) {
+			// Map [0, 33.33] to [10, 50]
+			return 0;
+		} else if (x > 36 && x <= 66) {
+			// Map (33.33, 66.66] to [50, 100]
+			return 50;
+		} else if (x > 87 && x <= 100) {
+			// Map (66.66, 100] to [100]
+			return 100;
+		}
 	}
 }
 
@@ -307,19 +301,38 @@ function cookingPanelInit() {
 	cut_paths.forEach((path) => {
 		if (path.id != '') {
 			path.addEventListener('click', () => {
+				// gernate new cooking cut and append to cut-on-plate
+				/**
+				 * @type {Cooking_cut}
+				 */
+				const cooking_cut = cookings.find((cooking) => {
+					return cooking.cut_id == path.id;
+				});
+				console.log(cooking_cut);
+				const cooking_cut_element = GenerateCookingCut(cooking_cut);
+				cut_plate.appendChild(cooking_cut_element);
+				MovableObject(
+					cooking_cut_element,
+					pan,
+					pan_hitbox,
+					(obj, dest, hit) => {
+						dest.appendChild(obj);
+						StartCooking(obj);
+					}
+				);
 				closePanel();
 				hitboxsDisplayBlockExcept();
 			});
 		}
 	});
-}
 
-function closePanel() {
-	hitboxsDisplayBlockExcept();
-	cut_pannel_wrap.style.top = '-100%';
-}
+	function closePanel() {
+		hitboxsDisplayBlockExcept();
+		cut_pannel_wrap.style.top = '-100%';
+	}
 
-function openPanel() {
-	hitboxsDisplayNoneExcept(cut_pannel_wrap);
-	cut_pannel_wrap.style = null;
+	function openPanel() {
+		hitboxsDisplayNoneExcept(cut_pannel_wrap);
+		cut_pannel_wrap.style = null;
+	}
 }

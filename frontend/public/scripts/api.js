@@ -2,6 +2,7 @@ import { backend_url } from './config.js';
 
 /**@typedef {import('./config.js').Breed_card } Breed_card */
 /**@typedef {import('./config.js').Cut_card } Cut_card */
+/**@typedef {import('./config.js').Cooking_cut } Cooking_cut */
 
 export async function get_breeds() {
 	/**
@@ -27,4 +28,17 @@ export async function get_cuts() {
 		});
 
 	return cuts;
+}
+
+export async function get_cookings() {
+	/**
+	 * @type {Cooking_cut[]}
+	 */
+	const cookings = await fetch(`${backend_url}/cookings`)
+		.then((res) => res.json())
+		.catch((err) => {
+			console.log('err', err);
+		});
+
+	return cookings;
 }
