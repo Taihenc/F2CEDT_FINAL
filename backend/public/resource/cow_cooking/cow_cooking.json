@@ -125,50 +125,6 @@
 		"cooking_perfect_max_value": 45
 	},
 	{
-		"cut_id": "cut_oxtail",
-		"cooking_id": "cooking_oxtail",
-		"cooking_path_img": ["./img/cooking_oxtail.png"],
-		"cooking_name": "Oxtail",
-		"cooking_size_text": "Not used for yakiniku",
-		"cooking_temperature_text": "Not used for yakiniku",
-		"cooking_time_text": "Not used for yakiniku",
-		"cooking_perfect_min_value": 0,
-		"cooking_perfect_max_value": 0
-	},
-	{
-		"cut_id": "cut_shank",
-		"cooking_id": "cooking_shank",
-		"cooking_path_img": ["./img/cooking_shank.png"],
-		"cooking_name": "Shank",
-		"cooking_size_text": "Not used for yakiniku",
-		"cooking_temperature_text": "Not used for yakiniku",
-		"cooking_time_text": "Not used for yakiniku",
-		"cooking_perfect_min_value": 0,
-		"cooking_perfect_max_value": 0
-	},
-	{
-		"cut_id": "cut_neck",
-		"cooking_id": "cooking_neck",
-		"cooking_path_img": ["./img/cooking_neck.png"],
-		"cooking_name": "Neck",
-		"cooking_size_text": "Not used for yakiniku",
-		"cooking_temperature_text": "Not used for yakiniku",
-		"cooking_time_text": "Not used for yakiniku",
-		"cooking_perfect_min_value": 0,
-		"cooking_perfect_max_value": 0
-	},
-	{
-		"cut_id": "cut_cheek",
-		"cooking_id": "cooking_cheek",
-		"cooking_path_img": ["./img/cooking_cheek.png"],
-		"cooking_name": "Cheek",
-		"cooking_size_text": "Not used for yakiniku",
-		"cooking_temperature_text": "Not used for yakiniku",
-		"cooking_time_text": "Not used for yakiniku",
-		"cooking_perfect_min_value": 0,
-		"cooking_perfect_max_value": 0
-	},
-	{
 		"cut_id": "cut_tongue",
 		"cooking_id": "cooking_tongue",
 		"cooking_path_img": ["./img/cooking_tongue.png"],

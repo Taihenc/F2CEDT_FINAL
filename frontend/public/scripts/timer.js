@@ -4,12 +4,13 @@ export default class Timer {
 		this.time = 0;
 		this.timer = null;
 	}
-	start() {
+	start(routine) {
 		const self = this;
 		self.updateDisplay();
 		this.timer = setInterval(function () {
 			self.time++;
 			self.updateDisplay();
+			if (routine) routine(self.time);
 		}, 1000);
 	}
 	stop() {

@@ -91,7 +91,7 @@
 	width: 100%;
 }
 
-.cut-pannel-wrap svg path:hover[id] {
+.cut-pannel-wrap svg path.clickable:hover[id] {
 	fill: var(--text-color-orange);
 	opacity: 0.7;
 }

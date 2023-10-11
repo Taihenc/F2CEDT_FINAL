@@ -174,7 +174,21 @@ function StartCooking(obj) {
 	let front = true;
 	let mouseDownTime, mouseUpTime;
 
-	timer.start();
+	timer.start((time) => {
+		if (time > 8) {
+			if (front) {
+				ChangeDoneness(obj, 'burned', 'back');
+			} else {
+				ChangeDoneness(obj, 'burned', 'front');
+			}
+		} else if (time > 5) {
+			if (front) {
+				ChangeDoneness(obj, 'cooked', 'back');
+			} else {
+				ChangeDoneness(obj, 'cooked', 'front');
+			}
+		}
+	});
 	cooking_time.parentNode.style.opacity = 1;
 	const cut_flip = document.getElementById('cut-flip');
 
@@ -198,6 +212,8 @@ function StartCooking(obj) {
 		mouseUpTime = new Date().getTime();
 		if (mouseUpTime - mouseDownTime < 100) {
 			clickEvent();
+		} else if (mouseUpTime - mouseDownTime < 1000) {
+			timer.stop();
 		}
 	};
 
@@ -299,7 +315,14 @@ function cookingPanelInit() {
 	});
 
 	cut_paths.forEach((path) => {
+		path.style.opacity = 0.5;
 		if (path.id != '') {
+			// if id is valud
+			if (!cookings.some((cooking) => cooking.cut_id === path.id)) {
+				return;
+			}
+			path.style.opacity = 1;
+			path.classList.add('clickable');
 			path.addEventListener('click', () => {
 				// gernate new cooking cut and append to cut-on-plate
 				/**
@@ -308,8 +331,8 @@ function cookingPanelInit() {
 				const cooking_cut = cookings.find((cooking) => {
 					return cooking.cut_id == path.id;
 				});
-				console.log(cooking_cut);
 				const cooking_cut_element = GenerateCookingCut(cooking_cut);
+				ChangeDoneness(cooking_cut_element, 'raw', 'both');
 				cut_plate.appendChild(cooking_cut_element);
 				MovableObject(
 					cooking_cut_element,
@@ -334,5 +357,44 @@ function cookingPanelInit() {
 	function openPanel() {
 		hitboxsDisplayNoneExcept(cut_pannel_wrap);
 		cut_pannel_wrap.style = null;
+	}
+}
+
+/**
+ * @param {Element} cooking_cut
+ * @param {"raw" | "cooked" | "burned"} doneness
+ * @param {"front" | "back" | "both"} option
+ */
+function ChangeDoneness(cooking_cut, doneness, option) {
+	const cooking_img = cooking_cut.getElementsByTagName('img');
+	let opacityValues;
+
+	if (option === 'front') {
+		opacityValues = {
+			raw: [1, 0, 0],
+			cooked: [0, 1, 0],
+			burned: [0, 0, 1],
+		};
+		for (let i = 0; i < 3; i++) {
+			cooking_img[i].style.opacity = opacityValues[doneness][i];
+		}
+	} else if (option === 'back') {
+		opacityValues = {
+			raw: [1, 0, 0],
+			cooked: [0, 1, 0],
+			burned: [0, 0, 1],
+		};
+		for (let i = 3; i < 6; i++) {
+			cooking_img[i].style.opacity = opacityValues[doneness][i - 3];
+		}
+	} else if (option === 'both') {
+		opacityValues = {
+			raw: [1, 0, 0, 1, 0, 0],
+			cooked: [0, 1, 0, 0, 1, 0],
+			burned: [0, 0, 1, 0, 0, 1],
+		};
+		for (let i = 0; i < 6; i++) {
+			cooking_img[i].style.opacity = opacityValues[doneness][i];
+		}
 	}
 }
