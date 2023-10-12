@@ -11,7 +11,7 @@
 	justify-content: center;
 	align-items: center;
 	/* background-color: white; */
-	z-index: 1;
+	z-index: 2;
 }
 
 #nav-bar-link {
@@ -28,14 +28,14 @@
 }
 
 #nav-bar > .hamburger-lines {
-	display: block;
 	height: 4em;
 	width: 5em;
 	position: absolute;
 	top: cal(50% - 4em);
 	right: 7%;
 	z-index: 2;
-	display: flex;
+	/* display: flex; */
+	display: none;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -165,6 +165,10 @@
 		box-shadow: 4px 4px 30px 2px rgba(0, 0, 0, 0.25);
 	}
 
+	#nav-bar > .hamburger-lines {
+		display: flex;
+	}
+
 	#nav-bar > .hamburger-lines .line {
 		display: block;
 	}
@@ -194,5 +198,12 @@
 	#nav-bar-link > button.text-selected {
 		color: white !important;
 		background: rgba(255, 110, 0, 0.6);
+	}
+
+	#nav-bar #nav-bar-pan-left {
+		width: 10%;
+	}
+	#nav-bar #nav-bar-pan-right {
+		width: 10%;
 	}
 }

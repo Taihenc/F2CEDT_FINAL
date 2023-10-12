@@ -1,0 +1,136 @@
+{
+	"$schema": "http://json-schema.org/draft-07/schema",
+	"type": "array",
+	"default": [],
+	"title": "Root Schema",
+	"items": {
+		"type": "object",
+		"default": {},
+		"title": "A Schema",
+		"required": [
+			"cut_id",
+			"cooking_id",
+			"cooking_path_img",
+			"cooking_name",
+			"cooking_size_text",
+			"cooking_temperature_text",
+			"cooking_time_text",
+			"cooking_perfect_sore"
+		],
+		"properties": {
+			"cut_id": {
+				"type": "string",
+				"default": "",
+				"title": "The cut_id Schema",
+				"enum": [
+					"cut_head",
+					"cut_neck",
+					"cut_tongue",
+					"cut_cheek",
+					"cut_chuck",
+					"cut_brisket",
+					"cut_shank",
+					"cut_rib",
+					"cut_plate",
+					"cut_shortloin",
+					"cut_flank",
+					"cut_tenderloin",
+					"cut_topsirloin",
+					"cut_sirloin",
+					"cut_buttomsirloin",
+					"cut_round",
+					"cut_oxtail"
+				]
+			},
+			"cooking_id": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_id Schema",
+				"examples": ["cooking_chuck"]
+			},
+			"cooking_path_img": {
+				"type": "array",
+				"default": [],
+				"title": "The cooking_path_img Schema",
+				"items": {
+					"type": "string",
+					"title": "cut img",
+					"examples": ["./img/cooking_chunk_raw.png"]
+				},
+				"examples": [
+					[
+						"./img/cooking_chunk_raw.png",
+						"./img/cooking_chunk_cooked.png",
+						"./img/cooking_chunk_burned.png"
+					]
+				]
+			},
+			"cooking_name": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_name Schema",
+				"examples": ["Chuck"]
+			},
+			"cooking_size_text": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_size_text Schema",
+				"examples": ["1 1/2 to 2 inches thick"]
+			},
+			"cooking_temperature_text": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_temperature_text Schema",
+				"examples": ["Medium-high to high heat"]
+			},
+			"cooking_time_text": {
+				"type": "string",
+				"default": "",
+				"title": "The cooking_time_text Schema",
+				"examples": [
+					"1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness"
+				]
+			},
+			"cooking_perfect_score": {
+				"type": "number",
+				"default": 0,
+				"title": "The cooking_perfect_score Schema",
+				"examples": [69]
+			}
+		},
+		"examples": [
+			{
+				"cut_id": "ใช้อันเดียวกับ cut_id",
+				"cooking_id": "cooking_chuck",
+				"cooking_path_img": [
+					"./img/cooking_chunk_raw.png",
+					"./img/cooking_chunk_cooked.png",
+					"./img/cooking_chunk_burned.png"
+				],
+				"cooking_name": "Chuck",
+				"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+				"cooking_temperature_text": "Medium-high to high heat",
+				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
+				"cooking_perfect_score": 69
+			}
+		]
+	},
+	"examples": [
+		[
+			{
+				"cut_id": "ใช้อันเดียวกับ cut_id",
+				"cooking_id": "cooking_chuck",
+				"cooking_path_img": [
+					"./img/cooking_chunk_raw.png",
+					"./img/cooking_chunk_cooked.png",
+					"./img/cooking_chunk_burned.png"
+				],
+				"cooking_name": "Chuck",
+				"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+				"cooking_temperature_text": "Medium-high to high heat",
+				"cooking_time_text": "1 to 2 minutes per side\u003cbr\u003efor medium-rare to medium doneness",
+				"cooking_perfect_score": 69
+			}
+		]
+	]
+}

@@ -5,7 +5,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>YAKINIKU</title>
-    <link rel="icon" href="./img/common/Yakiniku.png">
+    <link rel="icon" href="./img/common/favicon.png">
     <link rel="stylesheet" href="./styles/base.css">
     <link rel="stylesheet" href="./styles/nav.css">
     <link rel="stylesheet" href="./styles/home.css">
@@ -13,7 +13,10 @@
     <link rel="stylesheet" href="./styles/breed-card.css">
     <link rel="stylesheet" href="./styles/home-card.css">
     <link rel="stylesheet" href="./styles/cut.css">
+    <link rel="stylesheet" href="./styles/cooking.css">
+    <link rel="stylesheet" href="./styles/cooking-cut.css">
     <link rel="stylesheet" href="./styles/typeface.css">
+    <link rel="stylesheet" href="./styles/temp.css">
 </head>
 
 <body>
@@ -32,14 +35,17 @@
                 <button class='text-header'>Cut</button>
                 <button class='text-header'>Cooking</button>
             </div>
-            <div id='nav-bar-pan-left'></div>
-            <div id='nav-bar-pan-right'></div>
+            <div id='nav-bar-pan-left' draggable="false" ondragstart="return false;"></div>
+            <div id='nav-bar-pan-right' draggable="false" ondragstart="return false;"></div>
         </nav>
         <!-- replace me! -->
     </main>
     <script type='module' src='./scripts/navigation.js'></script>
+    <script type='module' src='./scripts/mouse-handle.js'></script>
+    <script type='module' src='./scripts/touch-handle.js'></script>
     <script type='module' src='./scripts/breed-manip.js'></script>
     <script type='module' src='./scripts/cut-manip.js'></script>
+    <script type='module' src='./scripts/cooking-manip.js'></script>
 </body>
 
 </html>

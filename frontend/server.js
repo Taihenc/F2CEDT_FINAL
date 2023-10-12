@@ -2,6 +2,7 @@ import express from 'express';
 import home from './public/components/home.js';
 import breed from './public/components/breed.js';
 import cut from './public/components/cut.js';
+import cooking from './public/components/cooking.js';
 import fs from 'fs';
 import path from 'path';
 import { Set_backend_url } from './public/scripts/config.js';
@@ -23,7 +24,7 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 app.get('/', (req, res) => {
-	Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
+	// Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
 	fs.readFile(
 		path.resolve('./public/template.html'),
 		'utf-8',
@@ -38,7 +39,7 @@ app.get('/', (req, res) => {
 				append += home(0, true);
 				append += await breed(1, false);
 				append += await cut(2, false);
-				append += home(3, false);
+				append += await cooking(3, false);
 				return res.send(html.replace('<!-- replace me! -->', append));
 			})();
 		}

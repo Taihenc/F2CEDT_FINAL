@@ -205,5 +205,86 @@
 		"breed_price_level": "Moderate",
 		"breed_marbling_level": "Low",
 		"breed_info": "Ankole cattle, native to Africa, provide leaner meat with low marbling. They are known for their distinctive long, upward-curving horns and are well-adapted to the African climate."
+	},
+	{
+		"breed_path_img": "./img/maine_ancestry.png",
+		"breed_name": "Maine-Anjou",
+		"breed_country": "France",
+		"breed_country_img": "../country/france.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Maine-Anjou cattle, from France, are well-muscled with good meat quality and moderate marbling. They are known for their adaptability and are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/belgian_blue.png",
+		"breed_name": "Belgian Blue",
+		"breed_country": "Belgium",
+		"breed_country_img": "../country/belgium.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Low to moderate",
+		"breed_info": "Belgian Blue cattle, originating from Belgium, are known for their heavily muscled bodies and low to moderate marbling. They are prized for their meat yield and quality."
+	},
+	{
+		"breed_path_img": "./img/charbray.png",
+		"breed_name": "Charbray",
+		"breed_country": "United States",
+		"breed_country_img": "../country/unitedstates.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "High",
+		"breed_info": "Charbray cattle are a crossbreed that combines the qualities of Charolais and Brahman. They offer high marbling and are prized for their premium beef quality."
+	},
+	{
+		"breed_path_img": "./img/gyr.png",
+		"breed_name": "Gyr",
+		"breed_country": "India",
+		"breed_country_img": "../country/india.png",
+		"breed_price_level": "Moderate to high",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "The Gyr cow, native to India, offers moderate marbling and is known for its heat tolerance and adaptability to tropical climates. They are prized for their dairy and beef production capabilities."
+	},
+	{
+		"breed_path_img": "./img/south_devon.png",
+		"breed_name": "South Devon",
+		"breed_country": "United Kingdom",
+		"breed_country_img": "../country/unitedkingdom.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "South Devon cattle, known for their rich red color and solid build, provide good meat quality with moderate marbling. They are dual-purpose cattle suitable for both beef and milk production."
+	},
+	{
+		"breed_path_img": "./img/blaarkop.png",
+		"breed_name": "Blaarkop",
+		"breed_country": "Netherlands",
+		"breed_country_img": "../country/netherlands.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Blaarkop cattle, with their striking black and white heads, offer good meat quality with moderate marbling. They are a traditional Dutch breed known for their milk and beef production."
+	},
+	{
+		"breed_path_img": "./img/belmont_red.png",
+		"breed_name": "Belmont Red",
+		"breed_country": "Australia",
+		"breed_country_img": "../country/australia.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "Belmont Red cattle, originating from Australia, offer moderate marbling and are known for their adaptability to various climates. They are a versatile choice for beef production."
+	},
+	{
+		"breed_path_img": "./img/canadian_angus.png",
+		"breed_name": "Canadian Angus",
+		"breed_country": "Canada",
+		"breed_country_img": "../country/canada.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate to high",
+		"breed_info": "Canadian Angus cattle, a breed of Angus originating in Canada, provide moderate to high marbling and are prized for their premium beef quality. They are well-suited for cold Canadian climates."
+	},
+	{
+		"breed_path_img": "./img/polish.png",
+		"breed_name": "Polish Cow",
+		"breed_country": "Poland",
+		"breed_country_img": "../country/poland.png",
+		"breed_price_level": "Moderate",
+		"breed_marbling_level": "Moderate",
+		"breed_info": "https://www.youtube.com/watch?v=rRPQs_kM_nw&t=11539s"
 	}
 ]

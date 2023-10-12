@@ -23,6 +23,19 @@ export let backend_url = 'http://localhost:81';
  * @property {string} cut_info
  */
 
+/**
+ * @typedef {Object} Cooking_cut
+ * @property {string} _id
+ * @property {string} cut_id
+ * @property {string} cooking_id
+ * @property {Array} cooking_path_img
+ * @property {string} cooking_name
+ * @property {string} cooking_size_text
+ * @property {string} cooking_temperature_text
+ * @property {string} cooking_time_text
+ * @property {number} cooking_perfect_score
+ *  */
+
 export const toPercentage = {
 	'Low': 0,
 	'Low to moderate': 25,

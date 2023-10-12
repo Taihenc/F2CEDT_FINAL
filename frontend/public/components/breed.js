@@ -1,5 +1,6 @@
 import { get_breeds } from '../scripts/api.js';
 import { toPercentage, backend_url } from '../scripts/config.js';
+export let query = {};
 
 /**@typedef {import('../scripts/config.js').Breed_card} Breed_card */
 
@@ -26,6 +27,28 @@ export default async function breed(page_id, is_show) {
         <div id="breed-sort">
             <div id='breed-sort-icon'></div>
             <div id='breed-sort-text' class='text-para-light'>Sort</div>
+            <div class='sort-pannel text-sub-header' style='display: none; opacity: 0;'>
+                <div data-field='breed_name' class='name sort-option ascending'>
+                        <span>
+                            <img src="./img/common/arrow_down.png" alt="">
+                            <img src="./img/common/arrow_up.png" alt="">
+                        </span>
+                    Name
+                    </div> 
+                    <div data-field='breed_country' class='country sort-option ascending'>
+                        <span>
+                            <img src="./img/common/arrow_down.png" alt="">
+                            <img src="./img/common/arrow_up.png" alt="">
+                        </span>
+                    Country
+                    </div> 
+                </div>
+            </div>
+        <div class="breed-tools-pannel" style='display: none; opacity: 0'>
+            <div class='filter-selected'>
+            </div>
+            <div class='filter-options'>
+            </div>
         </div>
     </div>
     <div class="breed-cards" style='opacity: 0; margin-top: 4em'>
@@ -35,7 +58,7 @@ export default async function breed(page_id, is_show) {
     `;
 	let append = '';
 	try {
-		const breeds = await get_breeds();
+		const breeds = await get_breeds(query);
 		append = breeds.map((breed) => generateBreedCard(breed)).join('');
 	} catch (error) {
 		console.error('Error fetching breeds:', error);
@@ -45,7 +68,7 @@ export default async function breed(page_id, is_show) {
 }
 
 /**@param {Breed_card} breed */
-function generateBreedCard(breed) {
+export function generateBreedCard(breed) {
 	const breed_card_template = `
 <div class="card-breed">
     <div class="card-breed-top">

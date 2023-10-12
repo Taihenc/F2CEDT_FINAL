@@ -1,0 +1,72 @@
+[
+	{
+		"cut_id": "cut_chuck",
+		"cooking_id": "cooking_chuck",
+		"cooking_path_img": [
+			"./img/cooking_chunk_raw.png",
+			"./img/cooking_chunk_cooked.png",
+			"./img/cooking_chunk_burned.png"
+		],
+		"cooking_name": "Chuck",
+		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+		"cooking_temperature_text": "Medium-high to high heat",
+		"cooking_time_text": "1 to 2 minutes <br>for medium-rare to medium doneness",
+		"cooking_perfect_score": 60
+	},
+	{
+		"cut_id": "cut_brisket",
+		"cooking_id": "cooking_brisket",
+		"cooking_path_img": [
+			"./img/cooking_brisket_raw.png",
+			"./img/cooking_brisket_cooked.png",
+			"./img/cooking_brisket_burned.png"
+		],
+		"cooking_name": "Brisket",
+		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+		"cooking_temperature_text": "Low to medium",
+		"cooking_time_text": "20-30 seconds  (thin slices cook quickly)",
+		"cooking_perfect_score": 10
+	},
+	{
+		"cut_id": "cut_plate",
+		"cooking_id": "cooking_plate",
+		"cooking_path_img": [
+			"./img/cooking_plate_raw.png",
+			"./img/cooking_plate_cooked.png",
+			"./img/cooking_plate_burned.png"
+		],
+		"cooking_name": "Plate",
+		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+		"cooking_temperature_text": "Low to medium",
+		"cooking_time_text": "20-30 seconds  (thin slices cook quickly)",
+		"cooking_perfect_score": 10
+	},
+	{
+		"cut_id": "cut_rib",
+		"cooking_id": "cooking_rib",
+		"cooking_path_img": [
+			"./img/cooking_rib_raw.png",
+			"./img/cooking_rib_cooked.png",
+			"./img/cooking_rib_burned.png"
+		],
+		"cooking_name": "Rib",
+		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+		"cooking_temperature_text": "Medium to high",
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
+	},
+	{
+		"cut_id": "cut_flank",
+		"cooking_id": "cooking_flank",
+		"cooking_path_img": [
+			"./img/cooking_flank_raw.png",
+			"./img/cooking_flank_cooked.png",
+			"./img/cooking_flank_burned.png"
+		],
+		"cooking_name": "Flank",
+		"cooking_size_text": "Thin slices, about 1/8 to 1/4-inch thick",
+		"cooking_temperature_text": "Medium to high",
+		"cooking_time_text": "30-45 seconds ",
+		"cooking_perfect_score": 45
+	}
+]
