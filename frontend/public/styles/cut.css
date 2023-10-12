@@ -11,7 +11,7 @@
 	padding: 0 5em;
 	justify-content: center;
 	align-items: center;
-	z-index: 0;
+	z-index: auto;
 }
 
 .cut-selection {
