@@ -547,11 +547,6 @@ function ChangeDoneness(cooking_cut, doneness, option) {
 function popUpScore({ score_percent, score_text }) {
 	console.log(score_percent, score_text);
 	let text = null;
-	cooking_score_div.childNodes.forEach((element) => {
-		if (element.tagName == 'IMG') {
-			element.style.display = 'none';
-		}
-	});
 	if (score_text == 'Perfect') {
 		cooking_score_div.childNodes.forEach((element) => {
 			if (element?.classList?.contains('perfect')) {
@@ -583,6 +578,11 @@ function popUpScore({ score_percent, score_text }) {
 		text.classList.add('popup-animation');
 		text.addEventListener('animationend', () => {
 			text.classList.remove('popup-animation');
+			cooking_score_div.childNodes.forEach((element) => {
+				if (element.tagName == 'IMG') {
+					element.style.display = 'none';
+				}
+			});
 		});
 	}
 }

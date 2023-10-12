@@ -24,7 +24,7 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 app.get('/', (req, res) => {
-	Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
+	// Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
 	fs.readFile(
 		path.resolve('./public/template.html'),
 		'utf-8',
