@@ -544,6 +544,10 @@ function ChangeDoneness(cooking_cut, doneness, option) {
 	}
 }
 
+/**
+ *
+ * @param {{number, "Perfect"|"Good"|"Ok"|"Bad"}} param0
+ */
 function popUpScore({ score_percent, score_text }) {
 	console.log(score_percent, score_text);
 	let text = null;
@@ -575,14 +579,14 @@ function popUpScore({ score_percent, score_text }) {
 				text = element;
 			}
 		});
-		text.classList.add('popup-animation');
-		text.addEventListener('animationend', () => {
-			text.classList.remove('popup-animation');
-			cooking_score_div.childNodes.forEach((element) => {
-				if (element.tagName == 'IMG') {
-					element.style.display = 'none';
-				}
-			});
-		});
 	}
+	text.classList.add('popup-animation');
+	text.addEventListener('animationend', () => {
+		text.classList.remove('popup-animation');
+		cooking_score_div.childNodes.forEach((element) => {
+			if (element.tagName == 'IMG') {
+				element.style.display = 'none';
+			}
+		});
+	});
 }

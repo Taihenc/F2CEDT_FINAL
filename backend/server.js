@@ -6,7 +6,7 @@ import InitCowCuts from './src/db/init/cow_cut_init.js';
 import InitCowCooking from './src/db/init/cow_cooking_cut.js';
 
 const app = express();
-const PORT = 81;
+const PORT = 8080;
 
 await InitCowBreeds();
 await InitCowCuts();

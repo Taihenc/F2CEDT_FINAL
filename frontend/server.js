@@ -9,7 +9,7 @@ import { Set_backend_url } from './public/scripts/config.js';
 
 const app = express();
 const PORT = 80;
-const backend_PORT = 81;
+const backend_PORT = 8080;
 
 app.use(express.static('public'));
 
