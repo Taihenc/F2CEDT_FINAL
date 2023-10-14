@@ -126,3 +126,11 @@ export function generateBreedCard(breed) {
 </div>`;
 	return breed_card_template;
 }
+
+export function generateLoadMoreButton() {
+	return `<div class="breed-loadmore">
+    <div id='breed-loadmore-button' class="breed-loadmore-button text-header">
+        loadmore
+    </div>
+</div>`;
+}

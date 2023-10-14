@@ -1,5 +1,8 @@
-import { get_breeds, get_breeds_sorted } from '../scripts/api.js';
-import { generateBreedCard } from '../components/breed.js';
+import { get_breeds } from '../scripts/api.js';
+import {
+	generateBreedCard,
+	generateLoadMoreButton,
+} from '../components/breed.js';
 import { backend_url } from './config.js';
 import query from './breed-query.js';
 
@@ -18,41 +21,6 @@ let isFilterOpen = false;
 let isSortOpen = false;
 
 /**
- * Add click event to each card expand button
- */
-function addClickExpand() {
-	const buttons = document.getElementsByClassName('card-breed-expand-button');
-	// add click event to each button
-	for (let i = 0; i < buttons.length; i++) {
-		buttons[i].parentElement.addEventListener('click', function () {
-			let info = buttons[i];
-			info = info.parentElement.parentElement.getElementsByClassName(
-				'card-breed-more-info'
-			)[0];
-			if (info.style.height != '0px') {
-				info.style.height = 0;
-				buttons[i].classList.remove('card-breed-expand-button-active');
-			} else {
-				buttons[i].classList.add('card-breed-expand-button-active');
-				info.childNodes.forEach((node) => {
-					if (node.tagName == 'DIV') {
-						const height_in_em =
-							node.offsetHeight /
-							parseFloat(
-								window
-									.getComputedStyle(info)
-									.getPropertyValue('font-size')
-							);
-						info.style.height = height_in_em + 'em';
-					}
-				});
-			}
-		});
-	}
-}
-addClickExpand();
-
-/**
  * add event listener to search input
  */
 breed_input.addEventListener('keydown', async (event) => {
@@ -63,13 +31,14 @@ breed_input.addEventListener('keydown', async (event) => {
 		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
 		breed_cards.innerHTML = append;
 		addClickExpand();
+		addLoadMoreButton();
 	}
 });
 
 /**
  * Generate filter options by fetch all breeds country
  */
-get_breeds(query.getQuery()).then((breeds) => {
+get_breeds(query.getQuery('All')).then((breeds) => {
 	const filters = new Set();
 	breeds.forEach((breed) => {
 		if (filters.has(breed.breed_country)) return;
@@ -134,6 +103,7 @@ filter_button.addEventListener('click', async () => {
 		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
 		breed_cards.innerHTML = append;
 		addClickExpand();
+		addLoadMoreButton();
 	}
 });
 
@@ -167,6 +137,7 @@ sort_button.addEventListener('click', async () => {
 		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
 		breed_cards.innerHTML = append;
 		addClickExpand();
+		addLoadMoreButton();
 	}
 	sort_pannel.childNodes.forEach((option) => {
 		option.addEventListener('click', (event) => {
@@ -187,3 +158,64 @@ sort_button.addEventListener('click', async () => {
 		});
 	});
 });
+
+/**
+ * Add click event to each card expand button
+ */
+function addClickExpand() {
+	const buttons = document.getElementsByClassName('card-breed-expand-button');
+	// add click event to each button
+	for (let i = 0; i < buttons.length; i++) {
+		buttons[i].parentElement.addEventListener('click', function () {
+			let info = buttons[i];
+			info = info.parentElement.parentElement.getElementsByClassName(
+				'card-breed-more-info'
+			)[0];
+			if (info.style.height != '0px') {
+				info.style.height = 0;
+				buttons[i].classList.remove('card-breed-expand-button-active');
+			} else {
+				buttons[i].classList.add('card-breed-expand-button-active');
+				info.childNodes.forEach((node) => {
+					if (node.tagName == 'DIV') {
+						const height_in_em =
+							node.offsetHeight /
+							parseFloat(
+								window
+									.getComputedStyle(info)
+									.getPropertyValue('font-size')
+							);
+						info.style.height = height_in_em + 'em';
+					}
+				});
+			}
+		});
+	}
+}
+addClickExpand();
+
+/**
+ * this will init and handle the loadmore button click event
+ */
+function addLoadMoreButton() {
+	breed_cards.innerHTML += generateLoadMoreButton();
+	document
+		.getElementById('breed-loadmore-button')
+		.addEventListener('click', async (event) => loadmoreHandler(event));
+}
+async function loadmoreHandler(event) {
+	event.target.parentNode.remove();
+	query.loadmore(5);
+	const breeds = await get_breeds(query.getQuery());
+	const append = breeds.map((breed) => generateBreedCard(breed)).join('');
+	breed_cards.innerHTML += append;
+	breed_cards.innerHTML += generateLoadMoreButton();
+	addClickExpand();
+	document
+		.getElementById('breed-loadmore-button')
+		.removeEventListener('click', loadmoreHandler);
+	document
+		.getElementById('breed-loadmore-button')
+		.addEventListener('click', loadmoreHandler);
+}
+addLoadMoreButton();

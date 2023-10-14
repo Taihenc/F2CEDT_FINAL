@@ -8,6 +8,10 @@
 	--breed-tools-height: 1.75em;
 }
 
+main:has(.content-breed.content-on-show) {
+	overflow: hidden;
+}
+
 .content-breed {
 	margin-top: var(--nav-bar-height);
 	position: absolute;
@@ -17,6 +21,7 @@
 	gap: 1.5em;
 	height: var(--content-height);
 	width: 100vw;
+	overflow: hidden;
 }
 
 .breed-tools {
@@ -219,8 +224,38 @@
 	color: var(--text-color-light-black);
 }
 
+.breed-loadmore {
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.breed-loadmore-button {
+	display: inline;
+	font-size: 1.25em;
+	color: white;
+	background-color: var(--text-color-orange);
+	padding: 0.1em 1em;
+	border-radius: 5em;
+	cursor: pointer;
+	user-select: none;
+}
+
+.breed-loadmore-button:hover {
+	opacity: 0.5;
+}
+
 @media (max-width: 600px) {
 	.content-breed {
 		margin-top: calc(var(--nav-bar-height) + 5em);
+	}
+
+	.breed-loadmore {
+		bottom: 10em;
+	}
+
+	.breed-loadmore-button {
+		font-size: 3em;
 	}
 }
