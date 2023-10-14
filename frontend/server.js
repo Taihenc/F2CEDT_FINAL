@@ -5,7 +5,7 @@ import cut from './public/components/cut.js';
 import cooking from './public/components/cooking.js';
 import fs from 'fs';
 import path from 'path';
-import { Set_backend_url } from './public/scripts/config.js';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = 80;
@@ -24,7 +24,7 @@ app.listen(PORT, '0.0.0.0', () => {
 });
 
 app.get('/', (req, res) => {
-	// Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
+	Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
 	fs.readFile(
 		path.resolve('./public/template.html'),
 		'utf-8',
@@ -45,3 +45,11 @@ app.get('/', (req, res) => {
 		}
 	);
 });
+
+function Set_backend_url(url) {
+	const config_path = `${fileURLToPath(import.meta.url)}`;
+	const regex = /\b(backend_url\s*=\s*')[^']*'/i;
+
+	let data = fs.readFileSync(config_path, 'utf-8');
+	fs.writeFileSync(config_path, data.replace(regex, `$1${url}'`), 'utf-8');
+}
