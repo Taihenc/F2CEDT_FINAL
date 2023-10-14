@@ -76,7 +76,7 @@ export default async function cooking(page_id, is_show) {
         </div>
     </div>
     <div class="cut-info">
-        <div id='cut-name' class="cut-name text-header">Short Rib</div>
+        <div id='cut-name' class="cut-name text-header">Brisket</div>
         <div class="cut-property-info">
             <div class="property text-header">
                 Size
@@ -84,7 +84,7 @@ export default async function cooking(page_id, is_show) {
                     <img src="./img/04_cooking/knife.svg" alt="">
                 </span>
             </div>
-            <div id='cut-size-info' class="property-info text-sub-header">1/4 to 1/2 inch thick slices</div>
+            <div id='cut-size-info' class="property-info text-sub-header">Thin slices, about 1/8 to 1/4-inch thick</div>
         </div>
         <div class="cut-property-info">
             <div class="property text-header">
@@ -93,7 +93,7 @@ export default async function cooking(page_id, is_show) {
                     <img src="./img/04_cooking/thermometer.svg" alt="">
                 </span>
             </div>
-            <div id='cut-temp-info' class="property-info text-sub-header">Medium-high to high heat</div>
+            <div id='cut-temp-info' class="property-info text-sub-header">Low to medium</div>
         </div>
         <div class="cut-property-info">
             <div class="property text-header">
@@ -103,9 +103,7 @@ export default async function cooking(page_id, is_show) {
                 </span>
             </div>
             <div class="property-info text-sub-header">
-                <div id='cut-time-info' class="property-info">1 to 2 minutes per side
-                    <br>for medium-rare to medium doneness
-                </div>
+                <div id='cut-time-info' class="property-info">20-30 seconds (thin slices cook quickly)</div>
             </div>
         </div>
     </div>
