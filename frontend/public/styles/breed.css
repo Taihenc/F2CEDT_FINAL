@@ -86,10 +86,13 @@
 	flex-direction: column;
 	background-color: var(--breed-tools-bg);
 	border-radius: var(--breed-card-border-radius);
+	user-select: none;
+	pointer-events: none;
 }
 
 .sort-pannel .sort-option {
 	font-size: 1em;
+	pointer-events: all;
 }
 
 .sort-pannel .sort-option span img {

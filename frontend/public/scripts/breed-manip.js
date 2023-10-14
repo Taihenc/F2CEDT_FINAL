@@ -1,7 +1,7 @@
-import breed, { query } from '../components/breed.js';
 import { get_breeds, get_breeds_sorted } from '../scripts/api.js';
 import { generateBreedCard } from '../components/breed.js';
 import { backend_url } from './config.js';
+import query from './breed-query.js';
 
 const breed_input = document.getElementById('breed-input');
 const breed_cards = document.getElementsByClassName('breed-cards')[0];
@@ -17,6 +17,9 @@ const sort_pannel = document.getElementsByClassName('sort-pannel')[0];
 let isFilterOpen = false;
 let isSortOpen = false;
 
+/**
+ * Add click event to each card expand button
+ */
 function addClickExpand() {
 	const buttons = document.getElementsByClassName('card-breed-expand-button');
 	// add click event to each button
@@ -47,26 +50,26 @@ function addClickExpand() {
 		});
 	}
 }
+addClickExpand();
 
+/**
+ * add event listener to search input
+ */
 breed_input.addEventListener('keydown', async (event) => {
 	if (event.key === 'Enter') {
 		const breed_name = breed_input.value;
-		const breeds = await get_breeds(
-			`{ "$or": [
-				{"breed_name": {"$regex": "${breed_name}", "$options": "i"}},
-				{"breed_country": {"$regex": "${breed_name}", "$options": "i"}},
-				{"breed_info": {"$regex": "${breed_name}", "$options": "i"}}
-				]}`
-		);
+		query.setSearch(breed_name);
+		const breeds = await get_breeds(query.getQuery());
 		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
 		breed_cards.innerHTML = append;
 		addClickExpand();
 	}
 });
 
-addClickExpand();
-
-const filters = get_breeds().then((breeds) => {
+/**
+ * Generate filter options by fetch all breeds country
+ */
+get_breeds(query.getQuery()).then((breeds) => {
 	const filters = new Set();
 	breeds.forEach((breed) => {
 		if (filters.has(breed.breed_country)) return;
@@ -93,6 +96,9 @@ function generateFilterOption(breed) {
 	`;
 }
 
+/**
+ * this will handle the filter button click event
+ */
 filter_button.addEventListener('click', async () => {
 	if (isFilterOpen == false) {
 		isFilterOpen = true;
@@ -119,27 +125,15 @@ filter_button.addEventListener('click', async () => {
 		filter_selected.childNodes.forEach((option) => {
 			filters_selected.add(option.id);
 		});
-		let query = '';
+		let option = [];
 		filters_selected.forEach((filter) => {
-			query += `{"breed_country": {"$regex": "${filter}", "$options": "i"}},`;
+			if (typeof filter == 'string') option.push(filter);
 		});
-		if (filters_selected.size != 1) {
-			const breeds = await get_breeds(
-				`{ "$or": [${query.substring(0, query.length - 1)}]}`
-			);
-			const append = breeds
-				.map((breed) => generateBreedCard(breed))
-				.join('');
-			breed_cards.innerHTML = append;
-			addClickExpand();
-		} else {
-			const breeds = await get_breeds();
-			const append = breeds
-				.map((breed) => generateBreedCard(breed))
-				.join('');
-			breed_cards.innerHTML = append;
-			addClickExpand();
-		}
+		query.setFilter(option);
+		const breeds = await get_breeds(query.getQuery());
+		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
+		breed_cards.innerHTML = append;
+		addClickExpand();
 	}
 });
 
@@ -168,9 +162,8 @@ sort_button.addEventListener('click', async () => {
 		const sort_option =
 			sort_pannel.getElementsByClassName('sort-option-active')[0];
 		const sort_order = sort_option.classList.contains('ascending') ? 1 : -1;
-		const breeds = await get_breeds_sorted(
-			`{"${sort_option.dataset.field}": "${sort_order}"}`
-		);
+		query.setSort(sort_option.dataset.field, sort_order);
+		const breeds = await get_breeds(query.getQuery());
 		const append = breeds.map((breed) => generateBreedCard(breed)).join('');
 		breed_cards.innerHTML = append;
 		addClickExpand();

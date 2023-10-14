@@ -4,9 +4,12 @@ import { backend_url } from './config.js';
 /**@typedef {import('./config.js').Cut_card } Cut_card */
 /**@typedef {import('./config.js').Cooking_cut } Cooking_cut */
 
-export async function get_breeds(query) {
+export async function get_breeds(q) {
+	const query = JSON.stringify(q[0]);
+	const sort = JSON.stringify(q[1]);
 	const queryParams = new URLSearchParams({
 		query: query,
+		sort: sort,
 	}).toString();
 	/**
 	 * @type {Breed_card[]}
