@@ -37,6 +37,7 @@
 	width: 100%;
 	height: 10vw;
 	background: var(--breed-card-top-bg) 50% / cover no-repeat;
+	cursor: pointer;
 }
 
 .card-breed-info {

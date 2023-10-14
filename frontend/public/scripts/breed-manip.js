@@ -160,6 +160,32 @@ sort_button.addEventListener('click', async () => {
 });
 
 /**
+ * this will init and handle the loadmore button click event
+ */
+function addLoadMoreButton() {
+	breed_cards.innerHTML += generateLoadMoreButton();
+	document
+		.getElementById('breed-loadmore-button')
+		.addEventListener('click', async (event) => loadmoreHandler(event));
+}
+async function loadmoreHandler(event) {
+	event.target.parentNode.remove();
+	query.loadmore(5);
+	const breeds = await get_breeds(query.getQuery());
+	const append = breeds.map((breed) => generateBreedCard(breed)).join('');
+	breed_cards.innerHTML += append;
+	breed_cards.innerHTML += generateLoadMoreButton();
+	addClickExpand();
+	document
+		.getElementById('breed-loadmore-button')
+		.removeEventListener('click', loadmoreHandler);
+	document
+		.getElementById('breed-loadmore-button')
+		.addEventListener('click', loadmoreHandler);
+}
+addLoadMoreButton();
+
+/**
  * Add click event to each card expand button
  */
 function addClickExpand() {
@@ -193,29 +219,3 @@ function addClickExpand() {
 	}
 }
 addClickExpand();
-
-/**
- * this will init and handle the loadmore button click event
- */
-function addLoadMoreButton() {
-	breed_cards.innerHTML += generateLoadMoreButton();
-	document
-		.getElementById('breed-loadmore-button')
-		.addEventListener('click', async (event) => loadmoreHandler(event));
-}
-async function loadmoreHandler(event) {
-	event.target.parentNode.remove();
-	query.loadmore(5);
-	const breeds = await get_breeds(query.getQuery());
-	const append = breeds.map((breed) => generateBreedCard(breed)).join('');
-	breed_cards.innerHTML += append;
-	breed_cards.innerHTML += generateLoadMoreButton();
-	addClickExpand();
-	document
-		.getElementById('breed-loadmore-button')
-		.removeEventListener('click', loadmoreHandler);
-	document
-		.getElementById('breed-loadmore-button')
-		.addEventListener('click', loadmoreHandler);
-}
-addLoadMoreButton();
