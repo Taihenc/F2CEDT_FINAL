@@ -21,7 +21,6 @@ const query = {
 		this.sort = { [field]: order };
 	},
 	getQuery: function () {
-		console.log(this.filter.$or);
 		if (this.filter.$or?.length == 0 && this.search.$or?.length == 0) {
 			return [{}, this.sort];
 		} else if (this.filter.$or?.length == 0) {
