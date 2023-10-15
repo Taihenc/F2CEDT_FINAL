@@ -335,6 +335,7 @@
 	position: relative;
 	width: 60%;
 	height: 60%;
+	z-index: 10;
 }
 
 .wood-plate-hitbox {
@@ -459,9 +460,9 @@
 }
 
 .cooking-score .score {
-	width: 20em;
+	height: 7em;
 	opacity: 0;
-	max-width: 35rem;
+	/* max-width: 35rem; */
 	position: absolute;
 	transform: translate(-50%, -50%);
 	transition-property: top, opacity;
@@ -494,5 +495,133 @@
 	100% {
 		opacity: 0;
 		transform: translate(-50%, 0);
+	}
+}
+
+@media (max-width: 600px) {
+	.content-cooking {
+		align-items: start;
+		width: 100%;
+	}
+	.cooking-wrap {
+		height: auto;
+		font-size: 3em;
+		padding-top: 1.5em;
+		align-items: start;
+		gap: 0;
+		justify-content: center;
+		align-content: start;
+	}
+	.cooking-timer {
+		top: 1em;
+	}
+	.cooking-score .score {
+		height: 15em;
+	}
+	.cut-pannel-button {
+		top: 0;
+		right: -3em;
+		height: 3em;
+		width: 3em;
+		left: auto;
+		transform: none;
+	}
+	.cut-plate {
+		width: 35%;
+		order: 0;
+		z-index: 1;
+	}
+	.cut-pannel-wrap {
+		z-index: 3;
+		width: 80%;
+		top: 50%;
+		left: 50%;
+		transform: translate(-50%, -50%);
+	}
+	.cut-pannel-wrap button {
+		font-size: 1em;
+	}
+	.cut-info {
+		font-size: 0.75em;
+		margin: 0 0;
+		margin-right: 2em;
+		order: 1;
+		width: 50%;
+		gap: 1.25em;
+		z-index: 1;
+	}
+	.wood-plate {
+		width: 40%;
+		height: auto;
+		aspect-ratio: 1/1.4;
+		order: 3;
+		z-index: 1;
+	}
+	.wood-plate-hitbox {
+		top: -5%;
+	}
+	.cooking-bg {
+		font-size: 0.45em;
+		height: 100%;
+	}
+	.cooking-bg img:nth-child(1) {
+		width: 10em;
+		bottom: 20em;
+		left: 1em;
+		opacity: 0.7;
+	}
+
+	.cooking-bg img:nth-child(2) {
+		width: 12em;
+		bottom: 12em;
+		left: 9em;
+		opacity: 0.7;
+	}
+	.cooking-bg img:nth-child(3) {
+		width: 30em;
+		bottom: auto;
+		top: 20em;
+		right: -16em;
+		opacity: 0.6;
+	}
+	.pan-panel {
+		order: 2;
+		height: auto;
+		width: 80%;
+		aspect-ratio: 1/1;
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+		margin-top: -3em;
+		/* width: 25em; */
+	}
+	.pan {
+		order: 0;
+		max-width: 100%;
+	}
+	.range-slider {
+		margin: 0;
+		margin-top: -3em;
+		order: 1;
+		position: relative;
+		width: 40%;
+		transform: none;
+		z-index: 0;
+	}
+	#slider_thumb {
+		transform-origin: 50% 50%;
+		transform: translateY(-50%);
+	}
+	.heat-slider-text {
+		top: auto;
+		bottom: -2em !important;
+		rotate: none;
+		font-size: 0.75em;
+	}
+	.heat-slider-text.medium {
+		right: 10em;
+	}
+	.range-slider_thumb {
+		width: 2.5em;
 	}
 }
