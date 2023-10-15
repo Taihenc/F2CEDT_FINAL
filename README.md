@@ -4,10 +4,12 @@ This is a final project of F2CEDT ![lading](landing.png) _this is our landing pa
 
 ## Preview
 
+<div align="center">
 <img src="./gif/overall.gif" alt="Overall GIF" width="200">
 <img src="./gif/breed.gif" alt="Overall GIF" width="200">
 <img src="./gif/cut.gif" alt="Overall GIF" width="200">
 <img src="./gif/cook.gif" alt="Overall GIF" width="200">
+</div>
 
 ### Mobile
 
