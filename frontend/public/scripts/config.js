@@ -1,4 +1,4 @@
-// this will automatically change by fronend server
+// set this to the backend url
 export const backend_url = 'http://localhost:8080';
 
 /**
