@@ -52,6 +52,11 @@ let getHeatLevel = null;
 
 cookingPanelInit();
 InitSlider();
+generateAndAppendToPlate(
+	cookings.find((cooking) => {
+		return cooking.cut_id == 'cut_brisket';
+	})
+);
 
 document.getElementsByClassName('content-cooking')[0].addEventListener(
 	'touchmove',
@@ -472,24 +477,8 @@ function cookingPanelInit() {
 				cooking_info.cut_time_info.textContent =
 					cooking_cut.cooking_time_text;
 				// gernate new cooking cut and append to cut-on-plate
-				const cooking_cut_element = GenerateCookingCut(cooking_cut);
-				cut_plate.childNodes.forEach((element) => {
-					if (element?.classList?.contains('cooking-cut'))
-						element.remove();
-				});
-				ChangeDoneness(cooking_cut_element, 'raw', 'both');
-				cut_plate.appendChild(cooking_cut_element);
-				MovableObject(
-					cooking_cut_element,
-					pan,
-					pan_hitbox,
-					(obj, dest, hit) => {
-						dest.appendChild(obj);
-						StartCooking(obj);
-					}
-				);
+				generateAndAppendToPlate(cooking_cut);
 				closePanel();
-				hitboxsDisplayBlockExcept();
 			});
 		}
 	});
@@ -503,6 +492,24 @@ function cookingPanelInit() {
 		hitboxsDisplayNoneExcept(cut_pannel_wrap);
 		cut_pannel_wrap.style = null;
 	}
+}
+
+/**
+ *
+ * @param {Cooking_cut} cooking_cut
+ */
+function generateAndAppendToPlate(cooking_cut) {
+	const cooking_cut_element = GenerateCookingCut(cooking_cut);
+	cut_plate.childNodes.forEach((element) => {
+		if (element?.classList?.contains('cooking-cut')) element.remove();
+	});
+	ChangeDoneness(cooking_cut_element, 'raw', 'both');
+	cut_plate.appendChild(cooking_cut_element);
+	MovableObject(cooking_cut_element, pan, pan_hitbox, (obj, dest, hit) => {
+		dest.appendChild(obj);
+		StartCooking(obj);
+	});
+	hitboxsDisplayBlockExcept();
 }
 
 /**
@@ -544,6 +551,10 @@ function ChangeDoneness(cooking_cut, doneness, option) {
 	}
 }
 
+/**
+ *
+ * @param {{number, "Perfect"|"Good"|"Ok"|"Bad"}} param0
+ */
 function popUpScore({ score_percent, score_text }) {
 	console.log(score_percent, score_text);
 	let text = null;
@@ -575,14 +586,14 @@ function popUpScore({ score_percent, score_text }) {
 				text = element;
 			}
 		});
-		text.classList.add('popup-animation');
-		text.addEventListener('animationend', () => {
-			text.classList.remove('popup-animation');
-			cooking_score_div.childNodes.forEach((element) => {
-				if (element.tagName == 'IMG') {
-					element.style.display = 'none';
-				}
-			});
-		});
 	}
+	text.classList.add('popup-animation');
+	text.addEventListener('animationend', () => {
+		text.classList.remove('popup-animation');
+		cooking_score_div.childNodes.forEach((element) => {
+			if (element.tagName == 'IMG') {
+				element.style.display = 'none';
+			}
+		});
+	});
 }

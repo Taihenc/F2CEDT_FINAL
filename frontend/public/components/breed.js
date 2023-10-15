@@ -1,6 +1,6 @@
 import { get_breeds } from '../scripts/api.js';
 import { toPercentage, backend_url } from '../scripts/config.js';
-export let query = {};
+import query from '../scripts/breed-query.js';
 
 /**@typedef {import('../scripts/config.js').Breed_card} Breed_card */
 
@@ -58,7 +58,7 @@ export default async function breed(page_id, is_show) {
     `;
 	let append = '';
 	try {
-		const breeds = await get_breeds(query);
+		const breeds = await get_breeds(query.getQuery());
 		append = breeds.map((breed) => generateBreedCard(breed)).join('');
 	} catch (error) {
 		console.error('Error fetching breeds:', error);
@@ -125,4 +125,12 @@ export function generateBreedCard(breed) {
     </div>
 </div>`;
 	return breed_card_template;
+}
+
+export function generateLoadMoreButton() {
+	return `<div class="breed-loadmore">
+    <div id='breed-loadmore-button' class="breed-loadmore-button text-header">
+        loadmore
+    </div>
+</div>`;
 }

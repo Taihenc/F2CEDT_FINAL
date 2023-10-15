@@ -1,37 +1,20 @@
-import { query } from '../../../frontend/public/components/breed.js';
 import database from '../db/mongo.js';
 
-export async function GetCowBreeds(req, res) {
+export default async function GetCowBreeds(req, res) {
 	const collection = database.collection('cow_breeds');
-	let query;
+	const query = JSON.parse(req.query.query);
+	const sort = JSON.parse(req.query.sort);
+	const options = JSON.parse(req.query.options);
+	// console.log(query, sort, options);
 	try {
-		query = JSON.parse(req.query.query);
-	} catch (error) {
-		query = {};
-	}
-	if (typeof query === 'string') query = JSON.parse(query);
-	try {
-		const result = await collection.find(query).toArray();
+		const result = await collection
+			.find(query)
+			.sort(sort)
+			.skip(options.skip)
+			.limit(options.limit)
+			.toArray();
 		return res.json(result);
 	} catch {
 		return res.status(500).json({ error: error.message });
 	}
 }
-
-export async function GetCowBreedsSorted(req, res) {
-	const collection = database.collection('cow_breeds');
-	let query;
-	try {
-		query = JSON.parse(req.query.query);
-	} catch (error) {
-		query = {};
-	}
-	if (typeof query === 'string') query = JSON.parse(query);
-	try {
-		const result = await collection.find().sort(query).toArray();
-		return res.json(result);
-	} catch {
-		return res.status(500).json({ error: error.message });
-	}
-}
-// search query {$or: [{breed_name: {$regex: /angus/i}}, {breed_country: {$regex: /country/i}}, {breed_info: {$regex: /offers good/i}}]}

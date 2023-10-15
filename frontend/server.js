@@ -5,19 +5,13 @@ import cut from './public/components/cut.js';
 import cooking from './public/components/cooking.js';
 import fs from 'fs';
 import path from 'path';
-import { Set_backend_url } from './public/scripts/config.js';
+import { fileURLToPath } from 'url';
 
 const app = express();
 const PORT = 80;
-const backend_PORT = 81;
+// const backend_PORT = 8080;
 
 app.use(express.static('public'));
-
-// works but 2x slower
-// app.use('/resource', (req, res) => {
-// 	const serverURL = `${req.protocol}://${req.get('host')}`;
-// 	res.redirect(`${serverURL}:${backend_PORT}/resource${req.path}`);
-// });
 
 app.listen(PORT, '0.0.0.0', () => {
 	console.log(`Frontend Server ready at http://localhost:${PORT}`);
@@ -45,3 +39,11 @@ app.get('/', (req, res) => {
 		}
 	);
 });
+
+// function Set_backend_url(url) {
+// 	const config_path = `${fileURLToPath(import.meta.url)}`;
+// 	const regex = /\b(backend_url\s*=\s*')[^']*'/i;
+
+// 	let data = fs.readFileSync(config_path, 'utf-8');
+// 	fs.writeFileSync(config_path, data.replace(regex, `$1${url}'`), 'utf-8');
+// }

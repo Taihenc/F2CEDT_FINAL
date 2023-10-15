@@ -15,7 +15,7 @@
 			"cooking_size_text",
 			"cooking_temperature_text",
 			"cooking_time_text",
-			"cooking_perfect_sore"
+			"cooking_perfect_score"
 		],
 		"properties": {
 			"cut_id": {

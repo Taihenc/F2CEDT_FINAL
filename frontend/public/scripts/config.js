@@ -1,4 +1,5 @@
-export let backend_url = 'http://localhost:81';
+// set this to the backend url
+export const backend_url = 'http://localhost:8080';
 
 /**
  * @typedef {Object} Breed_card
@@ -43,7 +44,3 @@ export const toPercentage = {
 	'Moderate to high': 75,
 	'High': 100,
 };
-
-export function Set_backend_url(url) {
-	backend_url = url;
-}

@@ -41,7 +41,6 @@ function pan_right(event) {
 	const current_page = document.getElementsByClassName('content-on-show')[0];
 	const page_id = parseInt(current_page.id.match`[a-z]*([0-9]+)`[0]);
 	const next_page_id = (page_id + 1) % page_length;
-	const next_page = document.getElementById(`page-id-${next_page_id}`);
 
 	pan_to_page(next_page_id, 'right');
 }

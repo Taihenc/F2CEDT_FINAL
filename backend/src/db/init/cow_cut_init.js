@@ -21,7 +21,6 @@ export default async function InitCowCuts() {
 			await database.createCollection('cow_cuts');
 			const collection = database.collection('cow_cuts');
 			await collection.deleteMany({});
-			console.log('inserted');
 
 			await collection.insertMany(cuts, (err, result) => {
 				if (err) {
