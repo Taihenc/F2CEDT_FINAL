@@ -5,7 +5,7 @@ export default async function GetCowBreeds(req, res) {
 	const query = JSON.parse(req.query.query);
 	const sort = JSON.parse(req.query.sort);
 	const options = JSON.parse(req.query.options);
-	console.log(query, sort, options);
+	// console.log(query, sort, options);
 	try {
 		const result = await collection
 			.find(query)
