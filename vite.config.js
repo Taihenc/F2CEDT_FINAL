@@ -1,5 +1,5 @@
 import { defineConfig } from 'vite';
-const REPO_NAME = 'YAKITEMP';
+const REPO_NAME = 'YAKINIKU';
 
 export default defineConfig({
 	base: `/${REPO_NAME}/`,
