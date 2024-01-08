@@ -73,7 +73,9 @@ export function generateBreedCard(breed) {
 <div class="card-breed">
     <div class="card-breed-top">
         <div class="card-breed-img">
-            <img src="${breed.breed_path_img}" alt="${breed.breed_name}">
+            <img src="${backend_url}${breed.breed_path_img}" alt="${
+		breed.breed_name
+	}">
         </div>
         <div class="card-breed-img-filter"></div>
         <div class="card-breed-info">
