@@ -30,14 +30,11 @@ export async function get_breeds(q) {
 }
 
 export async function get_cuts() {
+	const collection = database.collection('cow_cuts');
 	/**
 	 * @type {Cut_card[]}
 	 */
-	const cuts = await fetch(`${backend_url}/cuts`)
-		.then((res) => res.json())
-		.catch((err) => {
-			console.log('err', err);
-		});
+	const cuts = await collection.find();
 
 	return cuts;
 }
