@@ -6,17 +6,17 @@ const query = {
 	setFilter: function (filter) {
 		this.options.skip = 0;
 		this.filter = filter.map((option) => ({
-			breed_country: { $regex: option, $options: 'i' },
+			breed_country: { '$regex': option, '$options': 'i' },
 		}));
-		this.filter = { $or: this.filter };
+		this.filter = { '$or': this.filter };
 	},
 	setSearch: function (breed_name) {
 		this.options.skip = 0;
 		this.search = {
-			$or: [
-				{ breed_name: { $regex: breed_name, $options: 'i' } },
-				{ breed_country: { $regex: breed_name, $options: 'i' } },
-				{ breed_info: { $regex: breed_name, $options: 'i' } },
+			'$or': [
+				{ breed_name: { '$regex': breed_name, '$options': 'i' } },
+				{ breed_country: { '$regex': breed_name, '$options': 'i' } },
+				{ breed_info: { '$regex': breed_name, '$options': 'i' } },
 			],
 		};
 	},
@@ -34,7 +34,7 @@ const query = {
 			return [this.filter, this.sort, this.options];
 		} else {
 			return [
-				{ $and: [this.filter, this.search] },
+				{ '$and': [this.filter, this.search] },
 				this.sort,
 				this.options,
 			];
