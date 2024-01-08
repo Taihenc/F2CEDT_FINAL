@@ -40,14 +40,11 @@ export async function get_cuts() {
 }
 
 export async function get_cookings() {
+	const collection = database.collection('cow_cooking');
 	/**
 	 * @type {Cooking_cut[]}
 	 */
-	const cookings = await fetch(`${backend_url}/cookings`)
-		.then((res) => res.json())
-		.catch((err) => {
-			console.log('err', err);
-		});
+	const cookings = await collection.find();
 
 	return cookings;
 }
