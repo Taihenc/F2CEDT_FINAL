@@ -1,57 +1,46 @@
-import express from 'express';
 import home from './public/components/home.js';
 import breed from './public/components/breed.js';
 import cut from './public/components/cut.js';
 import cooking from './public/components/cooking.js';
-import fs from 'fs';
-import path from 'path';
-import { fileURLToPath } from 'url';
+// import fs from 'fs';
+// import path from 'path';
+// import { fileURLToPath } from 'url';
 
-const app = express();
-const PORT = 80;
-// const backend_PORT = 8080;
+// let html = data;
+const breedManip_script = document.createElement('script');
+breedManip_script.type = 'module';
+breedManip_script.src = './scripts/breed-manip.js';
 
-app.use(express.static('public'));
+const cutManip_script = document.createElement('script');
+cutManip_script.type = 'module';
+cutManip_script.src = './scripts/cut-manip.js';
 
-app.listen(PORT, '0.0.0.0', () => {
-	console.log(`Frontend Server ready at http://localhost:${PORT}`);
-});
+const cookingManip_script = document.createElement('script');
+cookingManip_script.type = 'module';
+cookingManip_script.src = './scripts/cooking-manip.js';
 
-app.get('/', (req, res) => {
-	// Set_backend_url(`${req.protocol}://${req.get('host')}:${backend_PORT}`);
-	fs.readFile(
-		path.resolve('./public/template.html'),
-		'utf-8',
-		(err, data) => {
-			if (err) {
-				console.log(err);
-				res.status(500).send('Some error happened');
-			}
-			let html = data;
-			let append = '';
-			(async () => {
-				append += home(0, true);
-				append += await breed(1, false);
-				append += await cut(2, false);
-				append += await cooking(3, false);
-				return res.send(html.replace('<!-- replace me! -->', append));
-			})();
-			const loading = document.getElementById('loading');
-			// slowly reduce opacity of loading screen
-			loading.classList.add('disappear');
-			// remove loading screen after 1s
-			setTimeout(() => {
-				loading.remove();
-			}, 1000);
+const navigation_script = document.createElement('script');
+navigation_script.type = 'module';
+navigation_script.src = './scripts/navigation.js';
 
-		}
-	);
-});
+const loading = document.getElementById('loading');
 
-// function Set_backend_url(url) {
-// 	const config_path = `${fileURLToPath(import.meta.url)}`;
-// 	const regex = /\b(backend_url\s*=\s*')[^']*'/i;
+let append = '';
+(async () => {
+	append += home(0, true);
+	append += await breed(1, false);
+	append += await cut(2, false);
+	append += await cooking(3, false);
+	document.querySelector('#replace-me').outerHTML = append;
+	document.body.appendChild(breedManip_script);
+	document.body.appendChild(cutManip_script);
+	document.body.appendChild(cookingManip_script);
+	document.body.appendChild(navigation_script);
+	// slowly reduce opacity of loading screen
+	loading.classList.add('disappear');
+	// remove loading screen after 1s
+	setTimeout(() => {
+		loading.remove();
+	}, 1000);
 
-// 	let data = fs.readFileSync(config_path, 'utf-8');
-// 	fs.writeFileSync(config_path, data.replace(regex, `$1${url}'`), 'utf-8');
-// }
+})();
