@@ -218,3 +218,18 @@
 #loading .loading-text span:nth-child(10) {
 	animation: bounceUp10 var(--loading-text-duration) infinite;
 }
+
+.disappear {
+	animation: disappear 0.5s ease-in-out forwards;
+}
+
+@keyframes disappear {
+	0% {
+		scale: 1;
+		opacity: 1;
+	}
+	100% {
+		scale: 2;
+		opacity: 0;
+	}
+}

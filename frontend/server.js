@@ -37,7 +37,13 @@ app.get('/', (req, res) => {
 				return res.send(html.replace('<!-- replace me! -->', append));
 			})();
 			const loading = document.getElementById('loading');
-			loading.remove();
+			// slowly reduce opacity of loading screen
+			loading.classList.add('disappear');
+			// remove loading screen after 1s
+			setTimeout(() => {
+				loading.remove();
+			}, 1000);
+
 		}
 	);
 });
