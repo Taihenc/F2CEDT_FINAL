@@ -36,6 +36,8 @@ app.get('/', (req, res) => {
 				append += await cooking(3, false);
 				return res.send(html.replace('<!-- replace me! -->', append));
 			})();
+			const loading = document.getElementById('loading');
+			loading.remove();
 		}
 	);
 });
