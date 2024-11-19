@@ -5,13 +5,9 @@ export default defineConfig({
 	base: `/${REPO_NAME}/`,
 	build: {
 		target: 'esnext',
-		rollupOptions: {
-			output: {
-				globals: {
-					'realm-web': 'Realm', // Add global variable for realm-web
-				},
-			},
-		},
+		// rollupOptions: {
+		// 	input: './server.js',
+		// },
 	},
 	target: 'esnext',
 	esbuild: {
