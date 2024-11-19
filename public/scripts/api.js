@@ -1,6 +1,7 @@
 // this is not 100% 'api' but at least it's the only file that makes requests to the backend
 // import * as Realm from 'realm-web';
 import { backend_url } from './config.js';
+import * as Realm from 'realm-web';
 
 const app = new Realm.App({ id: 'data-spdfc' });
 const credentials = Realm.Credentials.apiKey(

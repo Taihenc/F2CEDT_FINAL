@@ -12,7 +12,7 @@
 	"author": "",
 	"license": "ISC",
 	"dependencies": {
-		"realm-web": "^2.0.0",
+		"realm-web": "^2.0.1",
 		"vite": "^5.0.11"
 	}
 }
